@@ -13,7 +13,7 @@
   {{ partial "ads/sidebar-rectangle" . }}
 
   <!-- Trending Articles -->
-  {{ $trendingArticles := first 5 .Site.RegularPages }}
+  {{ $trendingArticles := first 5 (where .Site.RegularPages "Section" "!=" "pages") }}
   {{ if gt (len $trendingArticles) 0 }}
     <div class="sidebar-widget sidebar-trending">
       <h3 class="widget-title">Trending Now</h3>

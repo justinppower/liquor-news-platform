@@ -1,12 +1,12 @@
 {{ define "main" }}
 <div class="homepage">
-  <!-- Breaking News Ticker -->
-  {{ partial "components/ticker" . }}
-
   <div class="homepage-wrapper">
     <!-- Hero Section -->
-    {{ $featured := first 1 .Site.RegularPages }}
-    {{ range $featured }}
+    {{ $featured := where .Site.RegularPages "Params.featured" true }}
+    {{ if eq (len $featured) 0 }}
+      {{ $featured = first 1 (where .Site.RegularPages "Section" "!=" "pages") }}
+    {{ end }}
+    {{ range first 1 $featured }}
       <section class="hero-section">
         {{ if .Params.image }}
           <div class="hero-image">
@@ -45,16 +45,18 @@
       <!-- Main Content -->
       <main class="homepage-main">
         <!-- Content Grid by Pillars -->
+        {{ $pillarMap := dict "industry-news" "Industry News" "texas-beat" "Texas Beat" "new-releases" "New Releases" }}
         {{ $pillars := slice "industry-news" "texas-beat" "new-releases" }}
 
         {{ range $pillars }}
           {{ $pillar := . }}
+          {{ $pillarName := index $pillarMap $pillar | default (humanize $pillar) }}
           {{ $pillarArticles := where $.Site.RegularPages "Params.pillars" "intersect" (slice $pillar) }}
           {{ if gt (len $pillarArticles) 0 }}
             <section class="pillar-section">
               <div class="pillar-header">
-                <h2 class="pillar-title">{{ $pillar }}</h2>
-                <a href="/categories/{{ lower (replace $pillar " " "-") }}/" class="pillar-link">View All</a>
+                <h2 class="pillar-title">{{ $pillarName }}</h2>
+                <a href="{{ (printf "/pillars/%s/" $pillar) | relURL }}" class="pillar-link">View All</a>
               </div>
 
               <div class="pillar-grid">

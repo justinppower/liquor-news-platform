@@ -1,5 +1,5 @@
 <!-- COMPONENT: Ticker - Breaking news horizontal scroll ticker displaying latest articles -->
-{{ $latestArticles := first 5 .Site.RegularPages }}
+{{ $latestArticles := first 5 (where .Site.RegularPages "Section" "!=" "pages") }}
 {{ if gt (len $latestArticles) 0 }}
   <div class="ticker-container">
     <div class="ticker-label">

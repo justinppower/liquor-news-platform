@@ -9,12 +9,13 @@
   // Mobile Menu Toggle
   // ===================================
 
-  const hamburger = document.querySelector('.hamburger');
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
   const siteNav = document.querySelector('.site-nav');
 
-  if (hamburger) {
-    hamburger.addEventListener('click', function() {
-      hamburger.classList.toggle('active');
+  if (menuToggle && siteNav) {
+    menuToggle.addEventListener('click', function() {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
       siteNav.classList.toggle('active');
     });
 
@@ -22,7 +23,7 @@
     const navLinks = siteNav.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
-        hamburger.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
         siteNav.classList.remove('active');
       });
     });
