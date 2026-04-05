@@ -1,0 +1,20 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  {{ $now := now }}
+  {{ $cutoff := $now.AddDate 0 0 -2 }}
+  {{ range where site.RegularPages "Date" "ge" $cutoff }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    <news:news>
+      <news:publication>
+        <news:name>{{ site.Title }}</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}</news:publication_date>
+      <news:title>{{ .Title | htmlEscape }}</news:title>
+      {{ with .Params.tags }}<news:keywords>{{ delimit . ", " }}</news:keywords>{{ end }}
+    </news:news>
+  </url>
+  {{ end }}
+</urlset>

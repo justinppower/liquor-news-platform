@@ -1,0 +1,18 @@
+{{/* AdSense Ad Slot - Lazy loaded below the fold
+     Usage: {{ partial "seo/adsense-slot.html" (dict "slot" "1234567890" "format" "auto" "context" .) }}
+     Params: slot (ad unit ID), format (auto|rectangle|horizontal|vertical), context (page context)
+*/}}
+{{ $client := .context.Site.Params.ads.adsense_client }}
+{{ $slot := .slot | default "" }}
+{{ $format := .format | default "auto" }}
+{{ if and $client $slot .context.Site.Params.ads.enable }}
+<div class="adsense-unit" data-ad-loaded="false">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{{ $client }}"
+       data-ad-slot="{{ $slot }}"
+       data-ad-format="{{ $format }}"
+       data-full-width-responsive="true"
+       loading="lazy"></ins>
+</div>
+{{ end }}

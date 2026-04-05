@@ -45,6 +45,14 @@ enableGitInfo = false
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
 
+[outputFormats]
+  [outputFormats.news-sitemap]
+    baseName = "news-sitemap"
+    mediaType = "application/xml"
+    protocol = "xml://"
+    isPlainText = true
+    notAlternative = true
+
 [services.rss]
   limit = 20
 
@@ -82,6 +90,10 @@ enableGitInfo = false
   [params.ads]
     adsense_client = ""
     enable = false
+
+  [params.seo]
+    news_sitemap = true
+    google_site_verification = ""
 
   [params.newsletter]
     provider = "beehiiv"

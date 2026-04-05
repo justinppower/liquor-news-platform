@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Block admin/draft paths
+Disallow: /queue/
+Disallow: /drafts/
+Disallow: /tags/
+Disallow: /categories/
+
+# Sitemaps
+Sitemap: {{ .Site.BaseURL | default "/" }}sitemap.xml
+{{ if .Site.Params.seo.news_sitemap }}Sitemap: {{ .Site.BaseURL | default "/" }}news-sitemap.xml{{ end }}
+
+# Crawl-delay for polite bots
+Crawl-delay: 1

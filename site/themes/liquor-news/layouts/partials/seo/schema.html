@@ -1,0 +1,104 @@
+{{/* JSON-LD Schema Markup - Config-driven, reusable across verticals */}}
+
+{{/* --- Organization (all pages) --- */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL | default .Site.Home.Permalink }}",
+  "description": "{{ .Site.Params.description }}",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ "images/logo.png" | absURL }}"
+  }{{ with .Site.Params.social }},
+  "sameAs": [
+    {{ with .twitter }}"https://twitter.com/{{ . }}"{{ end }}
+    {{ with .linkedin }}{{ if $.Site.Params.social.twitter }},{{ end }}"https://linkedin.com/company/{{ . }}"{{ end }}
+    {{ with .instagram }}{{ if or $.Site.Params.social.twitter $.Site.Params.social.linkedin }},{{ end }}"https://instagram.com/{{ . }}"{{ end }}
+  ]{{ end }}
+}
+</script>
+
+{{/* --- WebSite + SearchAction (homepage only) --- */}}
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL | default .Site.Home.Permalink }}",
+  "description": "{{ .Site.Params.description }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ .Site.BaseURL | default .Site.Home.Permalink }}?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{{ end }}
+
+{{/* --- NewsArticle (single articles) --- */}}
+{{ if and .IsPage (not .IsHome) }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "{{ .Title }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}",
+  "url": "{{ .Permalink }}",
+  "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  {{ with .Params.image }}"image": "{{ . | absURL }}",{{ end }}
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Params.author | default .Site.Params.author }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ "images/logo.png" | absURL }}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  }{{ with .Params.pillars }},
+  "articleSection": "{{ index . 0 }}"{{ end }}{{ with .Params.tags }},
+  "keywords": "{{ delimit . ", " }}"{{ end }},
+  "wordCount": {{ .WordCount }},
+  "inLanguage": "en-US"
+}
+</script>
+{{ end }}
+
+{{/* --- BreadcrumbList (non-home pages) --- */}}
+{{ if not .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ .Site.BaseURL | default .Site.Home.Permalink }}"
+    }{{ if .Section }},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ .Section | humanize | title }}",
+      "item": "{{ printf "/%s/" .Section | absURL }}"
+    }{{ end }}{{ if .IsPage }},
+    {
+      "@type": "ListItem",
+      "position": {{ if .Section }}3{{ else }}2{{ end }},
+      "name": "{{ .Title }}"
+    }{{ end }}
+  ]
+}
+</script>
+{{ end }}

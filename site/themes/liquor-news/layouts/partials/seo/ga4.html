@@ -1,0 +1,94 @@
+{{/* Google Analytics 4 - Enhanced tracking with custom events */}}
+{{ $gaID := .Site.Params.analytics.google_analytics }}
+{{ if $gaID }}
+<!-- GA4: {{ $gaID }} -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ $gaID }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ $gaID }}', {
+    'anonymize_ip': true,
+    'cookie_flags': 'SameSite=None;Secure'
+  });
+</script>
+<script>
+  /* Custom event tracking for news site engagement */
+  document.addEventListener('DOMContentLoaded', function() {
+    /* Track article scroll depth */
+    if (document.querySelector('.article-content')) {
+      var scrollMarks = [25, 50, 75, 100];
+      var firedMarks = {};
+      window.addEventListener('scroll', function() {
+        var article = document.querySelector('.article-content');
+        if (!article) return;
+        var rect = article.getBoundingClientRect();
+        var articleHeight = rect.height;
+        var scrolled = window.innerHeight - rect.top;
+        var pct = Math.round((scrolled / articleHeight) * 100);
+        scrollMarks.forEach(function(mark) {
+          if (pct >= mark && !firedMarks[mark]) {
+            firedMarks[mark] = true;
+            gtag('event', 'scroll_depth', {
+              'event_category': 'engagement',
+              'event_label': mark + '%',
+              'value': mark
+            });
+          }
+        });
+      });
+    }
+
+    /* Track outbound link clicks */
+    document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+      if (link.hostname !== window.location.hostname) {
+        link.addEventListener('click', function() {
+          gtag('event', 'outbound_click', {
+            'event_category': 'navigation',
+            'event_label': this.href
+          });
+        });
+      }
+    });
+
+    /* Track share button clicks */
+    document.querySelectorAll('.share-button').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var platform = this.className.replace('share-button share-', '');
+        gtag('event', 'share', {
+          'event_category': 'social',
+          'event_label': platform,
+          'content_type': 'article'
+        });
+      });
+    });
+
+    /* Track search usage */
+    var searchInput = document.querySelector('.search-input');
+    if (searchInput) {
+      var searchTimeout;
+      searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        var query = this.value;
+        searchTimeout = setTimeout(function() {
+          if (query.length > 2) {
+            gtag('event', 'search', {
+              'search_term': query
+            });
+          }
+        }, 1500);
+      });
+    }
+
+    /* Track newsletter signup attempts */
+    document.querySelectorAll('.newsletter-button').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        gtag('event', 'newsletter_signup', {
+          'event_category': 'conversion',
+          'event_label': window.location.pathname
+        });
+      });
+    });
+  });
+</script>
+{{ end }}

@@ -368,6 +368,32 @@
   }
 
   // ===================================
+  // AdSense Lazy Loading (IntersectionObserver)
+  // ===================================
+
+  var adUnits = document.querySelectorAll('.adsense-unit');
+  if (adUnits.length > 0 && typeof IntersectionObserver !== 'undefined') {
+    var adObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var unit = entry.target;
+          if (unit.dataset.adLoaded === 'false') {
+            unit.dataset.adLoaded = 'true';
+            try {
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch(e) { /* AdSense not loaded */ }
+          }
+          adObserver.unobserve(unit);
+        }
+      });
+    }, { rootMargin: '200px' });
+
+    adUnits.forEach(function(unit) {
+      adObserver.observe(unit);
+    });
+  }
+
+  // ===================================
   // Initialize on DOM Ready
   // ===================================
 
