@@ -33,18 +33,18 @@ jobs:
 
       - name: Fetch RSS feeds
         run: |
-          python scripts/rss-fetch.py
+          python site/scripts/rss-fetch.py
 
       - name: Check for new content
         id: check-changes
         run: |
-          git diff --quiet content/ data/ || echo "has_changes=true" >> $GITHUB_OUTPUT
+          git diff --quiet site/content/ site/data/ || echo "has_changes=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push new content
         if: steps.check-changes.outputs.has_changes == 'true' && github.event.inputs.dry_run != 'true'
         run: |
           git config user.name "RSS Bot"
           git config user.email "rss-bot@liquornewsusa.com"
-          git add content/ data/
+          git add site/content/ site/data/
           git commit -m "Auto: RSS feed update $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push
