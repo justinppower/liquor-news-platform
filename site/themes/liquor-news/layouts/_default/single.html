@@ -1,6 +1,8 @@
 {{ define "main" }}
 <article class="single-container">
   <div class="single-wrapper">
+    {{ partial "components/breadcrumb" . }}
+
     <!-- Article Header -->
     <header class="article-header">
       <h1 class="article-title">{{ .Title }}</h1>
@@ -56,6 +58,12 @@
           <!-- In-Article Ad -->
           {{ partial "ads/in-article" . }}
         </div>
+
+        <!-- Author Bio -->
+        {{ partial "components/author-bio" . }}
+
+        <!-- Article Navigation -->
+        {{ partial "components/article-nav" . }}
 
         <!-- Related Articles -->
         {{ $related := (where (where site.RegularPages "Section" .Section) "Params.pillars" "intersect" .Params.pillars) | first 3 }}

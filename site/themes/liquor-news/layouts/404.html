@@ -1,0 +1,118 @@
+{{ define "main" }}
+<div class="error-container">
+  <div class="error-wrapper">
+    <span class="error-code">404</span>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-message">The page you're looking for has been moved, removed, or never existed. Try searching for what you need or head back to the homepage.</p>
+    <div class="error-actions">
+      <a href="{{ "/" | relURL }}" class="error-btn error-btn-primary">Back to Homepage</a>
+      <a href="{{ "/pillars/" | relURL }}" class="error-btn error-btn-secondary">Browse Categories</a>
+    </div>
+    <div class="error-latest">
+      <h2 class="error-latest-title">Latest Stories</h2>
+      <div class="error-grid">
+        {{ range first 3 (where .Site.RegularPages "Section" "!=" "pages") }}
+          {{ partial "components/article-card" . }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.error-container {
+  width: 100%;
+  background-color: {{ .Site.Params.colors.background | default "#f5f5f5" }};
+  padding: 4rem 0;
+  min-height: calc(100vh - 200px);
+}
+.error-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.error-code {
+  font-family: 'Playfair Display', serif;
+  font-size: 8rem;
+  font-weight: 800;
+  color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  line-height: 1;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+.error-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  margin: 0 0 1rem 0;
+}
+.error-message {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+.error-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.875rem 2rem;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.error-btn-primary {
+  background-color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  color: white;
+}
+.error-btn-primary:hover {
+  background-color: {{ .Site.Params.colors.accent | default "#e94560" }};
+}
+.error-btn-secondary {
+  background-color: transparent;
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  border: 2px solid {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+}
+.error-btn-secondary:hover {
+  background-color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  color: white;
+}
+.error-latest {
+  border-top: 2px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  padding-top: 3rem;
+  text-align: left;
+}
+.error-latest-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+.error-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+@media (max-width: 640px) {
+  .error-code { font-size: 5rem; }
+  .error-title { font-size: 1.75rem; }
+  .error-grid { grid-template-columns: 1fr; }
+}
+</style>
+{{ end }}

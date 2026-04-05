@@ -1,0 +1,96 @@
+{{/* Author Bio Card - shown at end of articles */}}
+{{ if .Params.author }}
+<div class="author-bio">
+  <div class="author-bio-inner">
+    <div class="author-avatar">
+      {{ $initial := substr .Params.author 0 1 }}
+      <span class="author-avatar-letter">{{ $initial }}</span>
+    </div>
+    <div class="author-bio-content">
+      <span class="author-bio-label">Written by</span>
+      <h3 class="author-bio-name">{{ .Params.author }}</h3>
+      {{ if eq .Params.author "RSS Feed" }}
+        <p class="author-bio-desc">This article was sourced via our automated RSS aggregation engine. Content is pulled from trusted industry sources and queued for editorial review.</p>
+      {{ else }}
+        <p class="author-bio-desc">Contributing writer for {{ .Site.Title }}. Covering the U.S. alcohol industry with a focus on Texas.</p>
+      {{ end }}
+      {{ if .Params.source_url }}
+        <a href="{{ .Params.source_url }}" class="author-source-link" target="_blank" rel="noopener">Read original source &rarr;</a>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
+
+<style>
+.author-bio {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #fafafa;
+  border-radius: 6px;
+  border-left: 4px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+}
+.author-bio-inner {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.author-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.author-avatar-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+.author-bio-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+  font-weight: 600;
+}
+.author-bio-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  margin: 0.25rem 0 0.5rem 0;
+}
+.author-bio-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+.author-source-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: {{ .Site.Params.colors.accent | default "#e94560" }};
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.author-source-link:hover {
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+}
+@media (max-width: 640px) {
+  .author-bio-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+</style>

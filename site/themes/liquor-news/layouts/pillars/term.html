@@ -1,0 +1,210 @@
+{{ define "main" }}
+{{ $pillarMap := dict "industry-news" "Industry News" "texas-beat" "Texas Beat" "new-releases" "New Releases" "regulation-policy" "Regulation & Policy" "culture-lifestyle" "Culture & Lifestyle" "data-trends" "Data & Trends" }}
+{{ $pillarName := index $pillarMap .Title | default (humanize .Title) }}
+{{ $pillarDescriptions := dict "industry-news" "M&A, earnings, distribution shifts, and executive moves across the U.S. alcohol industry." "texas-beat" "Local stories, distillery openings, TABC news, and the Texas alcohol scene." "new-releases" "Bourbon drops, RTD launches, craft spirits, and what's hitting shelves." "regulation-policy" "TABC enforcement, federal policy, tariffs, and state-level legislation." "culture-lifestyle" "Cocktail culture, bar trends, tasting events, and the people behind the pour." "data-trends" "Market data, consumer insights, pricing trends, and industry forecasts." }}
+{{ $pillarDesc := index $pillarDescriptions .Title | default "" }}
+
+<div class="pillar-container">
+  <div class="pillar-wrapper">
+    <!-- Pillar Header -->
+    <div class="pillar-header">
+      <span class="pillar-label">{{ .Site.Title }}</span>
+      <h1 class="pillar-title">{{ $pillarName }}</h1>
+      {{ if $pillarDesc }}
+        <p class="pillar-description">{{ $pillarDesc }}</p>
+      {{ end }}
+      <div class="pillar-stats">
+        <span class="pillar-count">{{ len .Pages }} articles</span>
+      </div>
+    </div>
+
+    <div class="pillar-grid">
+      <!-- Main Content -->
+      <main class="pillar-main">
+        <!-- Featured Article (first one) -->
+        {{ $featured := first 1 .Pages }}
+        {{ range $featured }}
+        <div class="pillar-featured">
+          <div class="pillar-featured-content">
+            {{ if .Params.image }}
+              <img src="{{ .Params.image }}" alt="{{ .Title }}" class="pillar-featured-img" loading="lazy">
+            {{ end }}
+            <div class="pillar-featured-text">
+              <span class="pillar-featured-badge">Featured</span>
+              <h2 class="pillar-featured-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </h2>
+              <p class="pillar-featured-excerpt">{{ .Summary | truncate 200 }}</p>
+              <div class="pillar-featured-meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                {{ if .Params.source_name }}
+                  <span class="pillar-featured-source">{{ .Params.source_name }}</span>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+
+        <!-- Article Grid -->
+        <div class="article-grid">
+          {{ range after 1 .Paginator.Pages }}
+            {{ partial "components/article-card" . }}
+          {{ end }}
+        </div>
+
+        <!-- Pagination -->
+        {{ if gt .Paginator.TotalPages 1 }}
+          {{ partial "components/pagination" . }}
+        {{ end }}
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="pillar-sidebar">
+        {{ partial "components/sidebar" . }}
+      </aside>
+    </div>
+  </div>
+</div>
+
+<style>
+.pillar-container {
+  width: 100%;
+  background-color: {{ .Site.Params.colors.background | default "#f5f5f5" }};
+  padding: 2rem 0;
+  min-height: calc(100vh - 200px);
+}
+.pillar-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.pillar-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+}
+.pillar-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  font-weight: 700;
+}
+.pillar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  margin: 0.5rem 0;
+  line-height: 1.1;
+}
+.pillar-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+.pillar-stats {
+  margin-top: 0.75rem;
+}
+.pillar-count {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #999;
+  font-weight: 500;
+}
+.pillar-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+}
+.pillar-main { flex: 1; }
+.pillar-featured {
+  margin-bottom: 2.5rem;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e8e8e8;
+}
+.pillar-featured-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.pillar-featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 300px;
+}
+.pillar-featured-text {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.pillar-featured-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: {{ .Site.Params.colors.accent | default "#e94560" }};
+  margin-bottom: 0.75rem;
+}
+.pillar-featured-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+.pillar-featured-title a {
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  text-decoration: none;
+}
+.pillar-featured-title a:hover {
+  color: {{ .Site.Params.colors.accent | default "#e94560" }};
+}
+.pillar-featured-excerpt {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+.pillar-featured-meta {
+  display: flex;
+  gap: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #999;
+}
+.pillar-featured-source {
+  color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  font-weight: 600;
+}
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 1024px) {
+  .pillar-grid { grid-template-columns: 1fr; }
+  .pillar-title { font-size: 2.25rem; }
+}
+@media (max-width: 768px) {
+  .pillar-featured-content { grid-template-columns: 1fr; }
+  .pillar-featured-img { min-height: 200px; max-height: 250px; }
+  .article-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .pillar-title { font-size: 1.75rem; }
+  .pillar-wrapper { padding: 0 1rem; }
+}
+</style>
+{{ end }}

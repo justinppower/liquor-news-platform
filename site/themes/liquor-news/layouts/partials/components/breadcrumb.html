@@ -1,0 +1,60 @@
+{{/* Breadcrumb Navigation */}}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="{{ "/" | relURL }}">Home</a>
+    </li>
+    {{ if .Parent }}
+      {{ if ne .Parent.RelPermalink "/" }}
+        <li class="breadcrumb-item">
+          <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a>
+        </li>
+      {{ end }}
+    {{ end }}
+    {{ if .Params.pillars }}
+      {{ $pillar := index .Params.pillars 0 }}
+      {{ $pillarMap := dict "industry-news" "Industry News" "texas-beat" "Texas Beat" "new-releases" "New Releases" "regulation-policy" "Regulation & Policy" "culture-lifestyle" "Culture & Lifestyle" "data-trends" "Data & Trends" }}
+      {{ $pillarName := index $pillarMap $pillar | default (humanize $pillar) }}
+      <li class="breadcrumb-item">
+        <a href="{{ (printf "/pillars/%s/" $pillar) | relURL }}">{{ $pillarName }}</a>
+      </li>
+    {{ end }}
+    <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+      {{ .Title | truncate 60 }}
+    </li>
+  </ol>
+</nav>
+
+<style>
+.breadcrumb {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.breadcrumb-item a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.breadcrumb-item a:hover {
+  color: {{ .Site.Params.colors.accent | default "#e94560" }};
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/";
+  color: #ccc;
+  margin-right: 0.25rem;
+}
+.breadcrumb-current {
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  font-weight: 500;
+}
+</style>

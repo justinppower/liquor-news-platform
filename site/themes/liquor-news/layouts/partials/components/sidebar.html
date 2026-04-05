@@ -1,5 +1,10 @@
-<!-- COMPONENT: Sidebar - Sidebar with ad rectangle slot, newsletter signup, and trending articles -->
+<!-- COMPONENT: Sidebar - Sidebar with search, ad rectangle slot, newsletter signup, and trending articles -->
 <div class="sidebar-content">
+  <!-- Search -->
+  <div class="sidebar-widget sidebar-search">
+    {{ partial "components/search" . }}
+  </div>
+
   <!-- Top Leaderboard Ad -->
   {{ partial "ads/leaderboard-top" . }}
 

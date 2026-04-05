@@ -1,0 +1,80 @@
+{{/* Previous / Next Article Navigation */}}
+{{ $pages := where .Site.RegularPages "Section" "!=" "pages" }}
+{{ $prev := .PrevInSection }}
+{{ $next := .NextInSection }}
+
+{{ if or $prev $next }}
+<nav class="article-nav" aria-label="Article navigation">
+  {{ if $prev }}
+  <a href="{{ $prev.RelPermalink }}" class="article-nav-link article-nav-prev">
+    <span class="article-nav-direction">&larr; Previous</span>
+    <span class="article-nav-title">{{ $prev.Title | truncate 80 }}</span>
+  </a>
+  {{ else }}
+  <div class="article-nav-link article-nav-placeholder"></div>
+  {{ end }}
+
+  {{ if $next }}
+  <a href="{{ $next.RelPermalink }}" class="article-nav-link article-nav-next">
+    <span class="article-nav-direction">Next &rarr;</span>
+    <span class="article-nav-title">{{ $next.Title | truncate 80 }}</span>
+  </a>
+  {{ else }}
+  <div class="article-nav-link article-nav-placeholder"></div>
+  {{ end }}
+</nav>
+{{ end }}
+
+<style>
+.article-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+.article-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background-color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid #e8e8e8;
+  transition: all 0.2s ease;
+}
+.article-nav-link:hover {
+  border-color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.article-nav-next {
+  text-align: right;
+}
+.article-nav-direction {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  font-weight: 700;
+}
+.article-nav-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  line-height: 1.4;
+}
+.article-nav-placeholder {
+  border: none;
+  background: none;
+}
+@media (max-width: 640px) {
+  .article-nav {
+    grid-template-columns: 1fr;
+  }
+  .article-nav-next { text-align: left; }
+}
+</style>

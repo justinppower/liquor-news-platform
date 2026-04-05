@@ -21,23 +21,7 @@
 
         <!-- Pagination -->
         {{ if gt .Paginator.TotalPages 1 }}
-          <nav class="pagination">
-            {{ if .Paginator.HasPrev }}
-              <a href="{{ .Paginator.Prev.URL }}" class="pagination-link pagination-prev">
-                <span class="pagination-label">Previous</span>
-              </a>
-            {{ end }}
-
-            <div class="pagination-info">
-              Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
-            </div>
-
-            {{ if .Paginator.HasNext }}
-              <a href="{{ .Paginator.Next.URL }}" class="pagination-link pagination-next">
-                <span class="pagination-label">Next</span>
-              </a>
-            {{ end }}
-          </nav>
+          {{ partial "components/pagination" . }}
         {{ end }}
       </main>
 
@@ -105,41 +89,6 @@
 
 .list-sidebar {
   width: 100%;
-}
-
-/* Pagination */
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #e0e0e0;
-}
-
-.pagination-link {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.75rem 1.5rem;
-  background-color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: background-color 0.3s ease;
-}
-
-.pagination-link:hover {
-  background-color: {{ .Site.Params.colors.accent | default "#e94560" }};
-}
-
-.pagination-info {
-  font-family: 'Inter', sans-serif;
-  color: #666;
-  font-size: 0.95rem;
 }
 
 /* Responsive */

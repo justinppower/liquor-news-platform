@@ -173,7 +173,11 @@ ul {
 .mobile-menu-toggle {
   display: none;
   background: transparent;
-  padding: 0.5rem;
+  padding: 0.75rem;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-menu-toggle .hamburger {
@@ -182,6 +186,7 @@ ul {
   height: 2px;
   background-color: var(--color-card-bg);
   position: relative;
+  transition: background-color var(--transition-fast);
 }
 
 .mobile-menu-toggle .hamburger::before,
@@ -193,6 +198,7 @@ ul {
   background-color: var(--color-card-bg);
   position: absolute;
   left: 0;
+  transition: transform var(--transition-standard), top var(--transition-standard);
 }
 
 .mobile-menu-toggle .hamburger::before {
@@ -201,6 +207,21 @@ ul {
 
 .mobile-menu-toggle .hamburger::after {
   top: 7px;
+}
+
+/* Hamburger to X animation */
+.mobile-menu-toggle[aria-expanded="true"] .hamburger {
+  background-color: transparent;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger::after {
+  top: 0;
+  transform: rotate(-45deg);
 }
 
 /* Header Actions (newsletter CTA) */
@@ -508,6 +529,13 @@ ul {
     padding: 1rem;
     z-index: 99;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.25s ease-out;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .site-nav.active {
@@ -516,11 +544,23 @@ ul {
 
   .nav-list {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0;
+  }
+
+  .nav-item a {
+    display: block;
+    padding: 0.875rem 1rem;
+    min-height: 44px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 1rem;
+  }
+
+  .nav-item:last-child a {
+    border-bottom: none;
   }
 
   .mobile-menu-toggle {
-    display: block;
+    display: flex;
   }
 
   .footer-grid {
@@ -586,6 +626,59 @@ ul {
   a { color: black; }
   h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
   p { page-break-inside: avoid; }
+}
+
+/* ===================================
+   Accessibility & Focus
+   ===================================*/
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  z-index: 200;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+*:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Fluid Ad Sizing on Mobile */
+@media (max-width: 768px) {
+  .ad-slot,
+  .sponsored-content-unit {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .ad-slot img,
+  .ad-slot iframe {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Touch-friendly target sizing */
+@media (hover: none) and (pointer: coarse) {
+  .nav-item a,
+  .pagination-btn,
+  .pagination-num,
+  .share-button,
+  .error-btn,
+  .newsletter-form button {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 /* ===================================

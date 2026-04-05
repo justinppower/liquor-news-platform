@@ -309,6 +309,65 @@
   }
 
   // ===================================
+  // Client-Side Search
+  // ===================================
+
+  var searchInput = document.getElementById('search-input');
+  var searchResults = document.getElementById('search-results');
+  var searchIndex = null;
+
+  if (searchInput && searchResults) {
+    // Load search index on first focus
+    searchInput.addEventListener('focus', function() {
+      if (!searchIndex) {
+        var baseUrl = document.querySelector('link[rel="canonical"]');
+        var indexUrl = (baseUrl ? baseUrl.href.replace(/\/$/, '') : '') + '/index.json';
+        fetch(indexUrl)
+          .then(function(r) { return r.json(); })
+          .then(function(data) { searchIndex = data; })
+          .catch(function() { searchIndex = []; });
+      }
+    });
+
+    var debounceTimer;
+    searchInput.addEventListener('input', function() {
+      clearTimeout(debounceTimer);
+      var query = this.value.trim().toLowerCase();
+      debounceTimer = setTimeout(function() {
+        if (!query || query.length < 2 || !searchIndex) {
+          searchResults.classList.remove('active');
+          searchResults.innerHTML = '';
+          return;
+        }
+        var results = searchIndex.filter(function(item) {
+          return item.title.toLowerCase().indexOf(query) !== -1 ||
+                 (item.pillar && item.pillar.toLowerCase().indexOf(query) !== -1) ||
+                 (item.source && item.source.toLowerCase().indexOf(query) !== -1);
+        }).slice(0, 8);
+
+        if (results.length === 0) {
+          searchResults.innerHTML = '<div class="search-no-results">No articles found</div>';
+        } else {
+          searchResults.innerHTML = results.map(function(r) {
+            return '<a href="' + r.url + '" class="search-result-item" role="option">' +
+              '<div class="search-result-title">' + r.title + '</div>' +
+              '<div class="search-result-meta">' + (r.pillar || '') + (r.date ? ' &middot; ' + r.date : '') + '</div>' +
+              '</a>';
+          }).join('');
+        }
+        searchResults.classList.add('active');
+      }, 200);
+    });
+
+    // Close search on click outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#site-search')) {
+        searchResults.classList.remove('active');
+      }
+    });
+  }
+
+  // ===================================
   // Initialize on DOM Ready
   // ===================================
 

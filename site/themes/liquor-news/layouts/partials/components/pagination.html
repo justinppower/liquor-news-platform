@@ -1,0 +1,113 @@
+{{/* Numbered Pagination */}}
+{{ $paginator := .Paginator }}
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="pagination" aria-label="Pagination">
+  {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}" class="pagination-btn pagination-prev" aria-label="Previous page">&larr; Prev</a>
+  {{ else }}
+    <span class="pagination-btn pagination-disabled">&larr; Prev</span>
+  {{ end }}
+
+  <div class="pagination-numbers">
+    {{ $current := $paginator.PageNumber }}
+    {{ $total := $paginator.TotalPages }}
+    {{ $pagers := $paginator.Pagers }}
+
+    {{ range $pagers }}
+      {{ $pageNum := .PageNumber }}
+      {{ if eq $pageNum $current }}
+        <span class="pagination-num pagination-current" aria-current="page">{{ $pageNum }}</span>
+      {{ else if or (le $pageNum 2) (ge $pageNum (sub $total 1)) (and (ge $pageNum (sub $current 1)) (le $pageNum (add $current 1))) }}
+        <a href="{{ .URL }}" class="pagination-num">{{ $pageNum }}</a>
+      {{ else if or (eq $pageNum 3) (eq $pageNum (sub $total 2)) }}
+        {{ if and (gt (sub $current $pageNum) 1) (gt (sub $pageNum $current) 1) }}
+          <span class="pagination-ellipsis">&hellip;</span>
+        {{ else }}
+          <a href="{{ .URL }}" class="pagination-num">{{ $pageNum }}</a>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </div>
+
+  {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}" class="pagination-btn pagination-next" aria-label="Next page">Next &rarr;</a>
+  {{ else }}
+    <span class="pagination-btn pagination-disabled">Next &rarr;</span>
+  {{ end }}
+</nav>
+{{ end }}
+
+<style>
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+.pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.25rem;
+  background-color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease;
+}
+.pagination-btn:hover:not(.pagination-disabled) {
+  background-color: {{ .Site.Params.colors.accent | default "#e94560" }};
+}
+.pagination-disabled {
+  background-color: #ddd;
+  color: #999;
+  cursor: default;
+}
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.pagination-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  transition: all 0.2s ease;
+}
+.pagination-num:hover {
+  background-color: #e8e8e8;
+}
+.pagination-current {
+  background-color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  color: white;
+  font-weight: 700;
+}
+.pagination-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 40px;
+  font-family: 'Inter', sans-serif;
+  color: #999;
+}
+@media (max-width: 480px) {
+  .pagination { gap: 0.35rem; }
+  .pagination-btn { padding: 0.5rem 0.75rem; font-size: 0.8rem; }
+  .pagination-num { width: 34px; height: 34px; font-size: 0.8rem; }
+}
+</style>

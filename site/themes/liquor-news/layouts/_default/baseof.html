@@ -40,13 +40,15 @@
 </head>
 <body class="{{ with .Section }}section-{{ . }}{{ end }} {{ with .Type }}type-{{ . }}{{ end }}">
 
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
   {{ partial "header.html" . }}
 
   {{ if .Site.Params.ads.enable }}
     {{ partial "ads/leaderboard-top.html" . }}
   {{ end }}
 
-  <main class="site-main">
+  <main id="main-content" class="site-main">
     {{ block "main" . }}{{ end }}
   </main>
 
