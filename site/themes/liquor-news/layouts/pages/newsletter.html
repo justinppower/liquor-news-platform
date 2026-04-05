@@ -1,0 +1,369 @@
+{{ define "main" }}
+<div class="newsletter-page">
+  <div class="newsletter-hero">
+    <div class="newsletter-hero-inner">
+      <span class="newsletter-badge">Free Weekly Newsletter</span>
+      <h1 class="newsletter-headline">The U.S. Liquor Industry<br>in Your Inbox Every Friday</h1>
+      <p class="newsletter-subhead">Join thousands of industry professionals who start their weekend with our curated digest of the week's biggest stories, market moves, and Texas-focused coverage.</p>
+
+      <div class="newsletter-signup-box">
+        <form class="newsletter-hero-form" action="{{ .Site.Params.newsletter.signup_url | default "#" }}" method="POST">
+          <div class="newsletter-hero-input-group">
+            <input
+              type="email"
+              name="{{ .Site.Params.newsletter.email_field | default "email" }}"
+              class="newsletter-hero-input"
+              placeholder="Enter your email address"
+              required
+              aria-label="Email address"
+            >
+            <button type="submit" class="newsletter-hero-button">Subscribe Free</button>
+          </div>
+          <p class="newsletter-hero-consent">No spam. Unsubscribe anytime. We respect your inbox.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-value">
+    <div class="newsletter-value-inner">
+      <h2 class="newsletter-value-title">What You Get Every Friday</h2>
+      <div class="newsletter-value-grid">
+        <div class="value-card">
+          <div class="value-icon">01</div>
+          <h3>Market Movers</h3>
+          <p>Earnings reports, M&A activity, and distribution shifts that affect your business this week.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">02</div>
+          <h3>Texas Beat</h3>
+          <p>TABC updates, distillery openings, and retail trends specific to the Texas market.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">03</div>
+          <h3>New Releases</h3>
+          <p>Product launches, limited editions, and category trends worth watching.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">04</div>
+          <h3>Data Snapshot</h3>
+          <p>One chart or stat that tells the story of the week in U.S. spirits, beer, and wine.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-social-proof">
+    <div class="newsletter-social-inner">
+      <div class="proof-stats">
+        <div class="proof-stat">
+          <span class="proof-number">6</span>
+          <span class="proof-label">Content Pillars</span>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-number">16+</span>
+          <span class="proof-label">RSS Sources</span>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-number">5 min</span>
+          <span class="proof-label">Weekly Read</span>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-number">$0</span>
+          <span class="proof-label">Always Free</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-cta-bottom">
+    <div class="newsletter-cta-inner">
+      <h2>Don't Miss This Friday's Edition</h2>
+      <p>The U.S. alcohol industry moves fast. We make sure you don't miss what matters.</p>
+      <form class="newsletter-bottom-form" action="{{ .Site.Params.newsletter.signup_url | default "#" }}" method="POST">
+        <div class="newsletter-hero-input-group">
+          <input
+            type="email"
+            name="{{ .Site.Params.newsletter.email_field | default "email" }}"
+            class="newsletter-hero-input"
+            placeholder="Enter your email address"
+            required
+            aria-label="Email address"
+          >
+          <button type="submit" class="newsletter-hero-button">Get the Digest</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+.newsletter-page {
+  width: 100%;
+}
+
+/* Hero Section */
+.newsletter-hero {
+  background: linear-gradient(135deg, {{ .Site.Params.colors.primary | default "#1a1a2e" }} 0%, #16213e 100%);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.newsletter-hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.newsletter-badge {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  background: rgba(196, 163, 90, 0.15);
+  padding: 0.5rem 1.25rem;
+  border-radius: 30px;
+  margin-bottom: 2rem;
+}
+
+.newsletter-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin: 0 0 1.5rem;
+}
+
+.newsletter-subhead {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  margin: 0 0 2.5rem;
+}
+
+.newsletter-signup-box {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.newsletter-hero-input-group {
+  display: flex;
+  gap: 0;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.newsletter-hero-input {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  padding: 1rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: #2d2d2d;
+}
+
+.newsletter-hero-input:focus {
+  outline: none;
+}
+
+.newsletter-hero-input::placeholder {
+  color: #aaa;
+}
+
+.newsletter-hero-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  background-color: {{ .Site.Params.colors.accent | default "#e94560" }};
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.newsletter-hero-button:hover {
+  background-color: #d63851;
+}
+
+.newsletter-hero-consent {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  margin: 1rem 0 0;
+}
+
+/* Value Props */
+.newsletter-value {
+  padding: 5rem 1.5rem;
+  background: {{ .Site.Params.colors.background | default "#f5f5f5" }};
+}
+
+.newsletter-value-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.newsletter-value-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  text-align: center;
+  margin: 0 0 3rem;
+}
+
+.newsletter-value-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.value-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.value-icon {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  margin-bottom: 0.75rem;
+}
+
+.value-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  margin: 0 0 0.5rem;
+}
+
+.value-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Social Proof */
+.newsletter-social-proof {
+  padding: 3rem 1.5rem;
+  background: #fff;
+}
+
+.newsletter-social-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.proof-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.proof-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.proof-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+}
+
+.proof-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Bottom CTA */
+.newsletter-cta-bottom {
+  padding: 5rem 1.5rem;
+  background: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  text-align: center;
+}
+
+.newsletter-cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-cta-inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1rem;
+}
+
+.newsletter-cta-inner p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  margin: 0 0 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .newsletter-headline {
+    font-size: 2rem;
+  }
+
+  .newsletter-hero-input-group {
+    flex-direction: column;
+    border-radius: 6px;
+  }
+
+  .newsletter-hero-button {
+    border-radius: 0 0 6px 6px;
+  }
+
+  .newsletter-value-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter-hero {
+    padding: 3rem 1rem;
+  }
+
+  .newsletter-headline {
+    font-size: 1.75rem;
+  }
+
+  .proof-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+</style>
+{{ end }}

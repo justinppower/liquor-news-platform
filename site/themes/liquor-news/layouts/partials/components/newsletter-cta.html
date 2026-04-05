@@ -1,0 +1,216 @@
+{{/* In-Article Newsletter CTA - Insert mid-article or end-of-article
+     Usage: {{ partial "components/newsletter-cta" (dict "variant" "mid" "context" .) }}
+     Variants: "mid" (compact inline), "end" (full-width bottom)
+*/}}
+{{ $variant := .variant | default "end" }}
+{{ $ctx := .context }}
+
+{{ if eq $variant "mid" }}
+<div class="newsletter-cta newsletter-cta-mid" role="complementary" aria-label="Newsletter signup">
+  <div class="cta-mid-inner">
+    <div class="cta-mid-text">
+      <span class="cta-mid-label">Stay in the loop</span>
+      <p class="cta-mid-headline">Get stories like this delivered weekly</p>
+    </div>
+    <form class="cta-mid-form" action="{{ $ctx.Site.Params.newsletter.signup_url | default "#" }}" method="POST">
+      <div class="cta-mid-input-group">
+        <input type="email" name="{{ $ctx.Site.Params.newsletter.email_field | default "email" }}" class="cta-mid-input" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit" class="cta-mid-button">Subscribe</button>
+      </div>
+    </form>
+  </div>
+</div>
+{{ else }}
+<div class="newsletter-cta newsletter-cta-end" role="complementary" aria-label="Newsletter signup">
+  <div class="cta-end-inner">
+    <div class="cta-end-icon">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="M22 4L12 13L2 4"/>
+      </svg>
+    </div>
+    <h3 class="cta-end-headline">Enjoyed this article?</h3>
+    <p class="cta-end-body">Get the best of LiquorNewsUSA delivered to your inbox every Friday. Industry news, Texas coverage, and market data - all in a 5-minute read.</p>
+    <form class="cta-end-form" action="{{ $ctx.Site.Params.newsletter.signup_url | default "#" }}" method="POST">
+      <div class="cta-end-input-group">
+        <input type="email" name="{{ $ctx.Site.Params.newsletter.email_field | default "email" }}" class="cta-end-input" placeholder="Enter your email address" required aria-label="Email address">
+        <button type="submit" class="cta-end-button">Subscribe Free</button>
+      </div>
+      <p class="cta-end-consent">Free forever. No spam. Unsubscribe anytime.</p>
+    </form>
+  </div>
+</div>
+{{ end }}
+
+<style>
+/* Mid-article CTA */
+.newsletter-cta-mid {
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #fdf6e3 0%, #fef9ef 100%);
+  border: 1px solid #e8dcc8;
+  border-radius: 8px;
+}
+
+.cta-mid-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-mid-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {{ .context.Site.Params.colors.secondary | default "#c4a35a" }};
+}
+
+.cta-mid-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: {{ .context.Site.Params.colors.primary | default "#1a1a2e" }};
+  margin: 0.25rem 0 0;
+}
+
+.cta-mid-form {
+  flex-shrink: 0;
+}
+
+.cta-mid-input-group {
+  display: flex;
+  gap: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.cta-mid-input {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  min-width: 200px;
+  background: #fff;
+}
+
+.cta-mid-input:focus { outline: none; }
+
+.cta-mid-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.6rem 1.25rem;
+  background: {{ .context.Site.Params.colors.accent | default "#e94560" }};
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.cta-mid-button:hover { background: #d63851; }
+
+/* End-of-article CTA */
+.newsletter-cta-end {
+  margin: 3rem 0 0;
+  padding: 3rem 2rem;
+  background: {{ .context.Site.Params.colors.primary | default "#1a1a2e" }};
+  border-radius: 12px;
+  text-align: center;
+}
+
+.cta-end-inner {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cta-end-icon {
+  color: {{ .context.Site.Params.colors.secondary | default "#c4a35a" }};
+  margin-bottom: 1rem;
+}
+
+.cta-end-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.cta-end-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  margin: 0 0 2rem;
+}
+
+.cta-end-input-group {
+  display: flex;
+  gap: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.cta-end-input {
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.9rem 1.25rem;
+  border: none;
+  min-width: 0;
+  background: transparent;
+}
+
+.cta-end-input:focus { outline: none; }
+
+.cta-end-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.9rem 1.75rem;
+  background: {{ .context.Site.Params.colors.accent | default "#e94560" }};
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.cta-end-button:hover { background: #d63851; }
+
+.cta-end-consent {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  margin: 0.75rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .cta-mid-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-mid-input-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-mid-input { min-width: 0; }
+
+  .cta-end-input-group {
+    flex-direction: column;
+  }
+
+  .newsletter-cta-end {
+    padding: 2rem 1.25rem;
+  }
+}
+</style>

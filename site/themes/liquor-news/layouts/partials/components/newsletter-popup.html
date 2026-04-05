@@ -1,0 +1,220 @@
+{{/* Scroll-triggered slide-in newsletter popup
+     Triggers at 40% scroll depth, shows once per session via sessionStorage.
+     Includes exit-intent detection on desktop.
+*/}}
+<div id="newsletter-popup" class="nl-popup" role="dialog" aria-label="Newsletter signup" aria-hidden="true">
+  <div class="nl-popup-inner">
+    <button class="nl-popup-close" aria-label="Close newsletter popup">&times;</button>
+    <div class="nl-popup-content">
+      <span class="nl-popup-badge">Weekly Digest</span>
+      <h3 class="nl-popup-title">Don't miss the headlines</h3>
+      <p class="nl-popup-body">The week's top U.S. liquor industry stories, delivered every Friday.</p>
+      <form class="nl-popup-form" action="{{ .Site.Params.newsletter.signup_url | default "#" }}" method="POST">
+        <input type="email" name="{{ .Site.Params.newsletter.email_field | default "email" }}" class="nl-popup-input" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit" class="nl-popup-button">Subscribe Free</button>
+      </form>
+      <p class="nl-popup-consent">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.nl-popup {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.nl-popup.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nl-popup-inner {
+  position: relative;
+  width: 360px;
+  background: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.nl-popup-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.4);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.nl-popup-close:hover { color: #fff; }
+
+.nl-popup-badge {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  margin-bottom: 0.75rem;
+}
+
+.nl-popup-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+
+.nl-popup-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+}
+
+.nl-popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nl-popup-input {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.nl-popup-input:focus {
+  outline: none;
+  background: rgba(255,255,255,0.15);
+}
+
+.nl-popup-input::placeholder { color: rgba(255,255,255,0.35); }
+
+.nl-popup-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.75rem;
+  background: {{ .Site.Params.colors.accent | default "#e94560" }};
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.nl-popup-button:hover { background: #d63851; }
+
+.nl-popup-consent {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+  margin: 0.5rem 0 0;
+}
+
+@media (max-width: 480px) {
+  .nl-popup {
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .nl-popup-inner {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+  }
+}
+</style>
+
+<script>
+(function() {
+  var popup = document.getElementById('newsletter-popup');
+  if (!popup) return;
+
+  var closeBtn = popup.querySelector('.nl-popup-close');
+  var shown = false;
+
+  /* Check if already dismissed this session */
+  try {
+    if (sessionStorage.getItem('nl_popup_dismissed')) return;
+  } catch(e) {}
+
+  function showPopup() {
+    if (shown) return;
+    shown = true;
+    popup.classList.add('active');
+    popup.setAttribute('aria-hidden', 'false');
+  }
+
+  function hidePopup() {
+    popup.classList.remove('active');
+    popup.setAttribute('aria-hidden', 'true');
+    try { sessionStorage.setItem('nl_popup_dismissed', '1'); } catch(e) {}
+  }
+
+  /* Close button */
+  closeBtn.addEventListener('click', hidePopup);
+
+  /* Close on Escape */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && popup.classList.contains('active')) {
+      hidePopup();
+    }
+  });
+
+  /* Scroll trigger: show at 40% scroll depth */
+  var scrollTriggered = false;
+  window.addEventListener('scroll', function() {
+    if (scrollTriggered) return;
+    var scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    if (scrollPct > 40) {
+      scrollTriggered = true;
+      setTimeout(showPopup, 500);
+    }
+  });
+
+  /* Exit-intent trigger (desktop only) */
+  if (window.innerWidth > 768) {
+    document.addEventListener('mouseout', function(e) {
+      if (e.clientY < 5 && !e.relatedTarget && !e.toElement) {
+        showPopup();
+      }
+    });
+  }
+
+  /* Auto-hide form on successful submit (for Beehiiv/external) */
+  var form = popup.querySelector('form');
+  form.addEventListener('submit', function() {
+    setTimeout(function() {
+      popup.querySelector('.nl-popup-content').innerHTML =
+        '<p style="color:#fff;text-align:center;font-family:Inter,sans-serif;padding:2rem 0;">' +
+        '<span style="font-size:2rem;display:block;margin-bottom:0.5rem;">&#10003;</span>' +
+        'You\'re in! Check your inbox Friday.</p>';
+      setTimeout(hidePopup, 3000);
+    }, 500);
+  });
+})();
+</script>

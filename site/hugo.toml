@@ -98,7 +98,10 @@ enableGitInfo = false
   [params.newsletter]
     provider = "beehiiv"
     signup_url = ""
+    email_field = "email"
+    publication_id = ""
     incentive = "Weekly Digest: Top stories from the U.S. alcohol industry, delivered every Friday"
+    consent_text = "Free forever. No spam. Unsubscribe anytime."
 
 [build]
   writeStats = true

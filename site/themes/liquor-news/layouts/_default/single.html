@@ -57,7 +57,13 @@
 
           <!-- In-Article Ad -->
           {{ partial "ads/in-article" . }}
+
+          <!-- Mid-Article Newsletter CTA -->
+          {{ partial "components/newsletter-cta" (dict "variant" "mid" "context" .) }}
         </div>
+
+        <!-- End-of-Article Newsletter CTA -->
+        {{ partial "components/newsletter-cta" (dict "variant" "end" "context" .) }}
 
         <!-- Author Bio -->
         {{ partial "components/author-bio" . }}
