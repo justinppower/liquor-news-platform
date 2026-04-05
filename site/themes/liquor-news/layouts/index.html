@@ -7,7 +7,7 @@
       {{ $featured = first 1 (where .Site.RegularPages "Section" "!=" "pages") }}
     {{ end }}
     {{ range first 1 $featured }}
-      <section class="hero-section">
+      <section class="hero-section{{ if not .Params.image }} hero-no-image{{ end }}">
         {{ if .Params.image }}
           <div class="hero-image">
             <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
@@ -135,9 +135,14 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
-  margin-bottom: 4rem;
-  padding: 3rem 0;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
   border-bottom: 2px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+}
+
+.hero-section.hero-no-image {
+  grid-template-columns: 1fr;
+  max-width: 800px;
 }
 
 .hero-image {
