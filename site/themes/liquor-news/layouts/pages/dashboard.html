@@ -1,0 +1,504 @@
+{{ define "main" }}
+{{/* Gather site stats */}}
+{{ $allArticles := where site.RegularPages "Section" "ne" "pages" }}
+{{ $totalArticles := len $allArticles }}
+
+{{/* Articles by pillar */}}
+{{ $pillarCounts := dict }}
+{{ range $allArticles }}
+  {{ range .Params.pillars }}
+    {{ $current := index $pillarCounts . | default 0 }}
+    {{ $pillarCounts = merge $pillarCounts (dict . (add $current 1)) }}
+  {{ end }}
+{{ end }}
+
+{{/* Recent 7 days */}}
+{{ $now := now }}
+{{ $weekAgo := $now.AddDate 0 0 -7 }}
+{{ $recentArticles := where $allArticles ".PublishDate" "ge" $weekAgo }}
+{{ $recentCount := len $recentArticles }}
+
+{{/* Articles by source */}}
+{{ $sourceCounts := dict }}
+{{ range $allArticles }}
+  {{ $src := .Params.source | default "Unknown" }}
+  {{ $current := index $sourceCounts $src | default 0 }}
+  {{ $sourceCounts = merge $sourceCounts (dict $src (add $current 1)) }}
+{{ end }}
+
+{{/* Authors */}}
+{{ $authorCounts := dict }}
+{{ range $allArticles }}
+  {{ $author := .Params.author | default "Staff" }}
+  {{ $current := index $authorCounts $author | default 0 }}
+  {{ $authorCounts = merge $authorCounts (dict $author (add $current 1)) }}
+{{ end }}
+
+<div class="dashboard-container">
+  <div class="dashboard-wrapper">
+    <!-- Header -->
+    <header class="dash-header">
+      <div class="dash-header-left">
+        <h1 class="dash-title">Content Dashboard</h1>
+        <p class="dash-subtitle">Real-time content metrics for LiquorNewsUSA</p>
+      </div>
+      <div class="dash-header-right">
+        <span class="dash-updated">Last build: {{ now.Format "Jan 2, 2006 3:04 PM" }}</span>
+      </div>
+    </header>
+
+    <!-- KPI Row -->
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-number">{{ $totalArticles }}</div>
+        <div class="kpi-label">Total Articles</div>
+      </div>
+      <div class="kpi-card kpi-accent">
+        <div class="kpi-number">{{ $recentCount }}</div>
+        <div class="kpi-label">Published (7d)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number">{{ len site.Taxonomies.pillars }}</div>
+        <div class="kpi-label">Content Pillars</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number">{{ len $sourceCounts }}</div>
+        <div class="kpi-label">RSS Sources</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number">{{ len site.Taxonomies.tags }}</div>
+        <div class="kpi-label">Unique Tags</div>
+      </div>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="dash-grid">
+      <!-- Content by Pillar -->
+      <div class="dash-card">
+        <h2 class="dash-card-title">Articles by Pillar</h2>
+        <div class="pillar-bars">
+          {{ range $pillar, $count := $pillarCounts }}
+          {{ $pct := div (mul $count 100) $totalArticles }}
+          <div class="pillar-bar-row">
+            <span class="pillar-bar-label">{{ $pillar }}</span>
+            <div class="pillar-bar-track">
+              <div class="pillar-bar-fill" style="width: {{ $pct }}%"></div>
+            </div>
+            <span class="pillar-bar-count">{{ $count }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Top Sources -->
+      <div class="dash-card">
+        <h2 class="dash-card-title">Top RSS Sources</h2>
+        <table class="dash-table">
+          <thead>
+            <tr><th>Source</th><th>Articles</th></tr>
+          </thead>
+          <tbody>
+            {{ range $source, $count := $sourceCounts }}
+            <tr>
+              <td>{{ $source }}</td>
+              <td class="dash-table-num">{{ $count }}</td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Recent Articles -->
+      <div class="dash-card dash-card-wide">
+        <h2 class="dash-card-title">Latest Articles</h2>
+        <table class="dash-table">
+          <thead>
+            <tr><th>Title</th><th>Pillar</th><th>Source</th><th>Published</th></tr>
+          </thead>
+          <tbody>
+            {{ range first 15 $allArticles }}
+            <tr>
+              <td><a href="{{ .Permalink }}">{{ .Title | truncate 65 }}</a></td>
+              <td>{{ range first 1 .Params.pillars }}<span class="dash-pill">{{ . }}</span>{{ end }}</td>
+              <td>{{ .Params.source | default "---" }}</td>
+              <td class="dash-table-num">{{ .PublishDate.Format "Jan 2" }}</td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Content Calendar Heatmap (last 30 days) -->
+      <div class="dash-card dash-card-wide">
+        <h2 class="dash-card-title">Publishing Frequency (Last 30 Days)</h2>
+        <div class="cal-heatmap" id="cal-heatmap">
+          {{ $thirtyAgo := $now.AddDate 0 0 -30 }}
+          {{ range $i := seq 30 }}
+            {{ $offset := sub (int $i) 30 }}
+            {{ $day := $now.AddDate 0 0 (int $offset) }}
+            {{ $dayStr := $day.Format "2006-01-02" }}
+            {{ $dayCount := 0 }}
+            {{ range $allArticles }}
+              {{ if eq (.PublishDate.Format "2006-01-02") $dayStr }}
+                {{ $dayCount = add $dayCount 1 }}
+              {{ end }}
+            {{ end }}
+            <div class="cal-day {{ if eq $dayCount 0 }}cal-0{{ else if le $dayCount 2 }}cal-1{{ else if le $dayCount 5 }}cal-2{{ else }}cal-3{{ end }}" title="{{ $day.Format "Jan 2" }}: {{ $dayCount }} articles">
+              <span class="cal-day-label">{{ $day.Format "2" }}</span>
+            </div>
+          {{ end }}
+        </div>
+        <div class="cal-legend">
+          <span class="cal-legend-label">Less</span>
+          <div class="cal-day cal-0" style="width:16px;height:16px;"></div>
+          <div class="cal-day cal-1" style="width:16px;height:16px;"></div>
+          <div class="cal-day cal-2" style="width:16px;height:16px;"></div>
+          <div class="cal-day cal-3" style="width:16px;height:16px;"></div>
+          <span class="cal-legend-label">More</span>
+        </div>
+      </div>
+
+      <!-- Tag Cloud -->
+      <div class="dash-card">
+        <h2 class="dash-card-title">Top Tags</h2>
+        <div class="tag-cloud">
+          {{ range first 25 site.Taxonomies.tags.ByCount }}
+            <a href="{{ .Page.Permalink }}" class="dash-tag" title="{{ .Count }} articles">{{ .Page.Title }} <sup>{{ .Count }}</sup></a>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Authors -->
+      <div class="dash-card">
+        <h2 class="dash-card-title">Content by Author</h2>
+        <table class="dash-table">
+          <thead>
+            <tr><th>Author</th><th>Articles</th></tr>
+          </thead>
+          <tbody>
+            {{ range $author, $count := $authorCounts }}
+            <tr>
+              <td>{{ $author }}</td>
+              <td class="dash-table-num">{{ $count }}</td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.dashboard-container {
+  width: 100%;
+  background: #0f0f1a;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.dashboard-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #2a2a3e;
+}
+
+.dash-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+}
+
+.dash-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #888;
+  margin: 0.25rem 0 0 0;
+}
+
+.dash-updated {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #666;
+  background: #1a1a2e;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+}
+
+/* KPI Row */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.kpi-card {
+  background: #1a1a2e;
+  border: 1px solid #2a2a3e;
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.kpi-card.kpi-accent {
+  border-color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+}
+
+.kpi-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  line-height: 1;
+}
+
+.kpi-accent .kpi-number {
+  color: {{ .Site.Params.colors.accent | default "#e94560" }};
+}
+
+.kpi-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+}
+
+/* Grid */
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.dash-card {
+  background: #1a1a2e;
+  border: 1px solid #2a2a3e;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.dash-card-wide {
+  grid-column: 1 / -1;
+}
+
+.dash-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #2a2a3e;
+}
+
+/* Pillar Bars */
+.pillar-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pillar-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pillar-bar-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #ccc;
+  min-width: 120px;
+  text-transform: capitalize;
+}
+
+.pillar-bar-track {
+  flex: 1;
+  height: 8px;
+  background: #2a2a3e;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pillar-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, {{ .Site.Params.colors.secondary | default "#c4a35a" }}, {{ .Site.Params.colors.accent | default "#e94560" }});
+  border-radius: 4px;
+  min-width: 4px;
+  transition: width 0.6s ease;
+}
+
+.pillar-bar-count {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  min-width: 30px;
+  text-align: right;
+}
+
+/* Tables */
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+}
+
+.dash-table thead th {
+  text-align: left;
+  color: #888;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #2a2a3e;
+}
+
+.dash-table tbody td {
+  padding: 0.6rem 0.75rem;
+  color: #ccc;
+  border-bottom: 1px solid #1f1f30;
+}
+
+.dash-table tbody tr:hover {
+  background: #22223a;
+}
+
+.dash-table a {
+  color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  text-decoration: none;
+}
+
+.dash-table a:hover {
+  text-decoration: underline;
+}
+
+.dash-table-num {
+  text-align: right;
+  font-weight: 600;
+  color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  font-variant-numeric: tabular-nums;
+}
+
+.dash-pill {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  background: {{ .Site.Params.colors.secondary | default "#c4a35a" }}20;
+  color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Calendar Heatmap */
+.cal-heatmap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.cal-day {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.cal-day-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+}
+
+.cal-0 { background: #1f1f30; }
+.cal-0 .cal-day-label { color: #444; }
+.cal-1 { background: #2a3a2a; }
+.cal-1 .cal-day-label { color: #6a9; }
+.cal-2 { background: #3a5a2a; }
+.cal-2 .cal-day-label { color: #8c5; }
+.cal-3 { background: #4a7a2a; }
+.cal-3 .cal-day-label { color: #fff; }
+
+.cal-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cal-legend-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: #666;
+}
+
+/* Tag Cloud */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dash-tag {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  background: #22223a;
+  border: 1px solid #2a2a3e;
+  border-radius: 4px;
+  color: #ccc;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dash-tag:hover {
+  background: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  color: #000;
+  border-color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+}
+
+.dash-tag sup {
+  font-size: 0.6rem;
+  color: {{ .Site.Params.colors.accent | default "#e94560" }};
+  margin-left: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dash-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .dash-title { font-size: 1.75rem; }
+  .dash-grid { grid-template-columns: 1fr; }
+  .kpi-number { font-size: 2rem; }
+  .pillar-bar-label { min-width: 80px; font-size: 0.75rem; }
+  .dash-table { font-size: 0.8rem; }
+  .cal-day { width: 24px; height: 24px; }
+}
+
+/* Print: hide dashboard */
+@media print {
+  .dashboard-container { display: none; }
+}
+</style>
+{{ end }}

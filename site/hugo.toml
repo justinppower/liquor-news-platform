@@ -94,6 +94,7 @@ enableGitInfo = false
   [params.seo]
     news_sitemap = true
     google_site_verification = ""
+    default_og_image = "/images/og/og-default.jpg"
 
   [params.newsletter]
     provider = "beehiiv"

@@ -1,0 +1,177 @@
+/* ===================================
+   Print Stylesheet - LiquorNewsUSA
+   Clean, readable article output for printing
+   =================================== */
+
+@media print {
+  /* Reset backgrounds and colors for ink savings */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Hide non-essential elements */
+  .site-header,
+  .site-footer,
+  .ticker-container,
+  .leaderboard-top,
+  .article-sidebar,
+  .share-buttons,
+  .share-floating,
+  .newsletter-cta,
+  .newsletter-popup,
+  .newsletter-form,
+  .related-articles,
+  .article-nav,
+  .sidebar-box,
+  .breadcrumb,
+  .skip-link,
+  .mobile-menu-toggle,
+  .search-container,
+  .ad-slot,
+  .adsense-unit,
+  .sponsored-content,
+  .in-article-ad,
+  nav,
+  aside,
+  #share-floating,
+  .pillar-tags {
+    display: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1.5cm 2cm;
+    size: letter;
+  }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #000;
+  }
+
+  /* Article layout - full width for print */
+  .single-container,
+  .single-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .article-grid {
+    display: block !important;
+  }
+
+  /* Article title */
+  .article-title {
+    font-family: Georgia, serif;
+    font-size: 22pt;
+    line-height: 1.2;
+    margin-bottom: 0.5cm;
+    border-bottom: 2pt solid #000;
+    padding-bottom: 0.3cm;
+  }
+
+  .article-subtitle {
+    font-size: 12pt;
+    font-style: italic;
+    margin-bottom: 0.5cm;
+  }
+
+  /* Meta info */
+  .article-meta {
+    font-size: 9pt;
+    margin-bottom: 0.5cm;
+    padding-bottom: 0.3cm;
+    border-bottom: 0.5pt solid #ccc;
+  }
+
+  /* Article body */
+  .article-content {
+    max-width: 100% !important;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+
+  .article-content h2 {
+    font-size: 16pt;
+    margin-top: 0.8cm;
+    page-break-after: avoid;
+  }
+
+  .article-content h3 {
+    font-size: 13pt;
+    margin-top: 0.6cm;
+    page-break-after: avoid;
+  }
+
+  .article-content p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .article-content blockquote {
+    border-left: 2pt solid #000;
+    padding-left: 0.5cm;
+    font-style: italic;
+    margin: 0.5cm 0 0.5cm 0.5cm;
+  }
+
+  /* Images */
+  .featured-image img,
+  .article-content img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  .featured-image {
+    margin-bottom: 0.5cm;
+  }
+
+  /* Links - show URL after text */
+  .article-content a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555 !important;
+    word-break: break-all;
+  }
+
+  .article-content a[href^="#"]:after,
+  .article-content a[href^="javascript"]:after {
+    content: "";
+  }
+
+  /* Author bio */
+  .author-bio {
+    border-top: 0.5pt solid #ccc;
+    padding-top: 0.3cm;
+    margin-top: 0.5cm;
+    page-break-inside: avoid;
+  }
+
+  /* Page break controls */
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+  }
+
+  figure, img {
+    page-break-inside: avoid;
+  }
+
+  /* Print header */
+  .article-header::before {
+    content: "LiquorNewsUSA.com";
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 9pt;
+    color: #888 !important;
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    margin-bottom: 0.5cm;
+  }
+}

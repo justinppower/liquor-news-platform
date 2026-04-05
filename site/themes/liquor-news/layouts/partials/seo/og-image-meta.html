@@ -1,0 +1,39 @@
+{{/*
+  OG Image Meta - Provides structured fallback for OG images
+  Priority: page image > pillar default image > site default OG image
+*/}}
+
+{{ $ogImage := "" }}
+
+{{/* 1. Page-specific image */}}
+{{ if .Params.image }}
+  {{ $ogImage = .Params.image | absURL }}
+
+{{/* 2. Pillar-based default */}}
+{{ else if .Params.pillars }}
+  {{ $pillar := index .Params.pillars 0 }}
+  {{ $pillarImages := dict
+    "industry-news" "/images/og/og-industry-news.jpg"
+    "texas-beat" "/images/og/og-texas-beat.jpg"
+    "new-releases" "/images/og/og-new-releases.jpg"
+    "regulation-policy" "/images/og/og-regulation.jpg"
+    "culture-lifestyle" "/images/og/og-culture.jpg"
+    "data-trends" "/images/og/og-data-trends.jpg"
+  }}
+  {{ with index $pillarImages $pillar }}
+    {{ $ogImage = . | absURL }}
+  {{ end }}
+{{ end }}
+
+{{/* 3. Site default fallback */}}
+{{ if not $ogImage }}
+  {{ $ogImage = (.Site.Params.seo.default_og_image | default "/images/og/og-default.jpg") | absURL }}
+{{ end }}
+
+{{/* Output the meta tags */}}
+{{ if $ogImage }}
+  <meta property="og:image" content="{{ $ogImage }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="{{ $ogImage }}">
+{{ end }}

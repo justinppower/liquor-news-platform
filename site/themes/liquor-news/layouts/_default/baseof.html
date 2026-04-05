@@ -38,7 +38,8 @@
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
   <meta property="og:url" content="{{ .Permalink }}">
   <meta property="og:locale" content="en_US">
-  {{ with .Params.image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+  {{/* OG Image with pillar/default fallbacks */}}
+  {{ partial "seo/og-image-meta" . }}
   {{ if .IsPage }}
     {{ with .Params.author }}<meta property="article:author" content="{{ . }}">{{ end }}
     <meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }}">
@@ -52,7 +53,7 @@
   <meta name="twitter:title" content="{{ $seoTitle }}">
   <meta name="twitter:description" content="{{ $seoDesc }}">
   {{ with .Site.Params.social.twitter }}<meta name="twitter:site" content="@{{ . }}">{{ end }}
-  {{ with .Params.image }}<meta name="twitter:image" content="{{ . | absURL }}">{{ end }}
+  {{/* twitter:image handled by seo/og-image-meta partial */}}
 
   {{/* --- Google Search Console Verification --- */}}
   {{ with .Site.Params.seo.google_site_verification }}
@@ -69,6 +70,9 @@
 
   <!-- Theme CSS -->
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+
+  <!-- Print Stylesheet -->
+  <link rel="stylesheet" href="{{ "css/print.css" | relURL }}" media="print">
 
   <!-- RSS -->
   {{ range .AlternativeOutputFormats }}

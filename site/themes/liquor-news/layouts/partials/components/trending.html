@@ -1,0 +1,146 @@
+<!-- COMPONENT: Trending Articles - Shows most recent articles ranked by recency as a "trending" proxy -->
+{{ $limit := .limit | default 5 }}
+{{ $articles := (where site.RegularPages "Section" "ne" "pages") | first $limit }}
+
+{{ if gt (len $articles) 0 }}
+<div class="trending-widget">
+  <div class="trending-header">
+    <span class="trending-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+    </span>
+    <h3 class="trending-title">Trending Now</h3>
+  </div>
+
+  <ol class="trending-list">
+    {{ range $i, $page := $articles }}
+    <li class="trending-item">
+      <span class="trending-rank">{{ add $i 1 }}</span>
+      <div class="trending-content">
+        <a href="{{ .Permalink }}" class="trending-link">{{ .Title }}</a>
+        <div class="trending-meta">
+          {{ range first 1 .Params.pillars }}
+            <span class="trending-pillar">{{ . }}</span>
+          {{ end }}
+          <time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format "Jan 2" }}</time>
+        </div>
+      </div>
+    </li>
+    {{ end }}
+  </ol>
+</div>
+{{ end }}
+
+<style>
+.trending-widget {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.trending-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid {{ $.Site.Params.colors.secondary | default "#c4a35a" }};
+}
+
+.trending-icon {
+  color: {{ $.Site.Params.colors.accent | default "#e94560" }};
+}
+
+.trending-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: {{ $.Site.Params.colors.primary | default "#1a1a2e" }};
+  margin: 0;
+}
+
+.trending-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: trending;
+}
+
+.trending-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.trending-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.trending-rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: {{ $.Site.Params.colors.secondary | default "#c4a35a" }};
+  border: 2px solid {{ $.Site.Params.colors.secondary | default "#c4a35a" }};
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.trending-item:first-child .trending-rank {
+  background: {{ $.Site.Params.colors.secondary | default "#c4a35a" }};
+  color: #fff;
+}
+
+.trending-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.trending-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: {{ $.Site.Params.colors.text | default "#2d2d2d" }};
+  text-decoration: none;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.trending-link:hover {
+  color: {{ $.Site.Params.colors.accent | default "#e94560" }};
+}
+
+.trending-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.trending-pillar {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  background: {{ $.Site.Params.colors.secondary | default "#c4a35a" }}15;
+  color: {{ $.Site.Params.colors.secondary | default "#c4a35a" }};
+  border-radius: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-size: 0.65rem;
+}
+</style>

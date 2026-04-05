@@ -17,23 +17,8 @@
   <!-- Sidebar Rectangle Ad -->
   {{ partial "ads/sidebar-rectangle" . }}
 
-  <!-- Trending Articles -->
-  {{ $trendingArticles := first 5 (where .Site.RegularPages "Section" "!=" "pages") }}
-  {{ if gt (len $trendingArticles) 0 }}
-    <div class="sidebar-widget sidebar-trending">
-      <h3 class="widget-title">Trending Now</h3>
-      <ul class="trending-list">
-        {{ range $i, $article := $trendingArticles }}
-          <li class="trending-item">
-            <a href="{{ $article.Permalink }}" class="trending-link">
-              <span class="trending-number">{{ add $i 1 }}</span>
-              <span class="trending-title">{{ $article.Title }}</span>
-            </a>
-          </li>
-        {{ end }}
-      </ul>
-    </div>
-  {{ end }}
+  <!-- Trending Articles (Enhanced Widget) -->
+  {{ partial "components/trending" (dict "limit" 5 "Site" .Site) }}
 </div>
 
 <style>
