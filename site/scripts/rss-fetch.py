@@ -16,6 +16,7 @@ Usage:
 Runs via GitHub Actions on a 30-minute cron schedule.
 """
 
+import html
 import json
 import os
 import re
@@ -150,12 +151,12 @@ def determine_pillar(entry, feed_config, site_config):
 
 def generate_markdown(entry, feed_config, pillar):
     """Generate Hugo-compatible Markdown from an RSS entry."""
-    title = entry.get("title", "Untitled").strip()
+    title = html.unescape(entry.get("title", "Untitled").strip())
     link = entry.get("link", "")
     summary = entry.get("summary", "")
 
-    # Clean HTML from summary
-    summary_clean = re.sub(r'<[^>]+>', '', summary).strip()
+    # Clean HTML from summary and decode entities
+    summary_clean = html.unescape(re.sub(r'<[^>]+>', '', summary).strip())
     if len(summary_clean) > 300:
         summary_clean = summary_clean[:297] + "..."
 
@@ -171,24 +172,30 @@ def generate_markdown(entry, feed_config, pillar):
         date_str = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S+00:00")
 
     # Build frontmatter
+    safe_title = title.replace('"', "'")
+    safe_desc = summary_clean[:160].replace('"', "'")
+    source_name = feed_config.get("name", "Unknown")
+    pillar_display = pillar.replace("-", " ").title()
+    tags_json = json.dumps(feed_config.get("keywords_boost", []))
+
     frontmatter = f"""---
-title: "{title.replace('"', '\\"')}"
+title: "{safe_title}"
 date: {date_str}
 draft: true
 pillars: ["{pillar}"]
-tags: {json.dumps(feed_config.get("keywords_boost", []))}
-categories: ["{pillar.replace('-', ' ').title()}"]
+tags: {tags_json}
+categories: ["{pillar_display}"]
 author: "RSS Feed"
-description: "{summary_clean[:160].replace('"', '\\"')}"
+description: "{safe_desc}"
 source_url: "{link}"
-source_name: "{feed_config.get('name', 'Unknown')}"
+source_name: "{source_name}"
 article_type: "news_brief"
 auto_generated: true
 ---
 
 {summary_clean}
 
-*Source: [{feed_config.get('name', 'Unknown')}]({link})*
+*Source: [{source_name}]({link})*
 """
     return frontmatter
 

@@ -1,15 +1,17 @@
 {
   "_meta": {
     "description": "RSS feed sources organized by tier. Swap this file for different verticals.",
-    "version": "1.0.0",
-    "total_feeds": 32
+    "version": "1.1.0",
+    "total_feeds": 32,
+    "last_validated": "2026-04-05",
+    "operational_feeds": "See validation results in docs/sprints/feed-validation.md"
   },
   "feeds": {
     "tier_1_trade": [
       {
         "id": "bevnet",
         "name": "BevNET",
-        "url": "https://www.bevnet.com/rss/news",
+        "url": "https://www.bevnet.com/feed",
         "category": "trade",
         "priority": "high",
         "keywords_boost": ["spirits", "beer", "beverage industry"],
@@ -18,7 +20,7 @@
       {
         "id": "brewbound",
         "name": "Brewbound",
-        "url": "https://www.brewbound.com/rss/news",
+        "url": "https://www.brewbound.com/feed",
         "category": "trade",
         "priority": "high",
         "keywords_boost": ["craft beer", "brewery"],
@@ -43,12 +45,12 @@
         "refresh_minutes": 60
       },
       {
-        "id": "beverage_industry",
-        "name": "Beverage Industry",
-        "url": "https://www.bevindustry.com/rss",
+        "id": "sevenfifty_daily",
+        "name": "SevenFifty Daily",
+        "url": "https://daily.sevenfifty.com/feed",
         "category": "trade",
-        "priority": "medium",
-        "keywords_boost": ["beverage", "distribution"],
+        "priority": "high",
+        "keywords_boost": ["spirits", "wine", "beer", "industry trends"],
         "refresh_minutes": 60
       }
     ],
@@ -72,12 +74,12 @@
         "refresh_minutes": 120
       },
       {
-        "id": "whisky_advocate",
-        "name": "Whisky Advocate",
-        "url": "https://www.whiskyadvocate.com/feed/",
+        "id": "imbibe",
+        "name": "Imbibe Magazine",
+        "url": "https://imbibemagazine.com/feed",
         "category": "enthusiast",
         "priority": "high",
-        "keywords_boost": ["whiskey", "bourbon", "scotch", "rye"],
+        "keywords_boost": ["cocktail", "spirits", "whiskey", "drinks culture"],
         "refresh_minutes": 120
       },
       {
@@ -92,7 +94,7 @@
       {
         "id": "craft_spirits_mag",
         "name": "Craft Spirits Magazine",
-        "url": "https://www.craftspiritmag.com/feed/",
+        "url": "https://craftspiritsmag.com/feed",
         "category": "trade",
         "priority": "medium",
         "keywords_boost": ["craft distillery", "small batch"],
@@ -101,13 +103,13 @@
     ],
     "tier_3_wire_services": [
       {
-        "id": "businesswire_wine_spirits",
-        "name": "BusinessWire - Wine & Spirits",
-        "url": "https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpRWg==",
+        "id": "shanken_news",
+        "name": "Shanken News Daily",
+        "url": "https://www.shankennewsdaily.com/rss",
         "category": "press_release",
         "priority": "high",
-        "keywords_boost": ["wine", "spirits", "beverage", "alcohol"],
-        "refresh_minutes": 30
+        "keywords_boost": ["wine", "spirits", "M&A", "business news"],
+        "refresh_minutes": 60
       },
       {
         "id": "prnewswire_food_bev",
@@ -116,7 +118,8 @@
         "category": "press_release",
         "priority": "medium",
         "keywords_boost": ["spirits", "beer", "wine", "alcohol", "distillery", "brewery"],
-        "refresh_minutes": 30
+        "refresh_minutes": 30,
+        "notes": "May return errors - fallback to Shanken"
       }
     ],
     "tier_4_texas_regional": [
@@ -131,29 +134,11 @@
         "notes": "May need scraping fallback if no RSS available"
       },
       {
-        "id": "dallas_morning_news_food",
-        "name": "Dallas Morning News - Food & Drink",
-        "url": "https://www.dallasnews.com/food/rss/",
-        "category": "regional",
-        "priority": "medium",
-        "keywords_boost": ["Dallas", "Texas", "restaurant", "bar"],
-        "refresh_minutes": 120
-      },
-      {
-        "id": "houston_chronicle_food",
-        "name": "Houston Chronicle - Food",
-        "url": "https://www.houstonchronicle.com/food/rss/",
-        "category": "regional",
-        "priority": "medium",
-        "keywords_boost": ["Houston", "Texas", "restaurant", "bar"],
-        "refresh_minutes": 120
-      },
-      {
         "id": "texas_monthly",
         "name": "Texas Monthly",
         "url": "https://www.texasmonthly.com/feed/",
         "category": "regional",
-        "priority": "low",
+        "priority": "medium",
         "keywords_boost": ["Texas", "BBQ", "bar", "distillery", "brewery"],
         "refresh_minutes": 240
       },
@@ -183,6 +168,26 @@
         "priority": "medium",
         "keywords_boost": ["Austin", "bar", "restaurant", "cocktail"],
         "refresh_minutes": 120
+      },
+      {
+        "id": "dallas_morning_news_food",
+        "name": "Dallas Morning News - Food & Drink",
+        "url": "https://www.dallasnews.com/food/rss/",
+        "category": "regional",
+        "priority": "medium",
+        "keywords_boost": ["Dallas", "Texas", "restaurant", "bar"],
+        "refresh_minutes": 120,
+        "notes": "May require paywall bypass - errors expected"
+      },
+      {
+        "id": "houston_chronicle_food",
+        "name": "Houston Chronicle - Food",
+        "url": "https://www.houstonchronicle.com/food/rss/",
+        "category": "regional",
+        "priority": "medium",
+        "keywords_boost": ["Houston", "Texas", "restaurant", "bar"],
+        "refresh_minutes": 120,
+        "notes": "May require paywall bypass - errors expected"
       }
     ],
     "tier_5_regulatory_institutional": [
