@@ -1,0 +1,79 @@
+<!-- AD SLOT: Leaderboard Top - 728x90 banner ad at top of page/section, reads from site.Params.ads.leaderboard_top -->
+{{ if .Site.Params.ads.leaderboard_top }}
+  <div class="ad-leaderboard-top">
+    {{ if .Site.Params.ads.leaderboard_top.html }}
+      {{ .Site.Params.ads.leaderboard_top.html | safeHTML }}
+    {{ else if .Site.Params.ads.leaderboard_top.image }}
+      <img
+        src="{{ .Site.Params.ads.leaderboard_top.image }}"
+        alt="{{ .Site.Params.ads.leaderboard_top.alt | default "Advertisement" }}"
+        class="ad-image"
+        loading="lazy"
+      >
+    {{ else }}
+      <div class="ad-placeholder">
+        <p>Advertisement</p>
+        <p class="ad-placeholder-size">728 x 90</p>
+      </div>
+    {{ end }}
+  </div>
+{{ end }}
+
+<style>
+.ad-leaderboard-top {
+  width: 100%;
+  max-width: 728px;
+  height: 90px;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.ad-leaderboard-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ad-leaderboard-top iframe {
+  width: 728px;
+  height: 90px;
+  border: none;
+}
+
+.ad-placeholder {
+  text-align: center;
+  padding: 1rem;
+}
+
+.ad-placeholder p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #999;
+  margin: 0;
+}
+
+.ad-placeholder-size {
+  font-size: 0.8rem;
+  margin-top: 0.25rem !important;
+}
+
+@media (max-width: 768px) {
+  .ad-leaderboard-top {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 728 / 90;
+  }
+
+  .ad-leaderboard-top iframe {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>

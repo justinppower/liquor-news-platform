@@ -1,0 +1,347 @@
+{{ define "main" }}
+<article class="single-container">
+  <div class="single-wrapper">
+    <!-- Article Header -->
+    <header class="article-header">
+      <h1 class="article-title">{{ .Title }}</h1>
+
+      {{ if .Params.description }}
+        <p class="article-subtitle">{{ .Params.description }}</p>
+      {{ end }}
+
+      <!-- Article Meta -->
+      <div class="article-meta">
+        <div class="meta-left">
+          {{ if .Params.author }}
+            <span class="byline">By <span class="author-name">{{ .Params.author }}</span></span>
+          {{ end }}
+
+          <time class="publish-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+            {{ .PublishDate.Format "January 2, 2006" }}
+          </time>
+
+          {{ if .ReadingTime }}
+            <span class="reading-time">{{ .ReadingTime }} min read</span>
+          {{ end }}
+        </div>
+
+        {{ partial "components/share-buttons" . }}
+      </div>
+
+      <!-- Pillar Tags -->
+      {{ if .Params.pillars }}
+        <div class="pillar-tags">
+          {{ range .Params.pillars }}
+            <span class="pillar-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+      {{ end }}
+    </header>
+
+    <div class="article-grid">
+      <!-- Main Content -->
+      <main class="article-main">
+        {{ if .Params.image }}
+          <figure class="featured-image">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+            {{ if .Params.image_credit }}
+              <figcaption class="image-credit">{{ .Params.image_credit }}</figcaption>
+            {{ end }}
+          </figure>
+        {{ end }}
+
+        <div class="article-content">
+          {{ .Content }}
+
+          <!-- In-Article Ad -->
+          {{ partial "ads/in-article" . }}
+        </div>
+
+        <!-- Related Articles -->
+        {{ $related := (where (where site.RegularPages "Section" .Section) "Params.pillars" "intersect" .Params.pillars) | first 3 }}
+        {{ if gt (len $related) 0 }}
+          <div class="related-articles">
+            <h2 class="related-title">Related Articles</h2>
+            <div class="related-grid">
+              {{ range $related }}
+                {{ if ne .Permalink $.Permalink }}
+                  {{ partial "components/article-card" . }}
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="article-sidebar">
+        {{ partial "components/sidebar" . }}
+      </aside>
+    </div>
+  </div>
+</article>
+
+<style>
+.single-container {
+  width: 100%;
+  background-color: {{ .Site.Params.colors.background | default "#f5f5f5" }};
+  padding: 3rem 0;
+  min-height: 100vh;
+}
+
+.single-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.article-header {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+}
+
+.article-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.article-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  color: #666;
+  margin: 0 0 1.5rem 0;
+  font-weight: 500;
+  max-width: 800px;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.meta-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.byline {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.author-name {
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  font-weight: 700;
+}
+
+.publish-date {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #999;
+}
+
+.reading-time {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #999;
+  padding: 0.25rem 0.75rem;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+}
+
+.pillar-tags {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.pillar-tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.4rem 0.8rem;
+  background-color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  border-radius: 3px;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+}
+
+.article-main {
+  flex: 1;
+}
+
+.featured-image {
+  width: 100%;
+  margin: 0 0 2rem 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-credit {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #999;
+  padding: 0.75rem;
+  background-color: #f9f9f9;
+  border-left: 2px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+}
+
+.article-content {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.0625rem;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  line-height: 1.8;
+  max-width: 800px;
+}
+
+.article-content p {
+  margin: 0 0 1.5rem 0;
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+}
+
+.article-content h2 {
+  font-size: 1.75rem;
+}
+
+.article-content h3 {
+  font-size: 1.5rem;
+}
+
+.article-content h4 {
+  font-size: 1.25rem;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.article-content li {
+  margin-bottom: 0.75rem;
+}
+
+.article-content blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-left: 4px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  background-color: #fafafa;
+  font-style: italic;
+  color: #555;
+}
+
+.article-content a {
+  color: {{ .Site.Params.colors.accent | default "#e94560" }};
+  text-decoration: none;
+  border-bottom: 1px solid {{ .Site.Params.colors.accent | default "#e94560" }};
+  transition: color 0.3s ease;
+}
+
+.article-content a:hover {
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+}
+
+.article-sidebar {
+  width: 100%;
+}
+
+.related-articles {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+}
+
+.related-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  margin: 0 0 2rem 0;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .single-wrapper {
+    padding: 0 1rem;
+  }
+
+  .article-title {
+    font-size: 2rem;
+  }
+
+  .article-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .article-content {
+    font-size: 1rem;
+  }
+
+  .article-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meta-left {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+{{ end }}

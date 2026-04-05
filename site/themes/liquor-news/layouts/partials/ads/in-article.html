@@ -1,0 +1,72 @@
+<!-- AD SLOT: In-Article - Mid-article ad placement, reads from site.Params.ads.in_article -->
+{{ if .Site.Params.ads.in_article }}
+  <div class="ad-in-article">
+    {{ if .Site.Params.ads.in_article.html }}
+      {{ .Site.Params.ads.in_article.html | safeHTML }}
+    {{ else if .Site.Params.ads.in_article.image }}
+      <img
+        src="{{ .Site.Params.ads.in_article.image }}"
+        alt="{{ .Site.Params.ads.in_article.alt | default "Advertisement" }}"
+        class="ad-image"
+        loading="lazy"
+      >
+    {{ else }}
+      <div class="ad-placeholder">
+        <p>Advertisement</p>
+      </div>
+    {{ end }}
+  </div>
+{{ end }}
+
+<style>
+.ad-in-article {
+  width: 100%;
+  max-width: 600px;
+  margin: 3rem 0;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+}
+
+.ad-in-article img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 3px;
+}
+
+.ad-in-article iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+.ad-placeholder {
+  text-align: center;
+  padding: 2rem;
+  color: #999;
+}
+
+.ad-placeholder p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .ad-in-article {
+    margin: 2rem 0;
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .ad-in-article iframe {
+    height: auto;
+  }
+}
+</style>

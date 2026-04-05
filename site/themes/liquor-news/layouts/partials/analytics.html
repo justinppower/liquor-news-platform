@@ -1,0 +1,14 @@
+<!-- COMPONENT: Analytics - Google Analytics 4 script tag -->
+{{ if .Site.Params.google_analytics_id }}
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google_analytics_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ .Site.Params.google_analytics_id }}', {
+      'page_path': window.location.pathname,
+      'anonymize_ip': true
+    });
+  </script>
+{{ end }}

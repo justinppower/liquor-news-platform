@@ -1,0 +1,9 @@
+name = "Liquor News Theme"
+license = "Proprietary"
+licenselink = ""
+description = "News-magazine theme for the Modular News Platform. Extends base layout system."
+tags = ["news", "magazine", "responsive", "ads", "rss"]
+min_version = "0.120.0"
+
+[author]
+  name = "2CanTalks"

@@ -1,0 +1,103 @@
+<!-- COMPONENT: Ticker - Breaking news horizontal scroll ticker displaying latest articles -->
+{{ $latestArticles := first 5 .Site.RegularPages }}
+{{ if gt (len $latestArticles) 0 }}
+  <div class="ticker-container">
+    <div class="ticker-label">
+      <span class="ticker-badge">Breaking</span>
+    </div>
+
+    <div class="ticker-scroll">
+      <div class="ticker-content">
+        {{ range $latestArticles }}
+          <a href="{{ .Permalink }}" class="ticker-item">
+            <span class="ticker-text">{{ .Title }}</span>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <style>
+  .ticker-container {
+    width: 100%;
+    background-color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+    padding: 0.75rem 0;
+    overflow: hidden;
+    border-bottom: 3px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  }
+
+  .ticker-label {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .ticker-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.3rem 0.6rem;
+    background-color: {{ .Site.Params.colors.accent | default "#e94560" }};
+    color: white;
+    border-radius: 2px;
+  }
+
+  .ticker-scroll {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+  }
+
+  .ticker-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ticker-content {
+    display: flex;
+    gap: 1.5rem;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+  }
+
+  .ticker-item {
+    flex-shrink: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.25rem 0;
+  }
+
+  .ticker-item:hover {
+    color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  }
+
+  @media (max-width: 768px) {
+    .ticker-container {
+      padding: 0.5rem 0;
+    }
+
+    .ticker-label {
+      padding: 0 1rem;
+    }
+
+    .ticker-scroll {
+      padding: 0 1rem;
+    }
+
+    .ticker-item {
+      font-size: 0.9rem;
+    }
+  }
+  </style>
+{{ end }}

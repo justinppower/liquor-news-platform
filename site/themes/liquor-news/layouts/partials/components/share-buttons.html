@@ -1,0 +1,172 @@
+<!-- COMPONENT: Share Buttons - Social share buttons for Twitter, LinkedIn, Facebook, and email -->
+<div class="share-buttons">
+  <span class="share-label">Share:</span>
+
+  <!-- Twitter/X -->
+  <a
+    href="https://twitter.com/intent/tweet?url={{ .Permalink | safeURL }}&text={{ .Title | safeURL }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="share-button share-twitter"
+    aria-label="Share on Twitter"
+    title="Share on Twitter"
+  >
+    <span class="share-icon">𝕏</span>
+  </a>
+
+  <!-- LinkedIn -->
+  <a
+    href="https://www.linkedin.com/sharing/share-offsite/?url={{ .Permalink | safeURL }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="share-button share-linkedin"
+    aria-label="Share on LinkedIn"
+    title="Share on LinkedIn"
+  >
+    <span class="share-icon">in</span>
+  </a>
+
+  <!-- Facebook -->
+  <a
+    href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | safeURL }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="share-button share-facebook"
+    aria-label="Share on Facebook"
+    title="Share on Facebook"
+  >
+    <span class="share-icon">f</span>
+  </a>
+
+  <!-- Email -->
+  <a
+    href="mailto:?subject={{ .Title | safeURL }}&body={{ .Permalink | safeURL }}"
+    class="share-button share-email"
+    aria-label="Share via email"
+    title="Share via email"
+  >
+    <span class="share-icon">@</span>
+  </a>
+
+  <!-- Copy Link -->
+  <button
+    class="share-button share-copy"
+    aria-label="Copy link to clipboard"
+    title="Copy link to clipboard"
+    data-url="{{ .Permalink }}"
+  >
+    <span class="share-icon">🔗</span>
+  </button>
+</div>
+
+<style>
+.share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.share-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  text-decoration: none;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.share-button:hover {
+  transform: scale(1.1);
+}
+
+.share-icon {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.share-twitter:hover {
+  background-color: #1da1f2;
+  color: white;
+  border-color: #1da1f2;
+}
+
+.share-linkedin:hover {
+  background-color: #0077b5;
+  color: white;
+  border-color: #0077b5;
+}
+
+.share-facebook:hover {
+  background-color: #1877f2;
+  color: white;
+  border-color: #1877f2;
+}
+
+.share-email:hover {
+  background-color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  color: white;
+  border-color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+}
+
+.share-copy:hover {
+  background-color: {{ .Site.Params.colors.accent | default "#e94560" }};
+  color: white;
+  border-color: {{ .Site.Params.colors.accent | default "#e94560" }};
+}
+
+.share-copy.copied {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
+
+@media (max-width: 768px) {
+  .share-buttons {
+    gap: 0.5rem;
+  }
+
+  .share-button {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .share-icon {
+    font-size: 0.9rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButton = document.querySelector('.share-copy');
+  if (copyButton) {
+    copyButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      const url = this.getAttribute('data-url');
+      navigator.clipboard.writeText(url).then(() => {
+        this.classList.add('copied');
+        const originalIcon = this.innerHTML;
+        this.innerHTML = '<span class="share-icon">✓</span>';
+        setTimeout(() => {
+          this.classList.remove('copied');
+          this.innerHTML = originalIcon;
+        }, 2000);
+      });
+    });
+  }
+});
+</script>

@@ -1,0 +1,95 @@
+baseURL = ""
+languageCode = "en-us"
+title = "LiquorNewsUSA"
+theme = "liquor-news"
+
+summaryLength = 40
+paginate = 12
+enableRobotsTXT = true
+enableGitInfo = false
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  pillar = "pillars"
+  author = "authors"
+
+[menus]
+  [[menus.main]]
+    name = "Industry News"
+    url = "/pillars/industry-news/"
+    weight = 1
+  [[menus.main]]
+    name = "Texas Beat"
+    url = "/pillars/texas-beat/"
+    weight = 2
+  [[menus.main]]
+    name = "New Releases"
+    url = "/pillars/new-releases/"
+    weight = 3
+  [[menus.main]]
+    name = "Regulation"
+    url = "/pillars/regulation-policy/"
+    weight = 4
+  [[menus.main]]
+    name = "Culture"
+    url = "/pillars/culture-lifestyle/"
+    weight = 5
+  [[menus.main]]
+    name = "Data & Trends"
+    url = "/pillars/data-trends/"
+    weight = 6
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+
+[services.rss]
+  limit = 20
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+
+[params]
+  tagline = "Your daily source for U.S. alcohol industry news with a Texas lens"
+  description = "Breaking news, analysis, and insights covering the U.S. liquor, spirits, beer, and wine industry with dedicated Texas market coverage."
+  author = "LiquorNewsUSA Editorial"
+  mainSections = ["industry-news", "texas-beat", "new-releases", "regulation-policy", "culture-lifestyle", "data-trends"]
+
+  [params.colors]
+    primary = "#1a1a2e"
+    secondary = "#c4a35a"
+    accent = "#e94560"
+    background = "#f5f5f5"
+    text = "#2d2d2d"
+    text_light = "#6b6b6b"
+    card_bg = "#ffffff"
+    texas_spotlight_bg = "#fdf6e3"
+
+  [params.social]
+    twitter = ""
+    instagram = ""
+    linkedin = ""
+
+  [params.analytics]
+    google_analytics = ""
+
+  [params.ads]
+    adsense_client = ""
+    enable = false
+
+  [params.newsletter]
+    provider = "beehiiv"
+    signup_url = ""
+    incentive = "Weekly Digest: Top stories from the U.S. alcohol industry, delivered every Friday"
+
+[build]
+  writeStats = true
+
+[minify]
+  minifyOutput = true

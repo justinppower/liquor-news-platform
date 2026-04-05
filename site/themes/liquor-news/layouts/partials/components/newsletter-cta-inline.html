@@ -1,0 +1,59 @@
+<!-- COMPONENT: Newsletter CTA Inline - Small inline Subscribe button for header/navigation -->
+<div class="newsletter-cta-inline">
+  <button class="newsletter-cta-button" aria-label="Subscribe to newsletter">
+    <span class="cta-icon">✉</span>
+    <span class="cta-text">Subscribe</span>
+  </button>
+</div>
+
+<style>
+.newsletter-cta-inline {
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-cta-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background-color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.newsletter-cta-button:hover {
+  background-color: {{ .Site.Params.colors.accent | default "#e94560" }};
+  color: white;
+}
+
+.newsletter-cta-button:active {
+  transform: scale(0.95);
+}
+
+.cta-icon {
+  font-size: 1rem;
+}
+
+.cta-text {
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .newsletter-cta-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .cta-text {
+    display: none;
+  }
+}
+</style>

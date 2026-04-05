@@ -1,0 +1,185 @@
+{{ define "main" }}
+<div class="list-container">
+  <div class="list-wrapper">
+    <!-- Page Header -->
+    <div class="list-header">
+      <h1 class="list-title">{{ .Title }}</h1>
+      {{ if .Description }}
+        <p class="list-description">{{ .Description }}</p>
+      {{ end }}
+    </div>
+
+    <div class="list-grid">
+      <!-- Main Content Area -->
+      <main class="list-main">
+        <!-- Content Grid -->
+        <div class="article-grid">
+          {{ range .Paginator.Pages }}
+            {{ partial "components/article-card" . }}
+          {{ end }}
+        </div>
+
+        <!-- Pagination -->
+        {{ if gt .Paginator.TotalPages 1 }}
+          <nav class="pagination">
+            {{ if .Paginator.HasPrev }}
+              <a href="{{ .Paginator.Prev.URL }}" class="pagination-link pagination-prev">
+                <span class="pagination-label">Previous</span>
+              </a>
+            {{ end }}
+
+            <div class="pagination-info">
+              Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
+            </div>
+
+            {{ if .Paginator.HasNext }}
+              <a href="{{ .Paginator.Next.URL }}" class="pagination-link pagination-next">
+                <span class="pagination-label">Next</span>
+              </a>
+            {{ end }}
+          </nav>
+        {{ end }}
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="list-sidebar">
+        {{ partial "components/sidebar" . }}
+      </aside>
+    </div>
+  </div>
+</div>
+
+<style>
+.list-container {
+  width: 100%;
+  background-color: {{ .Site.Params.colors.background | default "#f5f5f5" }};
+  padding: 2rem 0;
+  min-height: calc(100vh - 200px);
+}
+
+.list-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.list-header {
+  margin-bottom: 3rem;
+  border-bottom: 2px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  padding-bottom: 1.5rem;
+}
+
+.list-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.list-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  color: #666;
+  margin: 0;
+  max-width: 700px;
+}
+
+.list-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+}
+
+.list-main {
+  flex: 1;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.list-sidebar {
+  width: 100%;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.pagination-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-link:hover {
+  background-color: {{ .Site.Params.colors.accent | default "#e94560" }};
+}
+
+.pagination-info {
+  font-family: 'Inter', sans-serif;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .list-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .list-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .list-wrapper {
+    padding: 0 1rem;
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .list-title {
+    font-size: 1.75rem;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pagination-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+{{ end }}

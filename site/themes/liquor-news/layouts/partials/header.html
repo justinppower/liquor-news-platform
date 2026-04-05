@@ -1,0 +1,38 @@
+<!-- COMPONENT: Header - Reusable across verticals. Reads from site config. -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <a href="{{ "/" | relURL }}" class="site-logo">
+        {{ with .Site.Params.logo }}
+          <img src="{{ . }}" alt="{{ $.Site.Title }}">
+        {{ else }}
+          <span class="site-title-text">{{ .Site.Title }}</span>
+        {{ end }}
+      </a>
+      {{ with .Site.Params.tagline }}
+        <span class="site-tagline">{{ . }}</span>
+      {{ end }}
+    </div>
+
+    <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
+
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+      <ul class="nav-list">
+        {{ range .Site.Menus.main }}
+          <li class="nav-item {{ if eq $.RelPermalink .URL }}active{{ end }}">
+            <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      {{ partial "components/newsletter-cta-inline.html" . }}
+    </div>
+  </div>
+</header>
+
+<!-- COMPONENT: Breaking News Ticker -->
+{{ partial "components/ticker.html" . }}

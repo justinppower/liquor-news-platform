@@ -1,0 +1,64 @@
+<!-- AD SLOT: Texas Spotlight Sponsor - Sponsor slot for Texas Spotlight section, reads from site.Params.ads.texas_spotlight_sponsor -->
+{{ if .Site.Params.ads.texas_spotlight_sponsor }}
+  <div class="ad-texas-spotlight-sponsor">
+    <p class="sponsor-label">Presented by</p>
+    {{ if .Site.Params.ads.texas_spotlight_sponsor.html }}
+      {{ .Site.Params.ads.texas_spotlight_sponsor.html | safeHTML }}
+    {{ else if .Site.Params.ads.texas_spotlight_sponsor.image }}
+      <img
+        src="{{ .Site.Params.ads.texas_spotlight_sponsor.image }}"
+        alt="{{ .Site.Params.ads.texas_spotlight_sponsor.alt | default "Sponsor" }}"
+        class="sponsor-image"
+        loading="lazy"
+      >
+    {{ else if .Site.Params.ads.texas_spotlight_sponsor.name }}
+      <div class="sponsor-placeholder">
+        {{ .Site.Params.ads.texas_spotlight_sponsor.name }}
+      </div>
+    {{ end }}
+  </div>
+{{ end }}
+
+<style>
+.ad-texas-spotlight-sponsor {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.sponsor-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #999;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.sponsor-image {
+  max-width: 200px;
+  height: auto;
+  display: inline-block;
+}
+
+.sponsor-placeholder {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .sponsor-image {
+    max-width: 150px;
+  }
+
+  .sponsor-placeholder {
+    font-size: 1.1rem;
+  }
+}
+</style>

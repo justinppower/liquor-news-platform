@@ -1,0 +1,272 @@
+{
+  "_meta": {
+    "description": "RSS feed sources organized by tier. Swap this file for different verticals.",
+    "version": "1.0.0",
+    "total_feeds": 32
+  },
+  "feeds": {
+    "tier_1_trade": [
+      {
+        "id": "bevnet",
+        "name": "BevNET",
+        "url": "https://www.bevnet.com/rss/news",
+        "category": "trade",
+        "priority": "high",
+        "keywords_boost": ["spirits", "beer", "beverage industry"],
+        "refresh_minutes": 30
+      },
+      {
+        "id": "brewbound",
+        "name": "Brewbound",
+        "url": "https://www.brewbound.com/rss/news",
+        "category": "trade",
+        "priority": "high",
+        "keywords_boost": ["craft beer", "brewery"],
+        "refresh_minutes": 30
+      },
+      {
+        "id": "spirits_business",
+        "name": "The Spirits Business",
+        "url": "https://www.thespiritsbusiness.com/feed/",
+        "category": "trade",
+        "priority": "high",
+        "keywords_boost": ["spirits", "whisky", "vodka", "tequila"],
+        "refresh_minutes": 60
+      },
+      {
+        "id": "drinks_business",
+        "name": "The Drinks Business",
+        "url": "https://www.thedrinksbusiness.com/feed/",
+        "category": "trade",
+        "priority": "medium",
+        "keywords_boost": ["wine", "spirits", "beer"],
+        "refresh_minutes": 60
+      },
+      {
+        "id": "beverage_industry",
+        "name": "Beverage Industry",
+        "url": "https://www.bevindustry.com/rss",
+        "category": "trade",
+        "priority": "medium",
+        "keywords_boost": ["beverage", "distribution"],
+        "refresh_minutes": 60
+      }
+    ],
+    "tier_2_enthusiast": [
+      {
+        "id": "vinepair",
+        "name": "VinePair",
+        "url": "https://vinepair.com/feed/",
+        "category": "enthusiast",
+        "priority": "high",
+        "keywords_boost": ["cocktail", "wine", "spirits", "beer"],
+        "refresh_minutes": 60
+      },
+      {
+        "id": "punch",
+        "name": "Punch",
+        "url": "https://punchdrink.com/feed/",
+        "category": "culture",
+        "priority": "medium",
+        "keywords_boost": ["cocktail", "bartender", "spirits"],
+        "refresh_minutes": 120
+      },
+      {
+        "id": "whisky_advocate",
+        "name": "Whisky Advocate",
+        "url": "https://www.whiskyadvocate.com/feed/",
+        "category": "enthusiast",
+        "priority": "high",
+        "keywords_boost": ["whiskey", "bourbon", "scotch", "rye"],
+        "refresh_minutes": 120
+      },
+      {
+        "id": "bourbon_review",
+        "name": "The Bourbon Review",
+        "url": "https://www.gobourbon.com/feed/",
+        "category": "enthusiast",
+        "priority": "medium",
+        "keywords_boost": ["bourbon", "Kentucky", "distillery"],
+        "refresh_minutes": 120
+      },
+      {
+        "id": "craft_spirits_mag",
+        "name": "Craft Spirits Magazine",
+        "url": "https://www.craftspiritmag.com/feed/",
+        "category": "trade",
+        "priority": "medium",
+        "keywords_boost": ["craft distillery", "small batch"],
+        "refresh_minutes": 120
+      }
+    ],
+    "tier_3_wire_services": [
+      {
+        "id": "businesswire_wine_spirits",
+        "name": "BusinessWire - Wine & Spirits",
+        "url": "https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpRWg==",
+        "category": "press_release",
+        "priority": "high",
+        "keywords_boost": ["wine", "spirits", "beverage", "alcohol"],
+        "refresh_minutes": 30
+      },
+      {
+        "id": "prnewswire_food_bev",
+        "name": "PR Newswire - Food & Beverage",
+        "url": "https://www.prnewswire.com/rss/food-beverages-nutrition-news.rss",
+        "category": "press_release",
+        "priority": "medium",
+        "keywords_boost": ["spirits", "beer", "wine", "alcohol", "distillery", "brewery"],
+        "refresh_minutes": 30
+      }
+    ],
+    "tier_4_texas_regional": [
+      {
+        "id": "tabc_news",
+        "name": "TABC News",
+        "url": "https://www.tabc.texas.gov/rss",
+        "category": "regulatory",
+        "priority": "critical",
+        "keywords_boost": ["TABC", "Texas", "enforcement", "license"],
+        "refresh_minutes": 60,
+        "notes": "May need scraping fallback if no RSS available"
+      },
+      {
+        "id": "dallas_morning_news_food",
+        "name": "Dallas Morning News - Food & Drink",
+        "url": "https://www.dallasnews.com/food/rss/",
+        "category": "regional",
+        "priority": "medium",
+        "keywords_boost": ["Dallas", "Texas", "restaurant", "bar"],
+        "refresh_minutes": 120
+      },
+      {
+        "id": "houston_chronicle_food",
+        "name": "Houston Chronicle - Food",
+        "url": "https://www.houstonchronicle.com/food/rss/",
+        "category": "regional",
+        "priority": "medium",
+        "keywords_boost": ["Houston", "Texas", "restaurant", "bar"],
+        "refresh_minutes": 120
+      },
+      {
+        "id": "texas_monthly",
+        "name": "Texas Monthly",
+        "url": "https://www.texasmonthly.com/feed/",
+        "category": "regional",
+        "priority": "low",
+        "keywords_boost": ["Texas", "BBQ", "bar", "distillery", "brewery"],
+        "refresh_minutes": 240
+      },
+      {
+        "id": "eater_dallas",
+        "name": "Eater Dallas",
+        "url": "https://dallas.eater.com/rss/index.xml",
+        "category": "regional",
+        "priority": "medium",
+        "keywords_boost": ["Dallas", "bar", "restaurant", "cocktail"],
+        "refresh_minutes": 120
+      },
+      {
+        "id": "eater_houston",
+        "name": "Eater Houston",
+        "url": "https://houston.eater.com/rss/index.xml",
+        "category": "regional",
+        "priority": "medium",
+        "keywords_boost": ["Houston", "bar", "restaurant", "cocktail"],
+        "refresh_minutes": 120
+      },
+      {
+        "id": "eater_austin",
+        "name": "Eater Austin",
+        "url": "https://austin.eater.com/rss/index.xml",
+        "category": "regional",
+        "priority": "medium",
+        "keywords_boost": ["Austin", "bar", "restaurant", "cocktail"],
+        "refresh_minutes": 120
+      }
+    ],
+    "tier_5_regulatory_institutional": [
+      {
+        "id": "nabca",
+        "name": "NABCA News",
+        "url": "https://www.nabca.org/rss",
+        "category": "regulatory",
+        "priority": "medium",
+        "keywords_boost": ["regulation", "control state", "alcohol policy"],
+        "refresh_minutes": 240,
+        "notes": "May require scraping"
+      },
+      {
+        "id": "ttb_news",
+        "name": "TTB News (Alcohol & Tobacco Tax)",
+        "url": "https://www.ttb.gov/rss",
+        "category": "regulatory",
+        "priority": "medium",
+        "keywords_boost": ["TTB", "tax", "label approval", "formula"],
+        "refresh_minutes": 240,
+        "notes": "May require scraping"
+      },
+      {
+        "id": "discus",
+        "name": "DISCUS - Distilled Spirits Council",
+        "url": "https://www.distilledspirits.org/feed/",
+        "category": "regulatory",
+        "priority": "medium",
+        "keywords_boost": ["spirits market", "DISCUS", "tariff", "trade policy"],
+        "refresh_minutes": 240
+      }
+    ],
+    "tier_6_google_alerts": [
+      {
+        "id": "alert_texas_distillery",
+        "name": "Google Alert: Texas distillery",
+        "url": "",
+        "category": "alert",
+        "priority": "medium",
+        "keywords_boost": ["Texas", "distillery"],
+        "refresh_minutes": 120,
+        "notes": "Configure via Google Alerts RSS output"
+      },
+      {
+        "id": "alert_bourbon_release",
+        "name": "Google Alert: bourbon release",
+        "url": "",
+        "category": "alert",
+        "priority": "medium",
+        "keywords_boost": ["bourbon", "release", "limited edition"],
+        "refresh_minutes": 120,
+        "notes": "Configure via Google Alerts RSS output"
+      },
+      {
+        "id": "alert_tabc",
+        "name": "Google Alert: TABC",
+        "url": "",
+        "category": "alert",
+        "priority": "high",
+        "keywords_boost": ["TABC", "Texas alcohol"],
+        "refresh_minutes": 60,
+        "notes": "Configure via Google Alerts RSS output"
+      },
+      {
+        "id": "alert_liquor_law_texas",
+        "name": "Google Alert: liquor law Texas",
+        "url": "",
+        "category": "alert",
+        "priority": "medium",
+        "keywords_boost": ["Texas", "liquor law", "alcohol regulation"],
+        "refresh_minutes": 120,
+        "notes": "Configure via Google Alerts RSS output"
+      },
+      {
+        "id": "alert_spirits_ma",
+        "name": "Google Alert: spirits M&A",
+        "url": "",
+        "category": "alert",
+        "priority": "medium",
+        "keywords_boost": ["M&A", "acquisition", "merger", "spirits"],
+        "refresh_minutes": 120,
+        "notes": "Configure via Google Alerts RSS output"
+      }
+    ]
+  }
+}

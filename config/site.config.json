@@ -1,0 +1,139 @@
+{
+  "$schema": "./site.config.schema.json",
+  "_meta": {
+    "version": "1.0.0",
+    "vertical": "liquor-news",
+    "environment": "development",
+    "last_updated": "2026-04-05"
+  },
+  "site": {
+    "name": "LiquorNewsUSA",
+    "tagline": "Your daily source for U.S. alcohol industry news with a Texas lens",
+    "domain": "",
+    "language": "en-US",
+    "timezone": "America/Chicago",
+    "logo": "/assets/logo.svg",
+    "favicon": "/assets/favicon.ico",
+    "social": {
+      "twitter": "",
+      "instagram": "",
+      "linkedin": "",
+      "facebook": ""
+    },
+    "contact": {
+      "email": "press@",
+      "advertising_email": "ads@"
+    }
+  },
+  "content": {
+    "pillars_config": "./content-pillars.json",
+    "daily_target_posts": 4,
+    "publishing_schedule": {
+      "first_publish": "07:00",
+      "last_publish": "18:00",
+      "timezone": "America/Chicago"
+    },
+    "article_types": ["news_brief", "feature", "review", "explainer", "roundup", "data_snapshot", "spotlight"],
+    "default_article_type": "news_brief",
+    "word_count_targets": {
+      "news_brief": { "min": 150, "max": 300 },
+      "feature": { "min": 800, "max": 1500 },
+      "review": { "min": 400, "max": 800 },
+      "explainer": { "min": 600, "max": 1200 },
+      "roundup": { "min": 500, "max": 1000 },
+      "data_snapshot": { "min": 300, "max": 600 },
+      "spotlight": { "min": 800, "max": 1500 }
+    }
+  },
+  "rss": {
+    "feeds_config": "./rss-feeds.json",
+    "refresh_interval_minutes": 30,
+    "max_items_per_feed": 20,
+    "keyword_filters": ["texas", "bourbon", "tequila", "whiskey", "spirits", "TABC", "craft beer", "wine", "RTD", "non-alc", "distillery", "brewery"],
+    "dedup_window_hours": 72,
+    "auto_draft": false,
+    "content_queue_enabled": true
+  },
+  "ads": {
+    "slots_config": "./ad-slots.json",
+    "provider": "google_adsense",
+    "adsense_client_id": "",
+    "enable_direct_sales": false,
+    "fallback_to_programmatic": true,
+    "blocked_categories": ["tobacco", "gambling", "firearms"]
+  },
+  "newsletter": {
+    "provider": "mailchimp",
+    "api_key_env": "NEWSLETTER_API_KEY",
+    "list_id": "",
+    "signup_incentive": "Weekly Digest: Top stories from the U.S. alcohol industry, delivered every Friday",
+    "send_day": "friday",
+    "send_time": "09:00",
+    "from_name": "LiquorNewsUSA",
+    "from_email": ""
+  },
+  "seo": {
+    "default_title_template": "{article_title} | {site_name}",
+    "default_description_template": "{article_excerpt}",
+    "schema_types": ["NewsArticle", "Organization", "WebSite", "BreadcrumbList"],
+    "sitemap_enabled": true,
+    "robots_txt_enabled": true,
+    "canonical_base": "",
+    "open_graph": {
+      "type": "article",
+      "image_default": "/assets/og-default.jpg"
+    }
+  },
+  "analytics": {
+    "google_analytics_id": "",
+    "google_search_console_verified": false,
+    "uptime_monitor_url": "",
+    "track_content_metrics": true
+  },
+  "social": {
+    "auto_post_on_publish": false,
+    "platforms": ["twitter", "linkedin"],
+    "post_template": "{title} - {excerpt_short} Read more: {url}",
+    "hashtags_default": ["#LiquorNews", "#TexasBooze", "#SpiritsBusiness"]
+  },
+  "theme": {
+    "active_theme": "liquor-news",
+    "base_theme": "_base",
+    "colors": {
+      "primary": "#1a1a2e",
+      "secondary": "#c4a35a",
+      "accent": "#e94560",
+      "background": "#f5f5f5",
+      "text": "#2d2d2d",
+      "text_light": "#6b6b6b",
+      "card_bg": "#ffffff",
+      "texas_spotlight_bg": "#fdf6e3"
+    },
+    "fonts": {
+      "heading": "Playfair Display",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "layout": {
+      "max_width": "1200px",
+      "sidebar_width": "300px",
+      "hero_height": "400px",
+      "grid_columns": 3
+    }
+  },
+  "hosting": {
+    "platform": "github_pages_plus_cloudflare",
+    "build_tool": "hugo",
+    "deploy_method": "github_actions",
+    "cdn": "cloudflare",
+    "ssl": true
+  },
+  "regional_focus": {
+    "primary_state": "Texas",
+    "primary_state_code": "TX",
+    "regulatory_body": "TABC",
+    "regulatory_url": "https://www.tabc.texas.gov",
+    "secondary_markets": ["California", "New York", "Florida"],
+    "national_coverage": true
+  }
+}

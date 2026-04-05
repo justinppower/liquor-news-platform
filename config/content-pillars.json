@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "description": "Content pillars define editorial categories. Swap this file to change verticals.",
+    "version": "1.0.0"
+  },
+  "pillars": [
+    {
+      "id": "industry-news",
+      "name": "Industry News",
+      "slug": "industry-news",
+      "description": "M&A, distribution shifts, earnings, brand launches, executive moves, regulatory changes, tariff impacts",
+      "audience": ["industry_professionals", "investors", "brand_owners"],
+      "icon": "briefcase",
+      "color": "#1a1a2e",
+      "priority": 1,
+      "rss_keywords": ["spirits M&A", "beverage earnings", "alcohol industry", "brand launch", "distribution deal"],
+      "ad_category": "trade"
+    },
+    {
+      "id": "texas-beat",
+      "name": "Texas Beat",
+      "slug": "texas-beat",
+      "description": "TABC updates, Texas distillery/brewery openings, local law changes, Texas brand spotlights, regional events",
+      "audience": ["texas_industry", "texas_consumers"],
+      "icon": "map-pin",
+      "color": "#c4a35a",
+      "priority": 2,
+      "rss_keywords": ["TABC", "Texas distillery", "Texas brewery", "Texas liquor", "Texas alcohol law"],
+      "ad_category": "regional"
+    },
+    {
+      "id": "new-releases",
+      "name": "New Releases & Reviews",
+      "slug": "new-releases",
+      "description": "New spirits/beer/wine launches, limited editions, seasonal releases, tasting notes",
+      "audience": ["consumers", "collectors", "enthusiasts"],
+      "icon": "star",
+      "color": "#e94560",
+      "priority": 3,
+      "rss_keywords": ["new release", "limited edition", "bourbon release", "tequila launch", "craft beer release"],
+      "ad_category": "consumer"
+    },
+    {
+      "id": "regulation",
+      "name": "Regulation & Policy",
+      "slug": "regulation-policy",
+      "description": "Federal/state law changes, TABC enforcement, Sunday sales debates, shipping regulations, tariff news",
+      "audience": ["industry_professionals", "retailers", "bar_owners"],
+      "icon": "scale",
+      "color": "#16213e",
+      "priority": 4,
+      "rss_keywords": ["alcohol regulation", "liquor law", "TABC enforcement", "alcohol tariff", "shipping law"],
+      "ad_category": "trade"
+    },
+    {
+      "id": "culture",
+      "name": "Culture & Lifestyle",
+      "slug": "culture-lifestyle",
+      "description": "Bar openings, cocktail trends, events calendar, food pairings, behind-the-scenes distillery stories",
+      "audience": ["consumers", "foodies", "casual_drinkers"],
+      "icon": "glass-water",
+      "color": "#a8577e",
+      "priority": 5,
+      "rss_keywords": ["cocktail trend", "bar opening", "spirits tasting", "food pairing", "mixology"],
+      "ad_category": "consumer"
+    },
+    {
+      "id": "data-trends",
+      "name": "Data & Trends",
+      "slug": "data-trends",
+      "description": "Market data roundups, consumer behavior shifts, category growth reports, sober-curious trends",
+      "audience": ["industry_analysts", "brand_managers"],
+      "icon": "bar-chart",
+      "color": "#0f3460",
+      "priority": 6,
+      "rss_keywords": ["alcohol market data", "spirits sales data", "beverage trends", "sober curious", "market report"],
+      "ad_category": "trade"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+<!-- COMPONENT: Newsletter Form - Newsletter signup form reading provider from .Site.Params.newsletter -->
+<form class="newsletter-form" action="{{ .Site.Params.newsletter.action | default "#" }}" method="{{ .Site.Params.newsletter.method | default "POST" }}" class="newsletter-signup">
+  <div class="newsletter-form-group">
+    <label for="newsletter-email" class="newsletter-label">Email Address</label>
+    <div class="newsletter-input-group">
+      <input
+        type="email"
+        id="newsletter-email"
+        name="{{ .Site.Params.newsletter.email_field | default "email" }}"
+        class="newsletter-input"
+        placeholder="your@email.com"
+        required
+        aria-label="Email address"
+      >
+      <button type="submit" class="newsletter-button">Subscribe</button>
+    </div>
+  </div>
+
+  {{ if .Site.Params.newsletter.consent_text }}
+    <p class="newsletter-consent">
+      {{ .Site.Params.newsletter.consent_text }}
+    </p>
+  {{ else }}
+    <p class="newsletter-consent">
+      We respect your privacy. Unsubscribe at any time.
+    </p>
+  {{ end }}
+</form>
+
+<style>
+.newsletter-form {
+  width: 100%;
+}
+
+.newsletter-form-group {
+  margin-bottom: 1rem;
+}
+
+.newsletter-label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  margin-bottom: 0.75rem;
+}
+
+.newsletter-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.1);
+}
+
+.newsletter-input::placeholder {
+  color: #ccc;
+}
+
+.newsletter-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  background-color: {{ .Site.Params.colors.accent | default "#e94560" }};
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletter-button:hover {
+  background-color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+}
+
+.newsletter-button:active {
+  transform: scale(0.98);
+}
+
+.newsletter-consent {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0.75rem 0 0 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .newsletter-input-group {
+    flex-direction: column;
+  }
+
+  .newsletter-button {
+    width: 100%;
+  }
+}
+</style>

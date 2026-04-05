@@ -1,0 +1,48 @@
+<!-- COMPONENT: Footer - Reusable across verticals -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-about">
+        <h3>{{ .Site.Title }}</h3>
+        <p>{{ .Site.Params.description }}</p>
+      </div>
+
+      <div class="footer-col footer-sections">
+        <h4>Sections</h4>
+        <ul>
+          {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/advertise/">Advertise</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/newsletter/">Newsletter</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-newsletter">
+        <h4>Stay Informed</h4>
+        <p>{{ .Site.Params.newsletter.incentive }}</p>
+        {{ partial "components/newsletter-form.html" . }}
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
+      {{ with .Site.Params.social }}
+        <div class="footer-social">
+          {{ with .twitter }}<a href="https://twitter.com/{{ . }}" aria-label="Twitter">Twitter</a>{{ end }}
+          {{ with .linkedin }}<a href="https://linkedin.com/company/{{ . }}" aria-label="LinkedIn">LinkedIn</a>{{ end }}
+          {{ with .instagram }}<a href="https://instagram.com/{{ . }}" aria-label="Instagram">Instagram</a>{{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</footer>

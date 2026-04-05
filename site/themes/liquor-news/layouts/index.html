@@ -1,0 +1,489 @@
+{{ define "main" }}
+<div class="homepage">
+  <!-- Breaking News Ticker -->
+  {{ partial "components/ticker" . }}
+
+  <div class="homepage-wrapper">
+    <!-- Hero Section -->
+    {{ $featured := first 1 .Site.RegularPages }}
+    {{ range $featured }}
+      <section class="hero-section">
+        {{ if .Params.image }}
+          <div class="hero-image">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+          </div>
+        {{ end }}
+
+        <div class="hero-content">
+          {{ if .Params.pillars }}
+            <div class="hero-pillar">
+              {{ index .Params.pillars 0 }}
+            </div>
+          {{ end }}
+
+          <h1 class="hero-title">{{ .Title }}</h1>
+
+          {{ if .Params.description }}
+            <p class="hero-excerpt">{{ .Params.description }}</p>
+          {{ end }}
+
+          <div class="hero-meta">
+            {{ if .Params.author }}
+              <span class="hero-author">By {{ .Params.author }}</span>
+            {{ end }}
+            <time class="hero-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+              {{ .PublishDate.Format "January 2, 2006" }}
+            </time>
+          </div>
+
+          <a href="{{ .Permalink }}" class="hero-button">Read Story</a>
+        </div>
+      </section>
+    {{ end }}
+
+    <div class="homepage-grid">
+      <!-- Main Content -->
+      <main class="homepage-main">
+        <!-- Content Grid by Pillars -->
+        {{ $pillars := slice "industry-news" "texas-beat" "new-releases" }}
+
+        {{ range $pillars }}
+          {{ $pillar := . }}
+          {{ $pillarArticles := where $.Site.RegularPages "Params.pillars" "intersect" (slice $pillar) }}
+          {{ if gt (len $pillarArticles) 0 }}
+            <section class="pillar-section">
+              <div class="pillar-header">
+                <h2 class="pillar-title">{{ $pillar }}</h2>
+                <a href="/categories/{{ lower (replace $pillar " " "-") }}/" class="pillar-link">View All</a>
+              </div>
+
+              <div class="pillar-grid">
+                {{ range first 3 $pillarArticles }}
+                  {{ partial "components/article-card" . }}
+                {{ end }}
+              </div>
+            </section>
+          {{ end }}
+        {{ end }}
+
+        <!-- Texas Spotlight Section -->
+        <section class="texas-spotlight">
+          <div class="texas-spotlight-content">
+            <h2 class="texas-spotlight-title">Texas Spotlight</h2>
+            <p class="texas-spotlight-description">Featured stories shaping the Lone Star State</p>
+
+            {{ $texasArticles := where .Site.RegularPages "Params.featured_texas" true }}
+            {{ if gt (len $texasArticles) 0 }}
+              <div class="texas-articles">
+                {{ range first 2 $texasArticles }}
+                  <article class="texas-article">
+                    {{ if .Params.image }}
+                      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="texas-article-image" loading="lazy">
+                    {{ end }}
+                    <h3 class="texas-article-title">
+                      <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </h3>
+                    <p class="texas-article-excerpt">{{ truncate 150 "..." .Params.description }}</p>
+                    <a href="{{ .Permalink }}" class="texas-article-link">Read More</a>
+                  </article>
+                {{ end }}
+              </div>
+            {{ else }}
+              <p class="texas-placeholder">Featured Texas stories coming soon</p>
+            {{ end }}
+
+            <!-- Texas Spotlight Sponsor Ad -->
+            {{ partial "ads/texas-spotlight-sponsor" . }}
+          </div>
+        </section>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="homepage-sidebar">
+        {{ partial "components/sidebar" . }}
+
+        <!-- Weekly Poll Placeholder -->
+        <div class="poll-widget">
+          <h3 class="poll-title">Weekly Poll</h3>
+          <div class="poll-placeholder">
+            <p>Check back soon for this week's poll</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<style>
+.homepage {
+  width: 100%;
+  background-color: {{ .Site.Params.colors.background | default "#f5f5f5" }};
+  min-height: 100vh;
+}
+
+.homepage-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  padding: 3rem 0;
+  border-bottom: 2px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+}
+
+.hero-image {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  padding: 2rem;
+  background-color: {{ .Site.Params.colors.card_bg | default "#ffffff" }};
+  border-radius: 4px;
+}
+
+.hero-pillar {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.4rem 0.8rem;
+  background-color: {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.hero-excerpt {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-author,
+.hero-date {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #888;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: {{ .Site.Params.colors.accent | default "#e94560" }};
+  color: white;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+}
+
+/* Grid Layout */
+.homepage-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.homepage-main {
+  flex: 1;
+}
+
+.homepage-sidebar {
+  width: 100%;
+}
+
+/* Pillar Sections */
+.pillar-section {
+  margin-bottom: 3rem;
+}
+
+.pillar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+}
+
+.pillar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  margin: 0;
+}
+
+.pillar-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: {{ .Site.Params.colors.accent | default "#e94560" }};
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.pillar-link:hover {
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Texas Spotlight */
+.texas-spotlight {
+  background-color: {{ .Site.Params.colors.texas_spotlight_bg | default "#fdf6e3" }};
+  border-radius: 4px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+
+.texas-spotlight-content {
+  max-width: 1000px;
+}
+
+.texas-spotlight-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  margin: 0 0 0.5rem 0;
+}
+
+.texas-spotlight-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 2rem 0;
+}
+
+.texas-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.texas-article {
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.texas-article-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.texas-article-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+  margin: 1rem;
+  line-height: 1.3;
+}
+
+.texas-article-title a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.texas-article-title a:hover {
+  color: {{ .Site.Params.colors.accent | default "#e94560" }};
+}
+
+.texas-article-excerpt {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0 1rem;
+  line-height: 1.5;
+}
+
+.texas-article-link {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: {{ .Site.Params.colors.accent | default "#e94560" }};
+  text-decoration: none;
+  margin: 0 1rem 1rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.texas-article-link:hover {
+  color: {{ .Site.Params.colors.primary | default "#1a1a2e" }};
+}
+
+.texas-placeholder {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #999;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Poll Widget */
+.poll-widget {
+  background-color: {{ .Site.Params.colors.card_bg | default "#ffffff" }};
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.poll-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: {{ .Site.Params.colors.text | default "#2d2d2d" }};
+  margin: 0 0 1rem 0;
+  border-bottom: 2px solid {{ .Site.Params.colors.secondary | default "#c4a35a" }};
+  padding-bottom: 0.75rem;
+}
+
+.poll-placeholder {
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+}
+
+.poll-placeholder p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #999;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    height: 300px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .homepage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-wrapper {
+    padding: 0 1rem;
+  }
+
+  .hero-section {
+    padding: 2rem 0;
+  }
+
+  .hero-image {
+    height: 250px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
+
+  .pillar-title {
+    font-size: 1.5rem;
+  }
+
+  .pillar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .texas-spotlight {
+    padding: 1.5rem;
+  }
+
+  .texas-articles {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    margin-bottom: 2rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .pillar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .texas-spotlight-title {
+    font-size: 1.75rem;
+  }
+}
+</style>
+{{ end }}

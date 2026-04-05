@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "description": "IAB-compliant ad slot definitions. Reusable across any news vertical.",
+    "version": "1.0.0",
+    "standard": "IAB Display Advertising Guidelines"
+  },
+  "slots": [
+    {
+      "id": "leaderboard-top",
+      "name": "Top Leaderboard",
+      "size": "728x90",
+      "location": "header_below_nav",
+      "type": "display",
+      "pricing_model": "cpm",
+      "estimated_cpm_range": [15, 45],
+      "responsive_fallback": "320x50",
+      "sticky": false,
+      "lazy_load": false,
+      "pages": ["home", "category", "article"]
+    },
+    {
+      "id": "sidebar-rectangle",
+      "name": "Sidebar Rectangle",
+      "size": "300x250",
+      "location": "right_sidebar",
+      "type": "display",
+      "pricing_model": "cpm",
+      "estimated_cpm_range": [15, 40],
+      "responsive_fallback": "300x250",
+      "sticky": true,
+      "lazy_load": true,
+      "pages": ["home", "category", "article"]
+    },
+    {
+      "id": "in-article",
+      "name": "In-Article Banner",
+      "size": "728x90",
+      "location": "mid_article",
+      "type": "display",
+      "pricing_model": "cpm",
+      "estimated_cpm_range": [10, 35],
+      "responsive_fallback": "300x250",
+      "sticky": false,
+      "lazy_load": true,
+      "pages": ["article"],
+      "insert_after_paragraph": 3
+    },
+    {
+      "id": "sponsored-content",
+      "name": "Sponsored Content",
+      "size": "full_article",
+      "location": "content_feed",
+      "type": "native",
+      "pricing_model": "flat_fee",
+      "estimated_rate_range": [500, 2000],
+      "sticky": false,
+      "lazy_load": false,
+      "pages": ["home", "category"],
+      "label": "Sponsored"
+    },
+    {
+      "id": "newsletter-sponsor",
+      "name": "Newsletter Sponsor",
+      "size": "600x100",
+      "location": "email_header",
+      "type": "email",
+      "pricing_model": "per_send",
+      "estimated_rate_range": [200, 500],
+      "pages": ["newsletter"]
+    },
+    {
+      "id": "texas-spotlight-sponsor",
+      "name": "Texas Spotlight Sponsor",
+      "size": "300x100",
+      "location": "texas_spotlight_section",
+      "type": "display",
+      "pricing_model": "monthly_exclusive",
+      "estimated_rate_range": [500, 1500],
+      "sticky": false,
+      "lazy_load": false,
+      "pages": ["home"]
+    }
+  ]
+}
