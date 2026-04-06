@@ -1,4 +1,4 @@
-baseURL = ""
+baseURL = "https://packagestoretx.com/"
 languageCode = "en-us"
 title = "LiquorNewsUSA"
 theme = "liquor-news"
