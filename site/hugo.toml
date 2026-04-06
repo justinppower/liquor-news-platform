@@ -4,7 +4,9 @@ title = "LiquorNewsUSA"
 theme = "liquor-news"
 
 summaryLength = 40
-paginate = 12
+# paginate = 12  # deprecated in Hugo v0.128.0
+[pagination]
+  pagerSize = 12
 enableRobotsTXT = true
 enableGitInfo = false
 
