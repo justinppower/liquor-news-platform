@@ -1,0 +1,9 @@
+{
+  "name": "LiquorNewsUSA",
+  "short_name": "LiquorNews",
+  "description": "U.S. alcohol industry news with a Texas lens",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f5f5",
+  "theme_color": "#1a1a2e"
+}

@@ -63,6 +63,11 @@
   {{/* --- JSON-LD Schema --- */}}
   {{ partial "seo/schema.html" . }}
 
+  <!-- Favicon & Manifest -->
+  <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
+  <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
+  <meta name="theme-color" content="{{ .Site.Params.colors.primary | default "#1a1a2e" }}">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
