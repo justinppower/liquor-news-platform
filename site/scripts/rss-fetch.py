@@ -41,7 +41,8 @@ except ImportError:
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 CONFIG_DIR = PROJECT_ROOT.parent / "config"
-CONTENT_DIR = PROJECT_ROOT / "content" / "queue"
+QUEUE_DIR = PROJECT_ROOT / "content" / "queue"
+CONTENT_DIR = PROJECT_ROOT / "content"
 DATA_DIR = PROJECT_ROOT / "data"
 SEEN_URLS_FILE = DATA_DIR / "seen-urls.json"
 
@@ -123,10 +124,84 @@ def slugify(text):
     return text[:80].rstrip('-')
 
 
+def is_us_relevant(entry, feed_config):
+    """Filter out content that is primarily UK/international and not US-relevant."""
+    title = entry.get("title", "")
+    summary = entry.get("summary", "")
+    combined = f"{title} {summary}".lower()
+
+    # Always allow US-focused feeds
+    us_feeds = ["vinepair", "bevnet", "brewbound", "bourbon pursuit",
+                "craft spirits", "eater", "texas monthly", "whiskey wash",
+                "texas standard", "chron.com"]
+    feed_name = feed_config.get("name", "").lower()
+    if any(uf in feed_name for uf in us_feeds):
+        return True
+
+    # Skip clearly non-US content
+    non_us_markers = [
+        "uk ", "u.k.", "british", "scotland", "scottish", "speyside",
+        "london", "brighton", "england", "wales", "corpinnat",
+        "german wine", "germany's", "piedmont", "italian wine region",
+        "kia oval", "on-trade", "juve camps",
+    ]
+    if any(marker in combined for marker in non_us_markers):
+        # But allow if it also mentions US context
+        us_markers = ["us ", "u.s.", "america", "texas", "kentucky",
+                      "bourbon", "california", "new york", "florida"]
+        if not any(us in combined for us in us_markers):
+            return False
+
+    return True
+
+
 def determine_pillar(entry, feed_config, site_config):
     """Map a feed entry to a content pillar based on feed category and keywords."""
     category = feed_config.get("category", "")
+    title = entry.get("title", "")
+    summary = entry.get("summary", "")
+    combined = f"{title} {summary}".lower()
 
+    # --- Texas Beat: regional Texas content ---
+    texas_keywords = ["texas", "tabc", "dallas", "houston", "austin",
+                      "san antonio", "fort worth", "lone star", "hill country",
+                      "dripping springs", "fredericksburg"]
+    if any(kw in combined for kw in texas_keywords):
+        return "texas-beat"
+
+    # --- Regulation & Policy ---
+    reg_keywords = ["bill ", "legislation", "regulate", "regulation", "policy",
+                    "cocktails to go", "sunday sales", "tariff", "trade war",
+                    "ban ", "banned", "compliance", "fda ", "ttb ", "discus",
+                    "spirits united", "control state", "three-tier"]
+    if any(kw in combined for kw in reg_keywords):
+        return "regulation-policy"
+
+    # --- Data & Trends ---
+    data_keywords = ["report", "data", "survey", "growth", "decline",
+                     "percent", "q1 ", "q2 ", "q3 ", "q4 ", "market share",
+                     "niq ", "iwsr", "export", "import", "consumption",
+                     "sales figures", "forecast", "nielsen", "volume"]
+    if sum(1 for kw in data_keywords if kw in combined) >= 2:
+        return "data-trends"
+
+    # --- New Releases ---
+    release_keywords = ["new release", "launches", "introduces", "unveils",
+                        "announces new", "limited edition", "cask strength",
+                        "single barrel", "batch ", "expression", "bottling",
+                        "age statement", "proof", "review:", "tasting notes"]
+    if any(kw in combined for kw in release_keywords):
+        return "new-releases"
+
+    # --- Culture & Lifestyle ---
+    culture_keywords = ["cocktail recipe", "best bars", "bartender",
+                        "restaurant", "guide to", "how to", "101",
+                        "wine glass", "sommelier", "mixolog", "podcast",
+                        "book club", "food pair"]
+    if any(kw in combined for kw in culture_keywords):
+        return "culture-lifestyle"
+
+    # --- Fallback by feed category ---
     pillar_map = {
         "trade": "industry-news",
         "press_release": "industry-news",
@@ -136,15 +211,6 @@ def determine_pillar(entry, feed_config, site_config):
         "regional": "texas-beat",
         "alert": "industry-news",
     }
-
-    # Check for Texas-specific content
-    title = entry.get("title", "")
-    summary = entry.get("summary", "")
-    combined = f"{title} {summary}".lower()
-
-    texas_keywords = ["texas", "tabc", "dallas", "houston", "austin", "san antonio", "fort worth"]
-    if any(kw in combined for kw in texas_keywords):
-        return "texas-beat"
 
     return pillar_map.get(category, "industry-news")
 
@@ -181,7 +247,7 @@ def generate_markdown(entry, feed_config, pillar):
     frontmatter = f"""---
 title: "{safe_title}"
 date: {date_str}
-draft: true
+draft: false
 pillars: ["{pillar}"]
 tags: {tags_json}
 categories: ["{pillar_display}"]
@@ -241,6 +307,12 @@ def fetch_feeds(feeds_config, site_config, seen_data, dry_run=False):
                     skipped_seen += 1
                     continue
 
+                # US relevance filter
+                if not is_us_relevant(entry, feed_config):
+                    skipped_filter += 1
+                    logger.debug(f"  Skipped (non-US): {title[:60]}")
+                    continue
+
                 # Keyword filter
                 combined_text = f"{title} {entry.get('summary', '')}"
                 if keyword_filters and not matches_keywords(combined_text, keyword_filters):
@@ -256,13 +328,14 @@ def fetch_feeds(feeds_config, site_config, seen_data, dry_run=False):
                 filename = f"{slug}.md"
 
                 if not dry_run:
-                    CONTENT_DIR.mkdir(parents=True, exist_ok=True)
-                    filepath = CONTENT_DIR / filename
+                    pillar_dir = CONTENT_DIR / pillar
+                    pillar_dir.mkdir(parents=True, exist_ok=True)
+                    filepath = pillar_dir / filename
                     with open(filepath, "w", encoding="utf-8") as f:
                         f.write(markdown)
-                    logger.info(f"  Created: {filename} [{pillar}]")
+                    logger.info(f"  Published: {filename} -> {pillar}/")
                 else:
-                    logger.info(f"  [DRY RUN] Would create: {filename} [{pillar}]")
+                    logger.info(f"  [DRY RUN] Would publish: {filename} -> {pillar}/")
 
                 # Mark as seen
                 seen_data["urls"][link] = datetime.now(timezone.utc).isoformat()
