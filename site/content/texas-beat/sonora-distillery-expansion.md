@@ -4,6 +4,7 @@ description: "Texas-based Sonora Distillery plans to double production capacity 
 author: "LiquorNewsUSA Editorial"
 date: 2026-04-03
 featured: false
+featured_texas: true
 article_type: "feature"
 pillars: ["texas-beat"]
 tags: ["Texas", "distillery", "Sonora", "expansion"]

@@ -11,6 +11,7 @@ source_url: "https://www.texasmonthly.com/bbq/millers-smokehouse-fire/"
 source_name: "Texas Monthly"
 article_type: "news_brief"
 auto_generated: true
+featured_texas: true
 ---
 
 The joint went up in flames a few weeks ago, but with the pit room still intact, its staff is determined to keep the business going in tough times.

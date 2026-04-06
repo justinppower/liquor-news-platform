@@ -11,6 +11,7 @@ source_url: "https://craftspiritsmag.com/2026/04/01/sespe-creek-distillerys-bour
 source_name: "Craft Spirits Magazine"
 article_type: "news_brief"
 auto_generated: true
+featured_texas: true
 ---
 
 Sespe Creek Distillery has signed with Dallas-based Misa Imports to bring its Warbringer Mesquite-Smoked Southwest Bourbon collection to Texas. The announcement comes just months after Sespe Creek introduced Batch 22, the first new release blended entirely under Master Distiller John Campbell’s d...
