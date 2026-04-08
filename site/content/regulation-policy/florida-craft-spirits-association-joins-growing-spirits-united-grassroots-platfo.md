@@ -13,7 +13,7 @@ article_type: "news_brief"
 auto_generated: true
 ---
 
-The Distilled Spirits Council of the United States (DISCUS) today announced the  Florida Craft Spirits Association  (FCSA) is joining  Spirits United as a partner member to continue the platform&#8217;s expansion across the Sunshine State. “The Florida [...]
-The post Florida Craft Spirits Associa...
+The Distilled Spirits Council of the United States (DISCUS) today announced the  Florida Craft Spirits Association  (FCSA) is joining  Spirits United as a partner member to continue the platform’s expansion across the Sunshine State. “The Florida [...]
+The post Florida Craft Spirits Association J...
 
 *Source: [DISCUS - Distilled Spirits Council](https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/)*

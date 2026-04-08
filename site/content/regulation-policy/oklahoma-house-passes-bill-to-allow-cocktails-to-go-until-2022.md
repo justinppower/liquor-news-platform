@@ -4,7 +4,7 @@ date: 2021-03-11T19:00:42+0000
 draft: false
 pillars: ["regulation-policy"]
 tags: ["spirits market", "DISCUS", "tariff", "trade policy"]
-categories: ["Regulation & Policy"]
+categories: ["Regulation Policy"]
 author: "RSS Feed"
 description: "Measure will provide support to struggling hospitality businesses Today, the Oklahoma House passed HB 2122 , a bill to allow cocktails to-go from restaurants un"
 source_url: "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/"

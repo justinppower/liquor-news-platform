@@ -6,13 +6,13 @@ pillars: ["new-releases"]
 tags: ["cocktail", "wine", "spirits", "beer"]
 categories: ["New Releases"]
 author: "RSS Feed"
-description: "Megawatt wine, beer, and spirits producer E&J Gallo Winery announced today that it completed its acquisition of Four Roses Bourbon from Japan beverage congl"
+description: "Megawatt wine, beer, and spirits producer E&J Gallo Winery announced today that it completed its acquisition of Four Roses Bourbon from Japan beverage conglomer"
 source_url: "https://vinepair.com/booze-news/gallo-finalizes-four-roses-bourbon-acquisition/"
 source_name: "VinePair"
 article_type: "news_brief"
 auto_generated: true
 ---
 
-Megawatt wine, beer, and spirits producer E&J Gallo Winery announced today that it completed its acquisition of Four Roses Bourbon from Japan beverage conglomerate Kirin Holdings. Neither party disclosed the terms of the transaction. The completion comes roughly two months after Gallo agreed ...
+Megawatt wine, beer, and spirits producer E&J Gallo Winery announced today that it completed its acquisition of Four Roses Bourbon from Japan beverage conglomerate Kirin Holdings. Neither party disclosed the terms of the transaction. The completion comes roughly two months after Gallo agreed to a...
 
 *Source: [VinePair](https://vinepair.com/booze-news/gallo-finalizes-four-roses-bourbon-acquisition/)*

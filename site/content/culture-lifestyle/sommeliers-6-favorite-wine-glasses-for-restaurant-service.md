@@ -4,7 +4,7 @@ date: 2026-04-02T14:00:12+0000
 draft: false
 pillars: ["culture-lifestyle"]
 tags: ["spirits", "wine", "beer", "industry trends"]
-categories: ["Culture & Lifestyle"]
+categories: ["Culture Lifestyle"]
 author: "RSS Feed"
 description: "From universal workhorses to precision stems, these are the wine glasses sommeliers rely on during service"
 source_url: "https://daily.sevenfifty.com/sommeliers-6-favorite-wine-glasses-for-restaurant-service/"

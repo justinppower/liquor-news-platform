@@ -6,13 +6,13 @@ pillars: ["new-releases"]
 tags: ["bourbon", "Kentucky", "distillery"]
 categories: ["New Releases"]
 author: "RSS Feed"
-description: "Big news today from Buffalo Trace Distillery&#8230; Buffalo Trace Distillery is thrilled to confirm a new addition to its annual, highly-anticipated Antique Col"
+description: "Big news today from Buffalo Trace Distillery… Buffalo Trace Distillery is thrilled to confirm a new addition to its annual, highly-anticipated Antique Collectio"
 source_url: "https://www.gobourbon.com/big-news-buffalo-trace-distillery-is-expanding-the-btac-collection/"
 source_name: "The Bourbon Review"
 article_type: "news_brief"
 auto_generated: true
 ---
 
-Big news today from Buffalo Trace Distillery&#8230; Buffalo Trace Distillery is thrilled to confirm a new addition to its annual, highly-anticipated Antique Collection: E. H. Taylor Bottled-in-Bond Bourbon. Making its debut this fall as part of the 2025 BTAC Collection, this bottled-in-bond, 100-...
+Big news today from Buffalo Trace Distillery… Buffalo Trace Distillery is thrilled to confirm a new addition to its annual, highly-anticipated Antique Collection: E. H. Taylor Bottled-in-Bond Bourbon. Making its debut this fall as part of the 2025 BTAC Collection, this bottled-in-bond, 100-proof ...
 
 *Source: [The Bourbon Review](https://www.gobourbon.com/big-news-buffalo-trace-distillery-is-expanding-the-btac-collection/)*

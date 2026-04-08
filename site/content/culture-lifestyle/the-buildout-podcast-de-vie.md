@@ -4,7 +4,7 @@ date: 2026-04-02T12:00:15+0000
 draft: false
 pillars: ["culture-lifestyle"]
 tags: ["cocktail", "wine", "spirits", "beer"]
-categories: ["Culture & Lifestyle"]
+categories: ["Culture Lifestyle"]
 author: "RSS Feed"
 description: "This episode of The Buildout is brought to you by Farmer’s Gin. It’s brought to you by the same amazing people who brought you Michter’s, and it’s actually the "
 source_url: "https://vinepair.com/the-buildout/de-vie/"

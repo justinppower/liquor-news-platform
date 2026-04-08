@@ -4,7 +4,7 @@ date: 2026-04-03T20:09:08+0000
 draft: false
 pillars: ["data-trends"]
 tags: ["spirits", "beer", "beverage industry"]
-categories: ["Data & Trends"]
+categories: ["Data Trends"]
 author: "RSS Feed"
 description: "After seeing some slowdown at the beginning of last month, non-alcoholic beverage sales remained “healthy and stable” with light acceleration in the two-week pe"
 source_url: "https://www.bevnet.com/news/2026/march-brings-accelerated-na-beverage-growth-niq-reports"
