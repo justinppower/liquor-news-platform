@@ -1,5 +1,5 @@
 ---
-title: "“Thank You for Listening,” a Short Film About Musician Joshua Ray Walker’s Brush With Mortality, to Debut in Dallas"
+title: "‘Thank You for Listening,’ a Short Film About Musician Joshua Ray Walker’s Brush With Mortality, to Debut in Dallas"
 date: 2026-04-08T16:52:18+0000
 draft: false
 pillars: ["texas-beat"]
