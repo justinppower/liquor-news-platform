@@ -1,14 +1,5 @@
 {
   "urls": {
-    "https://www.bevnet.com/spirits/2026/vosa-spirits-shut-down-heres-what-went-wrong": "2026-04-09T14:03:44.719403+00:00",
-    "https://www.bevnet.com/news/2026/on-premise-update-where-growth-is-concentrating-nielseniq-quarterly-report": "2026-04-09T14:03:44.720169+00:00",
-    "https://www.brewbound.com/news/dogfish-head-seeks-a-2nd-hit-with-grateful-dead-citrus-daydream-lager": "2026-04-09T14:03:47.646348+00:00",
-    "https://www.nombase.com/datahub/on-premise-update-key-shifts-to-watch---nielseniq-quarterly-report": "2026-04-09T14:03:47.646888+00:00",
-    "https://www.thespiritsbusiness.com/2026/04/brother-justus-chooses-quality-over-category/": "2026-04-09T14:03:49.058699+00:00",
-    "https://vinepair.com/articles/overproof-spirits-explained/": "2026-04-09T14:03:52.117203+00:00",
-    "https://vinepair.com/the-buildout/yacht-club/": "2026-04-09T14:03:52.117744+00:00",
-    "https://vinepair.com/articles/champagne-chavost-young-drinker-popularity/": "2026-04-09T14:03:52.118531+00:00",
-    "https://imbibemagazine.com/qa-and-playlist-jermaine-stone-the-wolf-of-wine/": "2026-04-09T14:03:52.471566+00:00",
     "https://www.bevnet.com/news/2026/bubly-wine-refresher-launch-shows-pepsis-blue-cloud-dream-isnt-done-yet": "2026-04-09T16:04:49.644227+00:00",
     "https://www.thedrinksbusiness.com/2026/04/lvmh-sells-indian-winery/": "2026-04-09T16:04:56.849626+00:00",
     "https://daily.sevenfifty.com/how-tiny-wine-shops-are-turning-constraint-into-opportunity/": "2026-04-09T16:04:57.268951+00:00",
@@ -121,7 +112,11 @@
     "https://www.thedrinksbusiness.com/2026/04/how-are-italian-white-wine-appellations-differentiating-themselves/": "2026-04-12T11:59:55.076695+00:00",
     "https://www.thedrinksbusiness.com/2026/04/stock-spirits-extends-limonce-with-sicilian-lemon-rtd-spritz/": "2026-04-12T11:59:55.077209+00:00",
     "https://vinepair.com/articles/wine-101-thoughts-on-american-wine/": "2026-04-12T11:59:56.105809+00:00",
-    "https://www.texasmonthly.com/travel/palo-pinto-mountains-state-park-sneak-peek/": "2026-04-12T12:00:04.021457+00:00"
+    "https://www.texasmonthly.com/travel/palo-pinto-mountains-state-park-sneak-peek/": "2026-04-12T12:00:04.021457+00:00",
+    "https://www.thespiritsbusiness.com/2026/04/brother-justus-chooses-quality-over-category/": "2026-04-12T14:10:48.669513+00:00",
+    "https://vinepair.com/articles/overproof-spirits-explained/": "2026-04-12T14:10:50.635227+00:00",
+    "https://vinepair.com/the-buildout/yacht-club/": "2026-04-12T14:10:50.635763+00:00",
+    "https://imbibemagazine.com/qa-and-playlist-jermaine-stone-the-wolf-of-wine/": "2026-04-12T14:10:51.050832+00:00"
   },
-  "last_cleanup": "2026-04-12T13:22:19.608730+00:00"
+  "last_cleanup": "2026-04-12T14:10:40.131813+00:00"
 }
