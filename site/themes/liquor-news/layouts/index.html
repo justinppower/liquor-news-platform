@@ -77,7 +77,7 @@
         </header>
 
         <div class="articles-grid articles-grid-home">
-          {{ $pillarPages := where .Site.RegularPages "Params.pillar" .Page.Title }}
+          {{ $pillarPages := where $.Site.RegularPages "Params.pillar" .Page.Title }}
           {{ range first 6 $pillarPages }}
           <article class="article-card article-card-home">
             <div class="article-card-content">
