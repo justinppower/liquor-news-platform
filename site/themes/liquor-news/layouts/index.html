@@ -1,4 +1,162 @@
 {{ define "main" }}
+<section class="homepage">
+  <!-- Featured Ticker -->
+  <div class="featured-ticker">
+    <div class="ticker-label">BREAKING</div>
+    <div class="ticker-items">
+      {{ range first 10 .Site.RegularPages }}
+      <span class="ticker-item">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </span>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Hero Featured Article -->
+  {{ $hero := index .Site.RegularPages 0 }}
+  {{ with $hero }}
+  <section class="hero-article">
+    <div class="hero-article-inner">
+      <div class="hero-article-content">
+        {{ if .Params.pillar }}
+        <span class="hero-pillar-badge">{{ .Params.pillar }}</span>
+        {{ end }}
+        <h1 class="hero-article-title">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h1>
+        <p class="hero-article-summary">{{ .Summary }}</p>
+        <div class="hero-article-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}</time>
+          {{ if .Params.source_name }}
+          <span class="hero-source">{{ .Params.source_name }}</span>
+          {{ end }}
+        </div>
+        <a href="{{ .Permalink }}" class="hero-read-more">Read Full Story</a>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Today's Headlines -->
+  <section class="headlines-strip">
+    <h2 class="headlines-title">Today's Headlines</h2>
+    <div class="headlines-grid">
+      {{ range first 4 (after 1 .Site.RegularPages) }}
+      <article class="headline-card">
+        {{ if .Params.pillar }}
+        <span class="pillar-badge">{{ .Params.pillar }}</span>
+        {{ end }}
+        <h3 class="headline-card-title">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h3>
+        <div class="article-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02" }}</time>
+          {{ if .Params.source_name }}
+          <span class="source-badge">{{ .Params.source_name }}</span>
+          {{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  <!-- Main Content Area -->
+  <div class="homepage-layout">
+    <main class="homepage-main">
+      {{ $pillars := .Site.Taxonomies.pillars }}
+      {{ if $pillars }}
+      {{ range first 3 $pillars.ByCount }}
+      <section class="pillar-section">
+        <header class="pillar-header">
+          <h2 class="pillar-title">
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+          </h2>
+          <a href="{{ .Page.Permalink }}" class="view-all">View All</a>
+        </header>
+        <div class="articles-grid articles-grid-home">
+          {{ $pillarPages := where .Site.RegularPages "Params.pillar" .Page.Title }}
+          {{ range first 6 $pillarPages }}
+          <article class="article-card article-card-home">
+            <div class="article-card-content">
+              <h3 class="article-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </h3>
+              <p class="article-summary">{{ .Summary }}</p>
+              <div class="article-meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}" class="article-date">
+                  {{ .Date.Format "Jan 02" }}
+                </time>
+                {{ if .Params.source_name }}
+                <span class="source-badge">{{ .Params.source_name }}</span>
+                {{ end }}
+              </div>
+              <a href="{{ .Permalink }}" class="read-more">Read</a>
+            </div>
+          </article>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+      {{ end }}
+
+      <section class="latest-section">
+        <h2 class="section-title">Latest Articles</h2>
+        <div class="articles-list">
+          {{ range first 20 .Site.RegularPages }}
+          <article class="article-item">
+            {{ if .Params.pillar }}
+            <span class="pillar-badge">{{ .Params.pillar }}</span>
+            {{ end }}
+            <h3 class="article-item-title">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h3>
+            <div class="article-item-meta">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02" }}</time>
+              {{ if .Params.source_name }}
+              <span class="source-badge">{{ .Params.source_name }}</span>
+              {{ end }}
+            </div>
+          </article>
+          {{ end }}
+        </div>
+      </section>
+    </main>
+
+    <aside class="homepage-sidebar">
+      <div class="sidebar-widget newsletter-widget">
+        <h3 class="widget-title">{{ .Site.Params.newsletter.title }}</h3>
+        <p class="newsletter-description">{{ .Site.Params.newsletter.description }}</p>
+        <form class="newsletter-form" action="#" method="POST">
+          <input type="email" placeholder="{{ .Site.Params.newsletter.placeholder }}" required class="newsletter-input">
+          <button type="submit" class="newsletter-button">{{ .Site.Params.newsletter.buttonText }}</button>
+        </form>
+      </div>
+      <div class="ad-slot ad-slot-homepage">
+        <div class="ad-placeholder">Advertisement</div>
+      </div>
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Categories</h3>
+        <ul class="category-list">
+          {{ range .Site.Taxonomies.categories.ByCount }}
+          <li>
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+            <span class="count">({{ .Count }})</span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Popular Tags</h3>
+        <div class="tag-cloud">
+          {{ range first 20 .Site.Taxonomies.tags.ByCount }}
+          <a href="{{ .Page.Permalink }}" class="tag-link">{{ .Page.Title }}</a>
+          {{ end }}
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+{{ end }}
+{{ define "main" }}
 <div class="homepage">
   <div class="homepage-wrapper">
     <!-- Hero Section -->
