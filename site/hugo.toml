@@ -87,7 +87,7 @@ enableGitInfo = false
     linkedin = ""
 
   [params.analytics]
-    google_analytics = ""
+    google_analytics = "G-9XLQG5F317"
 
   [params.ads]
     adsense_client = ""
