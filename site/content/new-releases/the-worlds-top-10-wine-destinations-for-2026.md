@@ -6,13 +6,13 @@ pillars: ["new-releases"]
 tags: ["cocktail", "wine", "spirits", "beer"]
 categories: ["New Releases"]
 author: "RSS Feed"
-description: "As the Northern Hemisphere nears its summer months, wineries around the world are gearing up for the deluge of tourists that will soon step through their doors."
+description: "As the Northern Hemisphere nears its summer months, wineries around the world are gearing up for the deluge of tourists who will soon step through their doors. "
 source_url: "https://vinepair.com/articles/best-wine-travel-destinations-2026/"
 source_name: "VinePair"
 article_type: "news_brief"
 auto_generated: true
 ---
 
-As the Northern Hemisphere nears its summer months, wineries around the world are gearing up for the deluge of tourists that will soon step through their doors. That means now is the moment to bust out your calendars and decide where in the world of wine you want to visit this year. For the latte...
+As the Northern Hemisphere nears its summer months, wineries around the world are gearing up for the deluge of tourists who will soon step through their doors. That means now is the moment to bust out your calendars and decide where in the world of wine you want to visit this year. For the latter...
 
 *Source: [VinePair](https://vinepair.com/articles/best-wine-travel-destinations-2026/)*
