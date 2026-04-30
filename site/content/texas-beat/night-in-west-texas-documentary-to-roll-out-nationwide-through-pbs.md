@@ -7,7 +7,7 @@ tags: ["Texas", "BBQ", "bar", "distillery", "brewery"]
 categories: ["Texas Beat"]
 author: "RSS Feed"
 description: "Executive produced by Texas Monthly, the film will be the season premiere of the award-winning ‘Reel South’ series as it enters its eleventh season."
-source_url: "https://www.texasmonthly.com/article/night-in-west-texas-documentary-reel-south-pbs/"
+source_url: "https://www.texasmonthly.com/press-room/night-in-west-texas-documentary-reel-south-pbs/"
 source_name: "Texas Monthly"
 article_type: "news_brief"
 auto_generated: true
@@ -15,4 +15,4 @@ auto_generated: true
 
 Executive produced by Texas Monthly, the film will be the season premiere of the award-winning ‘Reel South’ series as it enters its eleventh season.
 
-*Source: [Texas Monthly](https://www.texasmonthly.com/article/night-in-west-texas-documentary-reel-south-pbs/)*
+*Source: [Texas Monthly](https://www.texasmonthly.com/press-room/night-in-west-texas-documentary-reel-south-pbs/)*
