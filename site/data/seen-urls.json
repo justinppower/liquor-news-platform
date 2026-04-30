@@ -1,17 +1,5 @@
 {
   "urls": {
-    "https://www.thespiritsbusiness.com/2026/04/dre-and-snoop-turn-lemons-into-new-rtd-line/": "2026-04-27T09:36:46.091953+00:00",
-    "https://www.thespiritsbusiness.com/2026/04/lakes-distillery-to-axe-jobs-as-brand-home-shuts/": "2026-04-27T09:36:46.092497+00:00",
-    "https://www.thespiritsbusiness.com/2026/04/witchmark-distillery-offers-stone-carving/": "2026-04-27T09:36:46.092976+00:00",
-    "https://www.thespiritsbusiness.com/2026/04/brewdogs-steven-kersley-joins-eden-mill-as-ceo/": "2026-04-27T09:36:46.093624+00:00",
-    "https://www.thespiritsbusiness.com/2026/04/mad-tropikal-spirits-festival-launches-in-madrid/": "2026-04-27T09:36:46.094148+00:00",
-    "https://www.thedrinksbusiness.com/2026/04/all-the-medallists-from-the-prosecco-masters-2026/": "2026-04-27T09:36:48.040240+00:00",
-    "https://www.thedrinksbusiness.com/2026/04/iran-war-drives-change-in-wine-industry-practices/": "2026-04-27T09:36:48.040821+00:00",
-    "https://www.thedrinksbusiness.com/2026/04/five-winemakers-shaping-the-new-california/": "2026-04-27T09:36:48.041402+00:00",
-    "https://www.thedrinksbusiness.com/2026/04/rose-beer-reflects-a-broader-shift-in-drinking-culture/": "2026-04-27T09:36:48.041974+00:00",
-    "https://www.thedrinksbusiness.com/2026/04/wine-list-of-the-week-osteria-vibrato/": "2026-04-27T09:36:48.042479+00:00",
-    "https://www.thedrinksbusiness.com/2026/04/sazerac-eyes-brown-forman-and-larger-stake-in-john-distilleries/": "2026-04-27T09:36:48.043262+00:00",
-    "https://www.thedrinksbusiness.com/2026/04/undurraga-wine-group-makes-management-changes/": "2026-04-27T09:36:48.043857+00:00",
     "https://www.brewbound.com/news/from-gin-juice-to-hard-tea-dr-dre-and-snoop-target-new-rtd-segment": "2026-04-27T11:42:28.528472+00:00",
     "https://www.thespiritsbusiness.com/2026/04/sierra-tequila-offers-mexico-trip-in-tesco-listing/": "2026-04-27T11:42:30.673579+00:00",
     "https://www.thespiritsbusiness.com/2026/04/kingsland-drinks-group-secures-65m/": "2026-04-27T11:42:30.674142+00:00",
@@ -167,7 +155,23 @@
     "https://www.brewbound.com/news/nowadays-preps-for-november-ban-with-extra-light-thc-beverage-line": "2026-04-29T21:56:58.421458+00:00",
     "https://craftspiritsmag.com/2026/04/23/read-the-april-issue-of-craft-spirits-magazine/": "2026-04-29T22:58:21.325579+00:00",
     "https://vinepair.com/articles/hop-take-brewers-association-craft-brewers-conference-2026-craft-beer-comeback/": "2026-04-29T23:58:49.207279+00:00",
-    "https://www.thespiritsbusiness.com/2026/04/centenario-marks-fifa-world-cup-with-new-reposado/": "2026-04-30T08:39:56.434178+00:00"
+    "https://www.thespiritsbusiness.com/2026/04/centenario-marks-fifa-world-cup-with-new-reposado/": "2026-04-30T08:39:56.434178+00:00",
+    "https://www.thespiritsbusiness.com/2026/04/night-and-day-vodkas-consumption-shift/": "2026-04-30T10:52:20.531613+00:00",
+    "https://www.thespiritsbusiness.com/2026/04/virginia-distillery-blends-bourbon-and-american-single-malt/": "2026-04-30T10:52:20.532159+00:00",
+    "https://www.thespiritsbusiness.com/2026/04/high-noon-drops-first-limited-edition-flavour/": "2026-04-30T10:52:20.532690+00:00",
+    "https://www.thespiritsbusiness.com/2026/04/cognac-boosts-remy-cointreau-in-q4/": "2026-04-30T10:52:20.533205+00:00",
+    "https://www.thespiritsbusiness.com/2026/04/is-moderation-an-opportunity-for-5050-martinis/": "2026-04-30T10:52:20.533817+00:00",
+    "https://www.thespiritsbusiness.com/2026/04/mgps-distilling-sales-plunge-40-in-q1/": "2026-04-30T10:52:20.534341+00:00",
+    "https://www.thedrinksbusiness.com/2026/04/naked-wines-energised-by-strong-financial-year/": "2026-04-30T10:52:21.876260+00:00",
+    "https://www.thedrinksbusiness.com/2026/04/white-wine-gets-off-the-ground-in-vietnam/": "2026-04-30T10:52:21.876758+00:00",
+    "https://www.thedrinksbusiness.com/2026/04/beer-hour-alex-barlow/": "2026-04-30T10:52:21.877303+00:00",
+    "https://www.thedrinksbusiness.com/2026/04/vina-los-vascos-comes-full-circle/": "2026-04-30T10:52:21.877826+00:00",
+    "https://www.thedrinksbusiness.com/2026/04/henkell-freixenet-targets-southeast-asia-expansion/": "2026-04-30T10:52:21.878371+00:00",
+    "https://www.thedrinksbusiness.com/2026/04/cava-de-guarda-superior-a-category-on-the-rise/": "2026-04-30T10:52:21.878912+00:00",
+    "https://www.thedrinksbusiness.com/2026/04/becle-profits-fall-sharply-as-north-america-demand-weakens/": "2026-04-30T10:52:21.879419+00:00",
+    "https://www.thedrinksbusiness.com/2026/04/vinarchy-joins-wine-in-moderation/": "2026-04-30T10:52:21.879980+00:00",
+    "https://vinepair.com/articles/share-pair-sundays-the-connection-we-all-need/": "2026-04-30T10:52:22.473104+00:00",
+    "https://www.texasmonthly.com/games/word-wrangler-april-30-2026/": "2026-04-30T10:52:26.972030+00:00"
   },
-  "last_cleanup": "2026-04-30T08:38:22.272609+00:00"
+  "last_cleanup": "2026-04-30T10:52:10.833348+00:00"
 }
