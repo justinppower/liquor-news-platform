@@ -1,6 +1,6 @@
 ---
 title: "‘Night in West Texas’ Documentary to Roll Out Nationwide Through PBS"
-date: 2026-04-27T16:45:30+0000
+date: 2026-05-01T16:27:21+0000
 draft: false
 pillars: ["texas-beat"]
 tags: ["Texas", "BBQ", "bar", "distillery", "brewery"]
