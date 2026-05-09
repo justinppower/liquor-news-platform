@@ -1,6 +1,6 @@
 ---
 title: "DISCUS President & CEO Chris Swonger Testifies Before USTR Committee on Tariffs"
-date: 2026-05-06T15:29:25+0000
+date: 2026-05-06T13:30:25+0000
 draft: false
 pillars: ["regulation-policy"]
 tags: ["spirits market", "DISCUS", "tariff", "trade policy"]
