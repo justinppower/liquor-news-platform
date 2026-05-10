@@ -1,5 +1,5 @@
 ---
-title: "RNDC’s Dismantling; Plus Eco Beverages and Russian River"
+title: "RNDC’s Dismantling; Plus, Eco Beverages and Russian River"
 date: 2026-05-07T11:01:06+0000
 draft: false
 pillars: ["culture-lifestyle"]
