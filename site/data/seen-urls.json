@@ -1,9 +1,5 @@
 {
   "urls": {
-    "https://www.bevnet.com/spirits/2026/how-lil-yachtys-yacht-water-is-building-on-atlanta-music-and-brewing-veterans": "2026-05-11T20:46:04.227639+00:00",
-    "https://www.bevnet.com/news/2026/taste-radio-the-new-premium-mindset-why-quality-matters-more-than-ever": "2026-05-11T20:46:04.228330+00:00",
-    "https://daily.sevenfifty.com/the-7-best-ready-to-drink-cocktails-according-to-retailers/": "2026-05-11T20:46:13.423559+00:00",
-    "https://www.texasmonthly.com/press-room/aaron-parsley-update-new-story-podcast/": "2026-05-11T20:46:20.209293+00:00",
     "https://www.bevnet.com/news/2026/distribution-the-cycle-goes-nationwide-with-sprouts": "2026-05-11T22:04:10.294112+00:00",
     "https://www.brewbound.com/news/target-to-add-hemp-beverages-to-sets-in-florida-texas-and-illinois": "2026-05-11T22:04:13.257509+00:00",
     "https://craftspiritsmag.com/2026/05/08/copperworks-distilling-co-adds-two-new-concepts-at-copperworks-kenmore/": "2026-05-11T22:04:21.419698+00:00",
@@ -135,7 +131,19 @@
     "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-05-14T19:42:25.811313+00:00",
     "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-05-14T19:42:25.811874+00:00",
     "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-05-14T19:42:25.812459+00:00",
-    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-05-14T19:42:25.813019+00:00"
+    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-05-14T19:42:25.813019+00:00",
+    "https://www.bevnet.com/spirits/2026/how-lil-yachtys-yacht-water-is-building-on-atlanta-music-and-brewing-veterans": "2026-05-14T21:07:06.972644+00:00",
+    "https://daily.sevenfifty.com/the-7-best-ready-to-drink-cocktails-according-to-retailers/": "2026-05-14T21:07:14.535339+00:00",
+    "https://www.gobourbon.com/legacy-bourbon-brand-is-for-sale-1b-price-tag/": "2026-05-14T21:07:17.490493+00:00",
+    "https://www.gobourbon.com/big-news-buffalo-trace-distillery-is-expanding-the-btac-collection/": "2026-05-14T21:07:17.491208+00:00",
+    "https://www.gobourbon.com/upcoming-event-beam-supper-club-little-book-chapter-9-may-14th/": "2026-05-14T21:07:17.491871+00:00",
+    "https://www.gobourbon.com/historic-day-heaven-hill-fills-first-barrel-at-new-200m-distillery-in-bardstown/": "2026-05-14T21:07:17.492569+00:00",
+    "https://www.gobourbon.com/new-release-ky-senator-bourbon-john-edwards-107-proof/": "2026-05-14T21:07:17.493198+00:00",
+    "https://www.gobourbon.com/new-release-angels-envy-cellar-collection-vol-5-straight-rye-whiskey-finished-in-french-oak-extra-anejo-tequila-barrels/": "2026-05-14T21:07:17.493850+00:00",
+    "https://www.gobourbon.com/new-release-makers-mark-ground-breaking-historic-new-chapter/": "2026-05-14T21:07:17.494435+00:00",
+    "https://www.gobourbon.com/new-release-blood-oath-pact-11-bourbon-anejo-finished-special-distillery-april-release/": "2026-05-14T21:07:17.495068+00:00",
+    "https://www.gobourbon.com/new-release-2025-michters-10-year-bourbon/": "2026-05-14T21:07:17.495688+00:00",
+    "https://www.gobourbon.com/new-release-barrell-bourbon-cask-finish-p-x-sherry/": "2026-05-14T21:07:17.496344+00:00"
   },
-  "last_cleanup": "2026-05-14T19:41:54.930359+00:00"
+  "last_cleanup": "2026-05-14T21:07:03.564600+00:00"
 }
