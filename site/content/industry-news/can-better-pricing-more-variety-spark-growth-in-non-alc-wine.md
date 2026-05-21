@@ -1,22 +1,18 @@
 ---
 title: "Can Better Pricing, More Variety Spark Growth In Non-Alc Wine?"
-date: 2026-05-19T15:30:27+0000
+date: 2026-05-18T16:05:28+0000
 draft: false
 pillars: ["industry-news"]
-tags: ["craft beer", "brewery"]
+tags: ["spirits", "beer", "beverage industry"]
 categories: ["Industry News"]
 author: "RSS Feed"
-description: "Winemaking is a slow process, requiring years devoted to growing, harvesting, fermenting and aging before a bottle is uncorked.
-
-Much to the frustration of its "
-source_url: "https://www.brewbound.com/news/can-better-pricing-more-variety-spark-growth-in-non-alc-wine"
-source_name: "Brewbound"
+description: "Non-alc wine is betting that a reduced entry price point, more variety and a sprinkle of functionality will bring more mainstream consumers to the set."
+source_url: "https://www.bevnet.com/news/2026/can-better-pricing-more-variety-spark-growth-in-non-alc-wine"
+source_name: "BevNET"
 article_type: "news_brief"
 auto_generated: true
 ---
 
-Winemaking is a slow process, requiring years devoted to growing, harvesting, fermenting and aging before a bottle is uncorked.
+Non-alc wine is betting that a reduced entry price point, more variety and a sprinkle of functionality will bring more mainstream consumers to the set.
 
-Much to the frustration of its producers, the adoption of adult non-alcoholic (ANA) wine is taking a similar pace. Long dominated by sparkling varieties, still varietie...
-
-*Source: [Brewbound](https://www.brewbound.com/news/can-better-pricing-more-variety-spark-growth-in-non-alc-wine)*
+*Source: [BevNET](https://www.bevnet.com/news/2026/can-better-pricing-more-variety-spark-growth-in-non-alc-wine)*
