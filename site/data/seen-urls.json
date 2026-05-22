@@ -1,10 +1,5 @@
 {
   "urls": {
-    "https://www.brewbound.com/news/circana-weekly-scans-cinco-de-mayo-boost-missing-white-claw-cutwater-leapfrog-legacy-brands-in-latest-read": "2026-05-19T14:54:05.661102+00:00",
-    "https://www.thespiritsbusiness.com/2026/05/tfwa-asia-pacific-draws-nearly-3000-visitors/": "2026-05-19T14:54:07.996054+00:00",
-    "https://vinepair.com/articles/can-artificial-intelligence-save-wine/": "2026-05-19T14:54:11.836231+00:00",
-    "https://craftspiritsmag.com/2026/05/19/copperworks-scotch-cask-american-single-malt-whiskey/": "2026-05-19T14:54:15.983188+00:00",
-    "https://houston.eater.com/maps/houston-best-steak-steakhouses": "2026-05-19T14:54:18.356396+00:00",
     "https://www.bevnet.com/spirits/2026/niq-hard-tea-rtds-gain-on-premise-share-as-spirits-rtds-lead-growth": "2026-05-19T17:36:46.775201+00:00",
     "https://www.brewbound.com/news/can-better-pricing-more-variety-spark-growth-in-non-alc-wine": "2026-05-19T17:36:49.886861+00:00",
     "https://www.brewbound.com/news/buzzballz-leads-the-way-in-premixed-cocktails-segment-39-8-to-2-74b-in-l52wks": "2026-05-19T17:36:49.887440+00:00",
@@ -162,7 +157,14 @@
     "https://www.texasmonthly.com/bbq/poor-daddys-smokehouse-bbq-kermit/": "2026-05-22T13:28:51.452245+00:00",
     "https://www.texasmonthly.com/being-texan/texas-festivals-bullock-museum/": "2026-05-22T13:28:51.452595+00:00",
     "https://www.texasmonthly.com/culture/world-cup-grass-fields/": "2026-05-22T13:28:51.452968+00:00",
-    "https://www.texasmonthly.com/recipe/jalapeno-poppers-bbq-stuffed/": "2026-05-22T13:28:51.453430+00:00"
+    "https://www.texasmonthly.com/recipe/jalapeno-poppers-bbq-stuffed/": "2026-05-22T13:28:51.453430+00:00",
+    "https://www.bevnet.com/spirits/2026/new-rtds-from-mission-craft-tavern-boston-beer-and-more": "2026-05-22T16:02:16.856593+00:00",
+    "https://www.bevnet.com/news/2026/new-beverages-ghost-x-bubblicious-lapos-recess": "2026-05-22T16:02:16.857211+00:00",
+    "https://www.brewbound.com/news/circana-weekly-scans-cinco-de-mayo-boost-missing-white-claw-cutwater-leapfrog-legacy-brands-in-latest-read": "2026-05-22T16:02:19.372854+00:00",
+    "https://vinepair.com/articles/can-artificial-intelligence-save-wine/": "2026-05-22T16:02:23.542665+00:00",
+    "https://www.shankennewsdaily.com/2026/05/22/39897/year-to-date-trends-influenced-by-value-oriented-consumers-sipsource/": "2026-05-22T16:04:39.514299+00:00",
+    "https://www.shankennewsdaily.com/2026/05/22/39895/news-briefs-for-may-22-2026/": "2026-05-22T16:04:39.514936+00:00",
+    "https://houston.eater.com/maps/houston-best-steak-steakhouses": "2026-05-22T16:04:41.139433+00:00"
   },
-  "last_cleanup": "2026-05-22T13:28:34.828733+00:00"
+  "last_cleanup": "2026-05-22T16:02:14.765424+00:00"
 }
