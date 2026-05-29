@@ -1,0 +1,56 @@
+name: RSS Aggregate (Daily)
+
+on:
+  schedule:
+    # 06:00 UTC = 01:00 ET = 03:00 SAST
+    # Refreshes content overnight so morning readers get fresh news
+    - cron: '0 6 * * *'
+    # Also refresh at 18:00 UTC = 13:00 ET = midday for the U.S. afternoon refresh
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rss-aggregate
+  cancel-in-progress: false
+
+jobs:
+  aggregate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run aggregator
+        run: |
+          chmod +x scripts/aggregate.py
+          python scripts/aggregate.py
+
+      - name: Build bundle
+        run: |
+          cd _build
+          tar -czf ../site.tgz .
+          cd ..
+          base64 -w0 site.tgz > site-bundle.b64
+          ls -lh site-bundle.b64
+
+      - name: Commit bundle
+        run: |
+          git config user.name "Package Store Bot"
+          git config user.email "bot@packagestoretx.com"
+          git add site-bundle.b64
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "rss: daily aggregation $(date -u +%Y-%m-%d-%H%M)"
+            git push
+          fi
