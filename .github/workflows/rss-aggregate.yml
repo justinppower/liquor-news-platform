@@ -3,22 +3,26 @@ name: RSS Aggregate (Daily)
 on:
   schedule:
     # 06:00 UTC = 01:00 ET = 03:00 SAST
-    # Refreshes content overnight so morning readers get fresh news
     - cron: '0 6 * * *'
-    # Also refresh at 18:00 UTC = 13:00 ET = midday for the U.S. afternoon refresh
+    # 18:00 UTC = 13:00 ET = midday refresh
     - cron: '0 18 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
-  group: rss-aggregate
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
-  aggregate:
+  aggregate-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,6 +38,7 @@ jobs:
         run: |
           chmod +x scripts/aggregate.py
           python scripts/aggregate.py
+          echo "Aggregator produced $(find _build -type f | wc -l) files"
 
       - name: Build bundle
         run: |
@@ -43,14 +48,26 @@ jobs:
           base64 -w0 site.tgz > site-bundle.b64
           ls -lh site-bundle.b64
 
-      - name: Commit bundle
+      - name: Commit bundle (skip if no change)
         run: |
           git config user.name "Package Store Bot"
           git config user.email "bot@packagestoretx.com"
           git add site-bundle.b64
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "No bundle changes to commit"
           else
             git commit -m "rss: daily aggregation $(date -u +%Y-%m-%d-%H%M)"
             git push
           fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_build
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
