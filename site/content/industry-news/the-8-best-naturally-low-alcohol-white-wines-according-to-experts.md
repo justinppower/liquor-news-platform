@@ -6,13 +6,13 @@ pillars: ["industry-news"]
 tags: ["spirits", "wine", "beer", "industry trends"]
 categories: ["Industry News"]
 author: "RSS Feed"
-description: "Consumer demand for lighter, fresher wines with less alcohol are putting the spotlight on naturally low-alcohol white wines. Here are eight bottles wine profess"
+description: "Consumer demand for lighter, fresher wines has put the spotlight on naturally low-alcohol whites. Here are eight bottles wine professionals across the country r"
 source_url: "https://daily.sevenfifty.com/the-8-best-naturally-low-alcohol-white-wines-according-to-experts/"
 source_name: "SevenFifty Daily"
 article_type: "news_brief"
 auto_generated: true
 ---
 
-Consumer demand for lighter, fresher wines with less alcohol are putting the spotlight on naturally low-alcohol white wines. Here are eight bottles wine professionals across the country recommend
+Consumer demand for lighter, fresher wines has put the spotlight on naturally low-alcohol whites. Here are eight bottles wine professionals across the country recommend
 
 *Source: [SevenFifty Daily](https://daily.sevenfifty.com/the-8-best-naturally-low-alcohol-white-wines-according-to-experts/)*
