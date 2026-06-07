@@ -52,7 +52,7 @@ jobs:
         run: |
           git config user.name "Package Store Bot"
           git config user.email "bot@packagestoretx.com"
-          git add site-bundle.b64
+          git add site-bundle.b64 data/archive.json
           if git diff --staged --quiet; then
             echo "No bundle changes to commit"
           else
