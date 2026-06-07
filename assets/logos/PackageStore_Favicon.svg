@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <style type="text/css"><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900&amp;display=swap');
+      .mark { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 900; font-size: 44px; fill: #F5EFE0; text-anchor: middle; }
+      .stop { fill: #B8742C; }
+    ]]></style>
+  </defs>
+  <rect width="64" height="64" rx="8" fill="#0A0A0A"/>
+  <text x="32" y="50" class="mark">P<tspan class="stop">.</tspan></text>
+</svg>
