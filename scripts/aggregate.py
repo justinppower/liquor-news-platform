@@ -31,11 +31,12 @@ from urllib.error import URLError, HTTPError
 ROOT = Path(__file__).parent.parent
 BUILD = Path(os.environ.get("PACKAGE_STORE_BUILD_DIR", str(ROOT / "_build")))
 DATA = ROOT / "data" / "sources.json"
+ARCHIVE = ROOT / "data" / "archive.json"
 
 # Number of stories to keep per pillar in the rolling feed
-PER_PILLAR_LIMIT = 80
+PER_PILLAR_LIMIT = 300
 # Max age of stories to include (days)
-MAX_AGE_DAYS = 14
+MAX_AGE_DAYS = 120
 # Today reference for dates (UTC)
 NOW = datetime.now(timezone.utc)
 
@@ -138,6 +139,27 @@ def parse_date(s: str):
     return None
 
 
+
+# Only keep alcohol/drinks-trade items (filters out food, soda, tea, sports drinks, etc.)
+RELEVANT = [
+    "wine", "winery", "winerie", "vineyard", "vintage", "champagne", "prosecco", "rose", "rose",
+    "sommelier", "beer", "brewer", "brewery", "brewerie", "brewing", "ipa", "lager", " ale", "ales",
+    "stout", "pilsner", "cider", "spirit", "whiskey", "whisky", "bourbon", "scotch", " rye", "tequila",
+    "mezcal", "vodka", " gin", "gins", "rum", "cognac", "brandy", "liqueur", "cocktail", "distiller",
+    "distillery", "distillerie", "distilling", "abv", "proof", "cask", "barrel", "bottle", "rtd",
+    "ready-to-drink", "seltzer", "sake", "vermouth", "aperitif", "aperitivo", "amaro", "bitters",
+    "tabc", "ttb", "three-tier", "distributor", "on-premise", "off-premise", "on-prem", "off-prem",
+    "package store", "liquor", "alcohol", "malt", "agave", "bartender", "winemaker", "drinks", "drinking",
+    "pinot", "cabernet", "chardonnay", "merlot", "riesling", "nebbiolo", "sauvignon", "syrah", "grenache",
+    "bordeaux", "burgundy", "napa", "sparkling wine", "anejo", "rioja", "non-alcoholic", "low-abv", "spirits",
+]
+
+
+def is_relevant(item) -> bool:
+    hay = (item.get("title", "") + " " + item.get("description", "")).lower()
+    return any(k in hay for k in RELEVANT)
+
+
 def classify(item, classifier: dict, default: str) -> str:
     haystack = (item["title"] + " " + item["description"]).lower()
     for pillar, keywords in classifier.items():
@@ -161,6 +183,10 @@ def fetch_all(cfg) -> list:
             it["pillar"] = classify(it, cfg["classifier"], feed["default_pillar"])
         all_items.extend(items)
         print(f"      {len(items)} items")
+    # Topic filter: drinks/alcohol only
+    before = len(all_items)
+    all_items = [i for i in all_items if is_relevant(i)]
+    print(f"  topic filter: kept {len(all_items)}/{before} drinks items")
     # Filter by age
     cutoff = NOW - timedelta(days=MAX_AGE_DAYS)
     fresh = [i for i in all_items if i.get("published_dt") and i["published_dt"] >= cutoff]
@@ -681,6 +707,63 @@ def copy_static(out_dir: Path):
             shutil.copy2(src, dst)
 
 
+
+def load_archive():
+    if not ARCHIVE.exists():
+        return []
+    try:
+        raw = json.loads(ARCHIVE.read_text())
+    except Exception:
+        return []
+    out = []
+    for it in raw:
+        dt = parse_date(it.get("published") or "")
+        if not dt:
+            continue
+        it["published_dt"] = dt
+        out.append(it)
+    return out
+
+
+def save_archive(items):
+    serial = []
+    for it in items:
+        pub = it.get("published_dt")
+        serial.append({
+            "title": it.get("title", ""),
+            "link": it.get("link", ""),
+            "description": it.get("description", ""),
+            "published": pub.isoformat() if pub else it.get("published"),
+            "source": it.get("source", ""),
+            "source_id": it.get("source_id", ""),
+            "pillar": it.get("pillar", "industry-news"),
+            "slug": it.get("slug", ""),
+        })
+    ARCHIVE.parent.mkdir(parents=True, exist_ok=True)
+    ARCHIVE.write_text(json.dumps(serial, ensure_ascii=False))
+
+
+def merge_archive(fresh):
+    """Merge freshly fetched items with the persisted archive so content compounds across runs."""
+    archive = load_archive()
+    cutoff = NOW - timedelta(days=MAX_AGE_DAYS)
+    by_slug = {}
+    for it in archive + fresh:
+        dt = it.get("published_dt")
+        if not dt or dt < cutoff:
+            continue
+        slug = it.get("slug") or slugify(it.get("title", ""))
+        if not slug:
+            continue
+        it["slug"] = slug
+        by_slug[slug] = it
+    merged = list(by_slug.values())
+    merged.sort(key=lambda x: x["published_dt"], reverse=True)
+    save_archive(merged)
+    print(f"=== Archive merged: {len(fresh)} fresh + {len(archive)} archived -> {len(merged)} total ===")
+    return merged
+
+
 def main():
     cfg = json.loads(DATA.read_text())
     if BUILD.exists():
@@ -688,8 +771,9 @@ def main():
     BUILD.mkdir(parents=True, exist_ok=True)
 
     items = fetch_all(cfg)
+    items = merge_archive(items)
     if not items:
-        print("WARN: no items fetched. Aborting (no destructive build).", file=sys.stderr)
+        print("WARN: no items (fresh + archive empty). Aborting (no destructive build).", file=sys.stderr)
         sys.exit(1)
 
     # Bucket items by pillar
