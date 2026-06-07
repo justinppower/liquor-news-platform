@@ -1,31 +1,226 @@
 {
   "feeds": [
-    {"id": "shanken", "name": "Shanken News Daily", "url": "https://www.shankennewsdaily.com/feed/", "default_pillar": "industry-news"},
-    {"id": "spirits-business", "name": "The Spirits Business", "url": "https://www.thespiritsbusiness.com/feed/", "default_pillar": "industry-news"},
-    {"id": "drinks-business", "name": "The Drinks Business", "url": "https://www.thedrinksbusiness.com/feed/", "default_pillar": "industry-news"},
-    {"id": "vinepair", "name": "VinePair", "url": "https://vinepair.com/feed/", "default_pillar": "culture-lifestyle"},
-    {"id": "sevenfifty", "name": "SevenFifty Daily", "url": "https://daily.sevenfifty.com/feed/", "default_pillar": "industry-news"},
-    {"id": "brewbound", "name": "Brewbound", "url": "https://www.brewbound.com/feed", "default_pillar": "industry-news"},
-    {"id": "craft-spirits", "name": "Craft Spirits Magazine", "url": "https://craftspiritsmag.com/feed/", "default_pillar": "new-releases"},
-    {"id": "punch", "name": "Punch", "url": "https://punchdrink.com/feed/", "default_pillar": "culture-lifestyle"},
-    {"id": "imbibe", "name": "Imbibe Magazine", "url": "https://imbibemagazine.com/feed/", "default_pillar": "culture-lifestyle"},
-    {"id": "texas-monthly-food", "name": "Texas Monthly", "url": "https://www.texasmonthly.com/food/feed/", "default_pillar": "texas-beat"},
-    {"id": "wine-spectator", "name": "Wine Spectator", "url": "https://www.winespectator.com/articles/rss-news", "default_pillar": "new-releases"}
+    {
+      "id": "shanken",
+      "name": "Shanken News Daily",
+      "url": "https://www.shankennewsdaily.com/feed/",
+      "default_pillar": "industry-news"
+    },
+    {
+      "id": "spirits-business",
+      "name": "The Spirits Business",
+      "url": "https://www.thespiritsbusiness.com/feed/",
+      "default_pillar": "industry-news"
+    },
+    {
+      "id": "drinks-business",
+      "name": "The Drinks Business",
+      "url": "https://www.thedrinksbusiness.com/feed/",
+      "default_pillar": "industry-news"
+    },
+    {
+      "id": "brewbound",
+      "name": "Brewbound",
+      "url": "https://www.brewbound.com/feed/",
+      "default_pillar": "industry-news"
+    },
+    {
+      "id": "craft-brewing-business",
+      "name": "Craft Brewing Business",
+      "url": "https://www.craftbrewingbusiness.com/feed/",
+      "default_pillar": "industry-news"
+    },
+    {
+      "id": "vinepair",
+      "name": "VinePair",
+      "url": "https://vinepair.com/feed/",
+      "default_pillar": "culture-lifestyle"
+    },
+    {
+      "id": "punch",
+      "name": "Punch",
+      "url": "https://punchdrink.com/feed/",
+      "default_pillar": "culture-lifestyle"
+    },
+    {
+      "id": "imbibe",
+      "name": "Imbibe Magazine",
+      "url": "https://imbibemagazine.com/feed/",
+      "default_pillar": "culture-lifestyle"
+    },
+    {
+      "id": "good-beer-hunting",
+      "name": "Good Beer Hunting",
+      "url": "https://www.goodbeerhunting.com/blog?format=rss",
+      "default_pillar": "culture-lifestyle"
+    },
+    {
+      "id": "wine-folly",
+      "name": "Wine Folly",
+      "url": "https://winefolly.com/feed/",
+      "default_pillar": "culture-lifestyle"
+    },
+    {
+      "id": "decanter",
+      "name": "Decanter",
+      "url": "https://www.decanter.com/feed/",
+      "default_pillar": "new-releases"
+    },
+    {
+      "id": "wine-enthusiast",
+      "name": "Wine Enthusiast",
+      "url": "https://www.winemag.com/feed/",
+      "default_pillar": "new-releases"
+    },
+    {
+      "id": "craft-spirits",
+      "name": "Craft Spirits Magazine",
+      "url": "https://craftspiritsmag.com/feed/",
+      "default_pillar": "new-releases"
+    },
+    {
+      "id": "whiskey-wash",
+      "name": "The Whiskey Wash",
+      "url": "https://thewhiskeywash.com/feed/",
+      "default_pillar": "new-releases"
+    },
+    {
+      "id": "texas-monthly-food",
+      "name": "Texas Monthly",
+      "url": "https://www.texasmonthly.com/food/feed/",
+      "default_pillar": "texas-beat"
+    }
   ],
   "pillars": {
-    "industry-news": {"name": "Industry News", "h1": "Industry News.", "lede": "Brand launches, executive moves, M&A, supply, pricing, distribution. The business stories that move the U.S. drinks trade."},
-    "texas-beat": {"name": "Texas Beat", "h1": "Texas Beat.", "lede": "The largest unregulated alcohol market in the country, covered deeper than anyone covers it. TABC, three-tier reform, package store stories, brand launches, distribution."},
-    "regulation-policy": {"name": "Regulation & Policy", "h1": "Regulation & Policy.", "lede": "TTB, TABC, control states, three-tier reform, label modernization, on-prem rules. The policy changes that shape the trade year."},
-    "new-releases": {"name": "New Releases", "h1": "New Releases.", "lede": "Bottles that move the category. Not sponsored content masquerading as news. What changed on the shelf, and why it matters."},
-    "culture-lifestyle": {"name": "Culture & Lifestyle", "h1": "Culture & Lifestyle.", "lede": "Long reads, profiles, the human side of the business. Where the trade and the curious reader cross paths."},
-    "data-trends": {"name": "Data & Trends", "h1": "Data & Trends.", "lede": "Numbers stories. Multi-year comparisons. No hot takes without data."}
+    "industry-news": {
+      "name": "Industry News",
+      "h1": "Industry News.",
+      "lede": "Brand launches, executive moves, M&A, supply, pricing, distribution. The business stories that move the U.S. drinks trade."
+    },
+    "texas-beat": {
+      "name": "Texas Beat",
+      "h1": "Texas Beat.",
+      "lede": "The largest unregulated alcohol market in the country, covered deeper than anyone covers it. TABC, three-tier reform, package store stories, brand launches, distribution."
+    },
+    "regulation-policy": {
+      "name": "Regulation & Policy",
+      "h1": "Regulation & Policy.",
+      "lede": "TTB, TABC, control states, three-tier reform, label modernization, on-prem rules. The policy changes that shape the trade year."
+    },
+    "new-releases": {
+      "name": "New Releases",
+      "h1": "New Releases.",
+      "lede": "Bottles that move the category. Not sponsored content masquerading as news. What changed on the shelf, and why it matters."
+    },
+    "culture-lifestyle": {
+      "name": "Culture & Lifestyle",
+      "h1": "Culture & Lifestyle.",
+      "lede": "Long reads, profiles, the human side of the business. Where the trade and the curious reader cross paths."
+    },
+    "data-trends": {
+      "name": "Data & Trends",
+      "h1": "Data & Trends.",
+      "lede": "Numbers stories. Multi-year comparisons. No hot takes without data."
+    }
   },
   "classifier": {
-    "texas-beat": ["texas", "tabc", "houston", "dallas", "austin", "san antonio", "lone star", "hill country", "lockhart", "spec's"],
-    "regulation-policy": ["ttb ", "tabc ", "regulator", "regulation rule", "three-tier reform", "passed bill", "lawsuit filed", "court ruling", "labeling rule", "control state board", "alcohol policy", "abc board", "legislation", "regulatory"],
-    "data-trends": ["iri data", "nielsen data", "circana data", "bump williams", "depletion data", "year-over-year", "drinkstats", "drizly data", "scan data", "market share data"],
-    "new-releases": ["launches ", "launched ", " release", "new bottle", "new whiskey", "new gin", "new vodka", "new wine", "limited edition", "ready-to-drink", "first-ever", "debuts", "unveils ", "best ", " best ", " list", "ranking"],
-    "culture-lifestyle": ["sommelier", "bartender", "podcast", "interview ", "profile", "cocktail recipe", "bar program", "restaurant", "festival", "tasting room"],
+    "texas-beat": [
+      "texas",
+      "tabc",
+      "houston",
+      "dallas",
+      "austin",
+      "san antonio",
+      "lone star",
+      "hill country",
+      "lockhart",
+      "spec's",
+      "fort worth",
+      "el paso",
+      "waco"
+    ],
+    "regulation-policy": [
+      "ttb",
+      "tabc",
+      "regulator",
+      "regulation",
+      "regulatory",
+      "three-tier",
+      "passed bill",
+      "lawsuit",
+      "court ruling",
+      "labeling rule",
+      "control state",
+      "alcohol policy",
+      "abc board",
+      "legislation",
+      "legislature",
+      "excise tax",
+      "tariff",
+      "tariffs",
+      "license",
+      "licensing",
+      "compliance",
+      "trade war"
+    ],
+    "data-trends": [
+      "iri",
+      "nielsen",
+      "circana",
+      "niq",
+      "bump williams",
+      "depletion",
+      "depletions",
+      "year-over-year",
+      "year over year",
+      "scan data",
+      "market share",
+      "iwsr",
+      "shipment data",
+      "report finds",
+      "survey finds",
+      "data shows",
+      "by the numbers"
+    ],
+    "new-releases": [
+      "launches",
+      "launched",
+      "release",
+      "new bottle",
+      "new whiskey",
+      "new bourbon",
+      "new gin",
+      "new vodka",
+      "new tequila",
+      "new rum",
+      "new wine",
+      "limited edition",
+      "ready-to-drink",
+      "first-ever",
+      "debuts",
+      "unveils",
+      "introduces",
+      "rolls out",
+      "new expression"
+    ],
+    "culture-lifestyle": [
+      "sommelier",
+      "bartender",
+      "podcast",
+      "interview",
+      "profile",
+      "cocktail recipe",
+      "bar program",
+      "restaurant",
+      "festival",
+      "tasting room",
+      "drink of the week",
+      "best bars",
+      "recipe",
+      "how to",
+      "guide to",
+      "behind the bar"
+    ],
     "industry-news": []
   }
 }
