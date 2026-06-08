@@ -1,9 +1,5 @@
 {
   "urls": {
-    "https://www.brewbound.com/news/press-clips-great-lakes-extends-dortmunder-with-2-9-abv-dort-light-atrevida-beer-co-to-close-this-month": "2026-06-05T20:50:31.074295+00:00",
-    "https://daily.sevenfifty.com/the-science-behind-non-alcoholic-beer-and-wine-production/": "2026-06-05T20:50:34.890414+00:00",
-    "https://daily.sevenfifty.com/the-story-behind-the-american-wine-crisis/": "2026-06-05T20:50:34.890903+00:00",
-    "https://daily.sevenfifty.com/why-more-wineries-are-betting-on-high-volume-wines/": "2026-06-05T20:50:34.891350+00:00",
     "https://www.bevnet.com/news/events/bevnetlivesummer26/bevnet-live-nyc-2026-walmart-morrisons-and-asahi-join-11-meetings": "2026-06-05T23:44:54.784060+00:00",
     "https://www.bevnet.com/spirits/2026/right-coasts-italian-ice-heats-up-as-it-adds-new-markets-expands-in-trader-joes": "2026-06-05T23:44:54.784580+00:00",
     "https://craftspiritsmag.com/2026/05/27/catoctin-creek-distillery-announces-tasting-room-refresh-expanded-hours-and-grand-re-opening-celebration/": "2026-06-05T23:45:04.338887+00:00",
@@ -124,7 +120,11 @@
     "https://www.shankennewsdaily.com/2026/06/08/40009/california-retail-institution-kl-sets-up-shop-in-new-york/": "2026-06-08T19:20:52.909299+00:00",
     "https://www.shankennewsdaily.com/2026/06/08/40005/news-briefs-for-june-8-2026/": "2026-06-08T19:20:52.909917+00:00",
     "https://www.shankennewsdaily.com/2026/06/05/39986/treasury-wine-to-refocus-on-tighter-portfolio-to-reignite-growth/": "2026-06-08T19:20:52.910513+00:00",
-    "https://www.shankennewsdaily.com/2026/06/05/39984/proximo-extends-cuervo-into-canned-cocktails/": "2026-06-08T19:20:52.911101+00:00"
+    "https://www.shankennewsdaily.com/2026/06/05/39984/proximo-extends-cuervo-into-canned-cocktails/": "2026-06-08T19:20:52.911101+00:00",
+    "https://www.brewbound.com/news/press-clips-great-lakes-extends-dortmunder-with-2-9-abv-dort-light-atrevida-beer-co-to-close-this-month": "2026-06-08T21:23:37.876377+00:00",
+    "https://daily.sevenfifty.com/the-science-behind-non-alcoholic-beer-and-wine-production/": "2026-06-08T21:23:42.603422+00:00",
+    "https://daily.sevenfifty.com/the-story-behind-the-american-wine-crisis/": "2026-06-08T21:23:42.603885+00:00",
+    "https://daily.sevenfifty.com/why-more-wineries-are-betting-on-high-volume-wines/": "2026-06-08T21:23:42.604284+00:00"
   },
-  "last_cleanup": "2026-06-08T19:20:39.962620+00:00"
+  "last_cleanup": "2026-06-08T21:23:33.420448+00:00"
 }
