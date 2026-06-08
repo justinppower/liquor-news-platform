@@ -1,16 +1,5 @@
 {
   "urls": {
-    "https://dallas.eater.com/restaurant-news/77529/michelin-2005-winners-dallas-mamani": "2026-06-05T07:51:18.298535+00:00",
-    "https://austin.eater.com/maps/best-restaurants-austin-eater-38": "2026-06-05T07:51:18.549063+00:00",
-    "https://austin.eater.com/maps/best-steaks-austin-steakhouses-restaurants": "2026-06-05T07:51:18.549472+00:00",
-    "https://austin.eater.com/maps/best-texas-restaurants-austin-road-trip": "2026-06-05T07:51:18.549868+00:00",
-    "https://distilledspirits.org/bill-to-allow-consumers-to-decide-on-seven-day-spirits-sales-approved-by-committee/": "2026-06-05T07:51:29.119216+00:00",
-    "https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/": "2026-06-05T07:51:29.119813+00:00",
-    "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/": "2026-06-05T07:51:29.120313+00:00",
-    "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-06-05T07:51:29.120799+00:00",
-    "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-06-05T07:51:29.121315+00:00",
-    "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-06-05T07:51:29.121850+00:00",
-    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-06-05T07:51:29.122333+00:00",
     "https://www.thespiritsbusiness.com/2026/06/espolon-launches-extra-anejo-in-the-us/": "2026-06-05T11:24:17.206306+00:00",
     "https://www.thespiritsbusiness.com/2026/06/coming-soon-the-spirits-business-store/": "2026-06-05T11:24:17.206844+00:00",
     "https://www.thespiritsbusiness.com/2026/06/matt-arnold-is-gb-bartender-of-the-year-2026/": "2026-06-05T11:24:17.207373+00:00",
@@ -107,7 +96,20 @@
     "https://www.bevnet.com/news/2026/texas-ag-opens-investigation-into-deceptive-celsius-marketing-practices": "2026-06-07T23:34:49.297019+00:00",
     "https://craftspiritsmag.com/2026/06/04/which-states-dominated-the-2026-american-craft-spirits-awards/": "2026-06-07T23:35:06.297053+00:00",
     "https://craftspiritsmag.com/2026/06/01/sponsor-spotlight-a-chat-with-saverglass/": "2026-06-07T23:35:06.297573+00:00",
-    "https://austin.eater.com/maps/best-burgers-austin-restaurants": "2026-06-07T23:35:08.007458+00:00"
+    "https://austin.eater.com/maps/best-burgers-austin-restaurants": "2026-06-07T23:35:08.007458+00:00",
+    "https://www.thedrinksbusiness.com/2026/06/why-latitude-has-exited-the-conversation/": "2026-06-08T08:51:12.864598+00:00",
+    "https://www.thedrinksbusiness.com/2026/06/brazilian-ski-tourists-help-drive-chilean-wine-tourism-boom/": "2026-06-08T08:51:12.865119+00:00",
+    "https://dallas.eater.com/restaurant-news/77529/michelin-2005-winners-dallas-mamani": "2026-06-08T08:51:20.890230+00:00",
+    "https://austin.eater.com/maps/best-restaurants-austin-eater-38": "2026-06-08T08:51:21.158257+00:00",
+    "https://austin.eater.com/maps/best-steaks-austin-steakhouses-restaurants": "2026-06-08T08:51:21.158673+00:00",
+    "https://austin.eater.com/maps/best-texas-restaurants-austin-road-trip": "2026-06-08T08:51:21.159054+00:00",
+    "https://distilledspirits.org/bill-to-allow-consumers-to-decide-on-seven-day-spirits-sales-approved-by-committee/": "2026-06-08T08:51:32.879080+00:00",
+    "https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/": "2026-06-08T08:51:32.879666+00:00",
+    "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/": "2026-06-08T08:51:32.880162+00:00",
+    "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-06-08T08:51:32.880542+00:00",
+    "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-06-08T08:51:32.880929+00:00",
+    "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-06-08T08:51:32.881354+00:00",
+    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-06-08T08:51:32.881801+00:00"
   },
-  "last_cleanup": "2026-06-08T03:38:04.407448+00:00"
+  "last_cleanup": "2026-06-08T08:51:05.691012+00:00"
 }
