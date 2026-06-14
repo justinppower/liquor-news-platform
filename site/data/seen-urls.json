@@ -1,17 +1,5 @@
 {
   "urls": {
-    "https://www.bevnet.com/news/2026/bevnet-live-day-one-recap-sober-curious-founders-take-the-stage": "2026-06-11T16:51:32.514299+00:00",
-    "https://www.bevnet.com/news/2026/review-ooso-sparkling-tea-impresses-again": "2026-06-11T16:51:32.514832+00:00",
-    "https://www.brewbound.com/news/bevnet-live-day-1-recap-why-ben-weiss-is-back-in-bev-alc-athletics-bill-shufelt-on-disrupting-at-scale": "2026-06-11T16:51:34.514514+00:00",
-    "https://www.brewbound.com/podcast/fx-matt-brewings-fred-matt-on-mid-strength-beer-and-generating-retail-energy-plus-changes-coming-to-gabf": "2026-06-11T16:51:34.514968+00:00",
-    "https://www.brewbound.com/news/press-clips-new-trail-leadership-moves-a-massachusetts-brewery-auction-declining-consumer-sentiment-more": "2026-06-11T16:51:34.515561+00:00",
-    "https://daily.sevenfifty.com/the-science-of-tannins-in-wine/": "2026-06-11T16:51:39.795967+00:00",
-    "https://daily.sevenfifty.com/why-winemakers-are-split-on-the-benefits-of-concrete-eggs/": "2026-06-11T16:51:39.796448+00:00",
-    "https://daily.sevenfifty.com/the-science-behind-reductive-aromas-in-wine/": "2026-06-11T16:51:39.796939+00:00",
-    "https://vinepair.com/articles/ntk-lalo-tequila/": "2026-06-11T16:51:40.381180+00:00",
-    "https://vinepair.com/articles/vp-podcast-wine-country-vines-or-vibes/": "2026-06-11T16:51:40.381773+00:00",
-    "https://craftspiritsmag.com/2026/06/11/liberty-pole-spirits-and-mb-roland-distillery-announce-historic-collaboration/": "2026-06-11T16:51:48.095880+00:00",
-    "https://www.texasmonthly.com/games/word-wrangler-june-8-2026/": "2026-06-11T16:51:50.877629+00:00",
     "https://www.bevnet.com/spirits/2026/reyes-ceo-tom-day-on-rndc-deal-scaling-spirits-and-wine-business": "2026-06-11T19:33:12.140019+00:00",
     "https://www.bevnet.com/spirits/2026/spirits-distribution-punch-club-lands-at-total-wine-oishii-signs-with-sgws": "2026-06-11T19:33:12.140609+00:00",
     "https://www.brewbound.com/news/spirits-beer-continue-to-lead-off-premise-declines-as-negative-trends-persist-thru-memorial-day-per-niq-weekly-scans": "2026-06-11T19:33:14.106292+00:00",
@@ -113,7 +101,17 @@
     "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-06-14T14:39:39.278708+00:00",
     "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-06-14T14:39:39.279150+00:00",
     "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-06-14T14:39:39.279596+00:00",
-    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-06-14T14:39:39.280117+00:00"
+    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-06-14T14:39:39.280117+00:00",
+    "https://www.bevnet.com/news/2026/bevnet-live-day-one-recap-sober-curious-founders-take-the-stage": "2026-06-14T17:56:36.013277+00:00",
+    "https://www.bevnet.com/news/2026/review-ooso-sparkling-tea-impresses-again": "2026-06-14T17:56:36.013750+00:00",
+    "https://www.brewbound.com/news/bevnet-live-day-1-recap-why-ben-weiss-is-back-in-bev-alc-athletics-bill-shufelt-on-disrupting-at-scale": "2026-06-14T17:56:37.867872+00:00",
+    "https://www.brewbound.com/podcast/fx-matt-brewings-fred-matt-on-mid-strength-beer-and-generating-retail-energy-plus-changes-coming-to-gabf": "2026-06-14T17:56:37.868395+00:00",
+    "https://www.brewbound.com/news/press-clips-new-trail-leadership-moves-a-massachusetts-brewery-auction-declining-consumer-sentiment-more": "2026-06-14T17:56:37.868929+00:00",
+    "https://daily.sevenfifty.com/the-science-of-tannins-in-wine/": "2026-06-14T17:56:41.457626+00:00",
+    "https://daily.sevenfifty.com/why-winemakers-are-split-on-the-benefits-of-concrete-eggs/": "2026-06-14T17:56:41.458091+00:00",
+    "https://daily.sevenfifty.com/the-science-behind-reductive-aromas-in-wine/": "2026-06-14T17:56:41.458576+00:00",
+    "https://vinepair.com/articles/ntk-lalo-tequila/": "2026-06-14T17:56:41.929183+00:00",
+    "https://craftspiritsmag.com/2026/06/11/liberty-pole-spirits-and-mb-roland-distillery-announce-historic-collaboration/": "2026-06-14T17:56:45.739673+00:00"
   },
-  "last_cleanup": "2026-06-14T16:19:02.504582+00:00"
+  "last_cleanup": "2026-06-14T17:56:34.066639+00:00"
 }
