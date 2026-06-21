@@ -1,17 +1,5 @@
 {
   "urls": {
-    "https://www.bevnet.com/spirits/2026/specs-expands-west-acquires-nevadas-lees-discount-liquor": "2026-06-18T16:28:22.839062+00:00",
-    "https://www.brewbound.com/news/campari-builds-on-the-aperol-playbook-crodino-non-alc-spritz": "2026-06-18T16:28:25.211559+00:00",
-    "https://www.brewbound.com/news/specs-breaks-out-of-texas-acquires-nevada-based-lees-discount-liquor": "2026-06-18T16:28:25.212131+00:00",
-    "https://www.brewbound.com/news/press-clips-tilrays-portfolio-plans-for-uk-brewdog-locations-this-years-top-new-products-the-importance-of-beer-bars": "2026-06-18T16:28:25.212722+00:00",
-    "https://www.brewbound.com/news/brewpub-trends-continue-to-improve-with-smallest-yoy-volume-decline-in-craft-thanks-to-top-players-2025-hospitality-data-part-2": "2026-06-18T16:28:25.213363+00:00",
-    "https://daily.sevenfifty.com/the-making-of-champagnes-most-elusive-prestige-cuvee/": "2026-06-18T16:28:29.159695+00:00",
-    "https://vinepair.com/articles/social-media-cult-wine-impact/": "2026-06-18T16:28:29.681795+00:00",
-    "https://vinepair.com/booze-news/most-popular-scotch-brands-2026/": "2026-06-18T16:28:29.682367+00:00",
-    "https://vinepair.com/articles/less-popular-bourbon-producers-to-know/": "2026-06-18T16:28:29.682869+00:00",
-    "https://vinepair.com/articles/ntk-rabbit-hole/": "2026-06-18T16:28:29.683397+00:00",
-    "https://www.texasmonthly.com/news-politics/black-robe-regiment-christian-nationalism-schools/": "2026-06-18T16:28:32.859353+00:00",
-    "https://austin.eater.com/maps/best-barbecue-austin-restaurants": "2026-06-18T16:28:33.052856+00:00",
     "https://www.bevnet.com/spirits/2026/operator-energy-inside-44-north-vodkas-lean-strategy-for-regional-growth": "2026-06-18T18:41:54.928165+00:00",
     "https://www.shankennewsdaily.com/2026/06/18/40079/winesellers-ltd-targets-pockets-of-strength-in-the-import-segment/": "2026-06-18T18:42:04.813128+00:00",
     "https://www.shankennewsdaily.com/2026/06/18/40077/wine-spectator-bordeaux-futures-prices-rising-for-2025-vintage/": "2026-06-18T18:42:04.813674+00:00",
@@ -116,7 +104,16 @@
     "https://vinepair.com/articles/wine-101-chateau-lafite-part-iv/": "2026-06-21T13:23:29.529524+00:00",
     "https://craftspiritsmag.com/2026/06/17/quartz-mountain-distillers-stars-stripes-american-whisky/": "2026-06-21T13:23:32.294521+00:00",
     "https://craftspiritsmag.com/2026/06/09/what-you-can-and-cant-say-on-a-spirits-label-the-claims-that-get-rejected-and-the-ones-that-dont/": "2026-06-21T13:23:32.295085+00:00",
-    "https://www.texasmonthly.com/bbq/national-high-school-bbq-championship/": "2026-06-21T13:23:37.048273+00:00"
+    "https://www.texasmonthly.com/bbq/national-high-school-bbq-championship/": "2026-06-21T13:23:37.048273+00:00",
+    "https://www.brewbound.com/news/campari-builds-on-the-aperol-playbook-crodino-non-alc-spritz": "2026-06-21T17:03:02.849944+00:00",
+    "https://www.brewbound.com/news/specs-breaks-out-of-texas-acquires-nevada-based-lees-discount-liquor": "2026-06-21T17:03:02.850480+00:00",
+    "https://www.brewbound.com/news/press-clips-tilrays-portfolio-plans-for-uk-brewdog-locations-this-years-top-new-products-the-importance-of-beer-bars": "2026-06-21T17:03:02.851002+00:00",
+    "https://daily.sevenfifty.com/the-making-of-champagnes-most-elusive-prestige-cuvee/": "2026-06-21T17:03:06.390963+00:00",
+    "https://vinepair.com/articles/social-media-cult-wine-impact/": "2026-06-21T17:03:06.906077+00:00",
+    "https://vinepair.com/booze-news/most-popular-scotch-brands-2026/": "2026-06-21T17:03:06.906599+00:00",
+    "https://vinepair.com/articles/less-popular-bourbon-producers-to-know/": "2026-06-21T17:03:06.907103+00:00",
+    "https://vinepair.com/articles/ntk-rabbit-hole/": "2026-06-21T17:03:06.907584+00:00",
+    "https://austin.eater.com/maps/best-barbecue-austin-restaurants": "2026-06-21T17:03:10.997946+00:00"
   },
-  "last_cleanup": "2026-06-21T15:23:58.962208+00:00"
+  "last_cleanup": "2026-06-21T17:02:58.702224+00:00"
 }
