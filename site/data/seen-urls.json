@@ -1,9 +1,5 @@
 {
   "urls": {
-    "https://www.bevnet.com/spirits/2026/tentative-settlement-reached-in-ftcs-price-discrimination-lawsuit-against-southern-glazers": "2026-06-23T15:36:37.618856+00:00",
-    "https://www.thedrinksbusiness.com/2026/06/the-future-on-en-primeur-will-be-determined-by-distribution-rather-than-reducing-price/": "2026-06-23T15:36:49.694876+00:00",
-    "https://vinepair.com/booze-news/four-roses-new-experimental-series-mizunara-aged-bourbon/": "2026-06-23T15:36:50.415179+00:00",
-    "https://vinepair.com/articles/best-whiskey-from-every-state/": "2026-06-23T15:36:50.415962+00:00",
     "https://www.bevnet.com/spirits/2026/brown-forman-sazerac-bet-on-new-rtds-as-category-buoys-spirits-growth": "2026-06-23T19:57:04.225747+00:00",
     "https://www.brewbound.com/podcast/athletics-bill-shufelt-is-bullish-on-the-future-of-na-beer--and-the-beer-category": "2026-06-23T19:57:06.250556+00:00",
     "https://vinepair.com/articles/california-underrated-wine-regions-map/": "2026-06-23T19:57:10.469420+00:00",
@@ -147,7 +143,9 @@
     "https://vinepair.com/articles/rioja-producers-to-know/": "2026-06-26T12:31:06.119148+00:00",
     "https://vinepair.com/articles/wa-somms-wine-of-the-summer/": "2026-06-26T12:31:06.119701+00:00",
     "https://www.brewbound.com/news/owls-brew-adds-functional-non-alc-mixers": "2026-06-26T15:21:54.775650+00:00",
-    "https://www.texasmonthly.com/texas-monthly-presents/floods-episode-113/": "2026-06-26T15:22:19.134181+00:00"
+    "https://www.texasmonthly.com/texas-monthly-presents/floods-episode-113/": "2026-06-26T15:22:19.134181+00:00",
+    "https://www.bevnet.com/news/2026/new-products-rockstar-mocktails-hot-girl-pickle-lemonade-and-more-na-creations": "2026-06-26T17:15:14.714460+00:00",
+    "https://vinepair.com/booze-news/four-roses-new-experimental-series-mizunara-aged-bourbon/": "2026-06-26T17:15:22.296816+00:00"
   },
-  "last_cleanup": "2026-06-26T15:21:50.419923+00:00"
+  "last_cleanup": "2026-06-26T17:15:12.242264+00:00"
 }
