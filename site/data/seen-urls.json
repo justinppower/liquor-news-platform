@@ -1,22 +1,5 @@
 {
   "urls": {
-    "https://www.bevnet.com/spirits/2026/brown-forman-sazerac-bet-on-new-rtds-as-category-buoys-spirits-growth": "2026-06-23T19:57:04.225747+00:00",
-    "https://www.brewbound.com/podcast/athletics-bill-shufelt-is-bullish-on-the-future-of-na-beer--and-the-beer-category": "2026-06-23T19:57:06.250556+00:00",
-    "https://vinepair.com/articles/california-underrated-wine-regions-map/": "2026-06-23T19:57:10.469420+00:00",
-    "https://www.shankennewsdaily.com/2026/06/23/40099/interview-part-2-gallo-chief-commercial-officer-britt-west/": "2026-06-23T19:57:13.378361+00:00",
-    "https://www.shankennewsdaily.com/2026/06/23/40097/bacardi-fully-acquires-teeling-irish-whiskey/": "2026-06-23T19:57:13.378866+00:00",
-    "https://www.shankennewsdaily.com/2026/06/23/40095/news-briefs-for-june-23-2026/": "2026-06-23T19:57:13.379343+00:00",
-    "https://dallas.eater.com/restaurant-news/77529/michelin-2005-winners-dallas-mamani": "2026-06-23T19:57:19.818807+00:00",
-    "https://austin.eater.com/maps/best-restaurants-austin-eater-38": "2026-06-23T19:57:20.079646+00:00",
-    "https://austin.eater.com/maps/best-steaks-austin-steakhouses-restaurants": "2026-06-23T19:57:20.080086+00:00",
-    "https://austin.eater.com/maps/best-texas-restaurants-austin-road-trip": "2026-06-23T19:57:20.080505+00:00",
-    "https://distilledspirits.org/bill-to-allow-consumers-to-decide-on-seven-day-spirits-sales-approved-by-committee/": "2026-06-23T19:57:31.980841+00:00",
-    "https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/": "2026-06-23T19:57:31.981509+00:00",
-    "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/": "2026-06-23T19:57:31.982104+00:00",
-    "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-06-23T19:57:31.982643+00:00",
-    "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-06-23T19:57:31.983101+00:00",
-    "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-06-23T19:57:31.983572+00:00",
-    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-06-23T19:57:31.984011+00:00",
     "https://www.brewbound.com/news/brown-forman-sazerac-release-new-rtds-as-category-buoys-spirits-growth": "2026-06-23T21:43:18.092007+00:00",
     "https://daily.sevenfifty.com/the-science-of-tannins-in-wine/": "2026-06-23T21:43:22.754775+00:00",
     "https://daily.sevenfifty.com/why-winemakers-are-split-on-the-benefits-of-concrete-eggs/": "2026-06-23T21:43:22.755333+00:00",
@@ -147,7 +130,17 @@
     "https://www.bevnet.com/news/2026/new-products-rockstar-mocktails-hot-girl-pickle-lemonade-and-more-na-creations": "2026-06-26T17:15:14.714460+00:00",
     "https://vinepair.com/booze-news/four-roses-new-experimental-series-mizunara-aged-bourbon/": "2026-06-26T17:15:22.296816+00:00",
     "https://www.shankennewsdaily.com/2026/06/26/40119/louis-jadots-marquis-on-burgundys-u-s-growth-prospects/": "2026-06-26T19:17:23.772961+00:00",
-    "https://www.shankennewsdaily.com/2026/06/26/40115/news-briefs-for-june-26-2026/": "2026-06-26T19:17:23.773564+00:00"
+    "https://www.shankennewsdaily.com/2026/06/26/40115/news-briefs-for-june-26-2026/": "2026-06-26T19:17:23.773564+00:00",
+    "https://dallas.eater.com/restaurant-news/77529/michelin-2005-winners-dallas-mamani": "2026-06-26T21:05:43.772805+00:00",
+    "https://austin.eater.com/maps/best-restaurants-austin-eater-38": "2026-06-26T21:05:44.172609+00:00",
+    "https://austin.eater.com/maps/best-steaks-austin-steakhouses-restaurants": "2026-06-26T21:05:44.173145+00:00",
+    "https://distilledspirits.org/bill-to-allow-consumers-to-decide-on-seven-day-spirits-sales-approved-by-committee/": "2026-06-26T21:05:57.181634+00:00",
+    "https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/": "2026-06-26T21:05:57.182146+00:00",
+    "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/": "2026-06-26T21:05:57.182570+00:00",
+    "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-06-26T21:05:57.182997+00:00",
+    "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-06-26T21:05:57.183481+00:00",
+    "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-06-26T21:05:57.183968+00:00",
+    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-06-26T21:05:57.184410+00:00"
   },
-  "last_cleanup": "2026-06-26T19:17:10.413110+00:00"
+  "last_cleanup": "2026-06-26T21:05:26.824522+00:00"
 }
