@@ -1,7 +1,5 @@
 {
   "urls": {
-    "https://www.brewbound.com/news/owls-brew-adds-functional-non-alc-mixers": "2026-06-26T15:21:54.775650+00:00",
-    "https://www.texasmonthly.com/texas-monthly-presents/floods-episode-113/": "2026-06-26T15:22:19.134181+00:00",
     "https://www.bevnet.com/news/2026/new-products-rockstar-mocktails-hot-girl-pickle-lemonade-and-more-na-creations": "2026-06-26T17:15:14.714460+00:00",
     "https://vinepair.com/booze-news/four-roses-new-experimental-series-mizunara-aged-bourbon/": "2026-06-26T17:15:22.296816+00:00",
     "https://www.shankennewsdaily.com/2026/06/26/40119/louis-jadots-marquis-on-burgundys-u-s-growth-prospects/": "2026-06-26T19:17:23.772961+00:00",
@@ -109,7 +107,11 @@
     "https://www.texasmonthly.com/interactive/texas-road-trip-route-90/": "2026-06-29T13:04:29.721984+00:00",
     "https://www.texasmonthly.com/interactive/rio-grande-valley-taco-drive/": "2026-06-29T13:04:29.722415+00:00",
     "https://www.texasmonthly.com/interactive/texas-gulf-coast-road-trip/": "2026-06-29T13:04:29.722863+00:00",
-    "https://www.texasmonthly.com/interactive/east-texas-road-trip/": "2026-06-29T13:04:29.723282+00:00"
+    "https://www.texasmonthly.com/interactive/east-texas-road-trip/": "2026-06-29T13:04:29.723282+00:00",
+    "https://www.brewbound.com/news/owls-brew-adds-functional-non-alc-mixers": "2026-06-29T16:44:39.281585+00:00",
+    "https://www.shankennewsdaily.com/2026/06/29/40121/news-briefs-for-june-29-2026/": "2026-06-29T16:44:48.836721+00:00",
+    "https://www.texasmonthly.com/news-politics/texas-history-new-curricula-bible/": "2026-06-29T16:44:50.436213+00:00",
+    "https://www.texasmonthly.com/texas-monthly-presents/floods-episode-113/": "2026-06-29T16:44:50.436646+00:00"
   },
-  "last_cleanup": "2026-06-29T13:04:15.416063+00:00"
+  "last_cleanup": "2026-06-29T16:44:34.769127+00:00"
 }
