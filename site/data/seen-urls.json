@@ -1,10 +1,5 @@
 {
   "urls": {
-    "https://www.bevnet.com/news/2026/non-alc-beverage-sales-stay-stable-in-early-june": "2026-06-30T00:00:31.036603+00:00",
-    "https://www.brewbound.com/news/brown-forman-sazerac-release-new-rtds-as-category-buoys-spirits-growth": "2026-06-30T00:00:33.398472+00:00",
-    "https://daily.sevenfifty.com/the-science-of-tannins-in-wine/": "2026-06-30T00:00:37.307688+00:00",
-    "https://daily.sevenfifty.com/why-winemakers-are-split-on-the-benefits-of-concrete-eggs/": "2026-06-30T00:00:37.308098+00:00",
-    "https://daily.sevenfifty.com/the-science-behind-reductive-aromas-in-wine/": "2026-06-30T00:00:37.308547+00:00",
     "https://craftspiritsmag.com/2026/06/23/sugarlands-builds-on-growing-morales-beverage-group-partnership-with-texas-and-louisiana-expansion/": "2026-06-30T04:42:42.894428+00:00",
     "https://craftspiritsmag.com/2026/06/11/liberty-pole-spirits-and-mb-roland-distillery-announce-historic-collaboration/": "2026-06-30T04:42:42.894990+00:00",
     "https://www.gobourbon.com/legacy-bourbon-brand-is-for-sale-1b-price-tag/": "2026-06-30T08:27:34.807029+00:00",
@@ -134,7 +129,11 @@
     "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-07-02T21:42:55.249678+00:00",
     "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-07-02T21:42:55.250152+00:00",
     "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-07-02T21:42:55.250609+00:00",
-    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-07-02T21:42:55.251071+00:00"
+    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-07-02T21:42:55.251071+00:00",
+    "https://daily.sevenfifty.com/the-science-of-tannins-in-wine/": "2026-07-03T01:08:27.940386+00:00",
+    "https://daily.sevenfifty.com/why-winemakers-are-split-on-the-benefits-of-concrete-eggs/": "2026-07-03T01:08:27.940966+00:00",
+    "https://daily.sevenfifty.com/the-science-behind-reductive-aromas-in-wine/": "2026-07-03T01:08:27.941440+00:00",
+    "https://craftspiritsmag.com/2026/06/29/brush-creek-distillerys-heroes-edition-straight-bourbon-whiskey/": "2026-07-03T01:08:30.216299+00:00"
   },
-  "last_cleanup": "2026-07-02T23:01:02.742513+00:00"
+  "last_cleanup": "2026-07-03T01:08:21.375041+00:00"
 }
