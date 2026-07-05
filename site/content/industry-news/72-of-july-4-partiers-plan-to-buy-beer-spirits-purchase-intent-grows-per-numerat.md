@@ -1,5 +1,5 @@
 ---
-title: "72% of July 4 Partiers Plan to Buy Beer; Spirits Purchase Intent Grows, Per Numerator"
+title: "72% of July 4 Partiers Plan to Buy Beer; Spirits Purchase Intent Grows, per Numerator"
 date: 2026-07-02T13:01:08+0000
 draft: false
 pillars: ["industry-news"]
