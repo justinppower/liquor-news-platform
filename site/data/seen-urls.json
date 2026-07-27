@@ -1,17 +1,5 @@
 {
   "urls": {
-    "https://www.gobourbon.com/legacy-bourbon-brand-is-for-sale-1b-price-tag/": "2026-07-24T20:18:16.627681+00:00",
-    "https://www.gobourbon.com/big-news-buffalo-trace-distillery-is-expanding-the-btac-collection/": "2026-07-24T20:18:16.628264+00:00",
-    "https://www.gobourbon.com/upcoming-event-beam-supper-club-little-book-chapter-9-may-14th/": "2026-07-24T20:18:16.628750+00:00",
-    "https://www.gobourbon.com/historic-day-heaven-hill-fills-first-barrel-at-new-200m-distillery-in-bardstown/": "2026-07-24T20:18:16.629279+00:00",
-    "https://www.gobourbon.com/new-release-ky-senator-bourbon-john-edwards-107-proof/": "2026-07-24T20:18:16.629761+00:00",
-    "https://www.gobourbon.com/new-release-angels-envy-cellar-collection-vol-5-straight-rye-whiskey-finished-in-french-oak-extra-anejo-tequila-barrels/": "2026-07-24T20:18:16.630269+00:00",
-    "https://www.gobourbon.com/new-release-makers-mark-ground-breaking-historic-new-chapter/": "2026-07-24T20:18:16.630711+00:00",
-    "https://www.gobourbon.com/new-release-blood-oath-pact-11-bourbon-anejo-finished-special-distillery-april-release/": "2026-07-24T20:18:16.631201+00:00",
-    "https://www.gobourbon.com/new-release-2025-michters-10-year-bourbon/": "2026-07-24T20:18:16.631654+00:00",
-    "https://www.gobourbon.com/new-release-barrell-bourbon-cask-finish-p-x-sherry/": "2026-07-24T20:18:16.632128+00:00",
-    "https://www.shankennewsdaily.com/2026/07/24/40331/suntory-extends-196-into-hard-tea-category/": "2026-07-24T20:18:19.003452+00:00",
-    "https://www.shankennewsdaily.com/2026/07/24/40327/news-briefs-for-july-24-2026/": "2026-07-24T20:18:19.004037+00:00",
     "https://imbibemagazine.com/announcing-the-winners-of-the-2026-new-orleans-spirits-competition/": "2026-07-24T21:35:57.291647+00:00",
     "https://austin.eater.com/maps/best-barbecue-austin-restaurants": "2026-07-24T22:57:58.654899+00:00",
     "https://austin.eater.com/maps/best-mexican-restaurants-austin": "2026-07-25T06:13:51.790243+00:00",
@@ -120,7 +108,17 @@
     "https://www.shankennewsdaily.com/2026/07/27/40431/ste-michelle-debuts-new-wines-under-flagship-brand/": "2026-07-27T17:46:14.145143+00:00",
     "https://www.shankennewsdaily.com/2026/07/27/40429/news-briefs-for-july-27-2026/": "2026-07-27T17:46:14.145541+00:00",
     "https://www.brewbound.com/news/battle-of-the-teas-continues-as-boston-beer-adjusts-media-spend-and-tempers-fy26-expectations": "2026-07-27T19:21:20.047639+00:00",
-    "https://distilledspirits.org/discus-president-ceo-chris-swonger-testifies-before-ustr-committee-on-tariffs/": "2026-07-27T19:21:44.432664+00:00"
+    "https://distilledspirits.org/discus-president-ceo-chris-swonger-testifies-before-ustr-committee-on-tariffs/": "2026-07-27T19:21:44.432664+00:00",
+    "https://www.gobourbon.com/legacy-bourbon-brand-is-for-sale-1b-price-tag/": "2026-07-27T20:49:48.243854+00:00",
+    "https://www.gobourbon.com/big-news-buffalo-trace-distillery-is-expanding-the-btac-collection/": "2026-07-27T20:49:48.244479+00:00",
+    "https://www.gobourbon.com/upcoming-event-beam-supper-club-little-book-chapter-9-may-14th/": "2026-07-27T20:49:48.244984+00:00",
+    "https://www.gobourbon.com/historic-day-heaven-hill-fills-first-barrel-at-new-200m-distillery-in-bardstown/": "2026-07-27T20:49:48.245555+00:00",
+    "https://www.gobourbon.com/new-release-ky-senator-bourbon-john-edwards-107-proof/": "2026-07-27T20:49:48.246087+00:00",
+    "https://www.gobourbon.com/new-release-angels-envy-cellar-collection-vol-5-straight-rye-whiskey-finished-in-french-oak-extra-anejo-tequila-barrels/": "2026-07-27T20:49:48.246612+00:00",
+    "https://www.gobourbon.com/new-release-makers-mark-ground-breaking-historic-new-chapter/": "2026-07-27T20:49:48.247086+00:00",
+    "https://www.gobourbon.com/new-release-blood-oath-pact-11-bourbon-anejo-finished-special-distillery-april-release/": "2026-07-27T20:49:48.247583+00:00",
+    "https://www.gobourbon.com/new-release-2025-michters-10-year-bourbon/": "2026-07-27T20:49:48.248089+00:00",
+    "https://www.gobourbon.com/new-release-barrell-bourbon-cask-finish-p-x-sherry/": "2026-07-27T20:49:48.248575+00:00"
   },
-  "last_cleanup": "2026-07-27T19:21:14.605980+00:00"
+  "last_cleanup": "2026-07-27T20:49:37.468092+00:00"
 }
