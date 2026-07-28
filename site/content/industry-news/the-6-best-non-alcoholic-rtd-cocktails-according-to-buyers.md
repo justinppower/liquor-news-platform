@@ -1,5 +1,5 @@
 ---
-title: "The 6 Best Non-Alcoholic RTD Cocktails, According To Buyers"
+title: "The 6 Best Non-Alcoholic RTD Cocktails, According to Buyers"
 date: 2026-07-16T14:11:14+0000
 draft: false
 pillars: ["industry-news"]
