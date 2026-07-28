@@ -1,6 +1,5 @@
 {
   "urls": {
-    "https://austin.eater.com/maps/best-mexican-restaurants-austin": "2026-07-25T06:13:51.790243+00:00",
     "https://www.texasmonthly.com/food/carnitas-conejo-home-taqueria-shut-down/": "2026-07-25T13:18:50.313363+00:00",
     "https://www.texasmonthly.com/culture/texas-summer-bugs-parasites/": "2026-07-25T13:18:50.313886+00:00",
     "https://houston.eater.com/maps/houston-best-steak-steakhouses": "2026-07-25T14:46:29.110667+00:00",
@@ -120,7 +119,8 @@
     "https://imbibemagazine.com/announcing-the-winners-of-the-2026-new-orleans-spirits-competition/": "2026-07-27T22:03:19.372877+00:00",
     "https://www.bevnet.com/news/2026/distribution-hiyo-expands-partnership-with-breakaway-music-festival": "2026-07-27T23:32:52.458172+00:00",
     "https://craftspiritsmag.com/2026/07/27/an-interview-with-echo-spirits-the-obsession-behind-elusive/": "2026-07-27T23:35:16.267201+00:00",
-    "https://austin.eater.com/maps/best-barbecue-austin-restaurants": "2026-07-27T23:35:19.525655+00:00"
+    "https://austin.eater.com/maps/best-barbecue-austin-restaurants": "2026-07-27T23:35:19.525655+00:00",
+    "https://austin.eater.com/maps/best-mexican-restaurants-austin": "2026-07-28T08:00:31.775455+00:00"
   },
-  "last_cleanup": "2026-07-28T05:28:30.104121+00:00"
+  "last_cleanup": "2026-07-28T08:00:18.673207+00:00"
 }
