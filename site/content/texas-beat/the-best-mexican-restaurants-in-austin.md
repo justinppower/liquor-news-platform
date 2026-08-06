@@ -1,6 +1,6 @@
 ---
 title: "The Best Mexican Restaurants in Austin"
-date: 2026-06-30T18:45:00+0000
+date: 2026-06-30T18:45:00-0500
 draft: false
 pillars: ["texas-beat"]
 tags: ["Austin", "bar", "restaurant", "cocktail"]
