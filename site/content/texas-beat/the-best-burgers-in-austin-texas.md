@@ -1,6 +1,6 @@
 ---
 title: "The Best Burgers in Austin, Texas"
-date: 2026-05-14T14:00:00+0000
+date: 2026-05-14T14:00:00-0500
 draft: false
 pillars: ["texas-beat"]
 tags: ["Austin", "bar", "restaurant", "cocktail"]
