@@ -1,6 +1,6 @@
 ---
 title: "The 38 Best Restaurants in Austin, Summer 2026"
-date: 2026-07-09T14:00:00+0000
+date: 2026-07-09T14:00:00-0500
 draft: false
 pillars: ["texas-beat"]
 tags: ["Austin", "bar", "restaurant", "cocktail"]
