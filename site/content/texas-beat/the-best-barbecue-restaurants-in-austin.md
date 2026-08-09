@@ -1,6 +1,6 @@
 ---
 title: "The Best Barbecue Restaurants in Austin"
-date: 2026-06-18T14:00:00+0000
+date: 2026-06-18T14:00:00-0500
 draft: false
 pillars: ["texas-beat"]
 tags: ["Austin", "bar", "restaurant", "cocktail"]
