@@ -1,6 +1,6 @@
 ---
 title: "The Best Steakhouses in Austin"
-date: 2026-04-02T15:00:00+0000
+date: 2026-04-02T15:00:00-0500
 draft: false
 pillars: ["texas-beat"]
 tags: ["Austin", "bar", "restaurant", "cocktail"]
