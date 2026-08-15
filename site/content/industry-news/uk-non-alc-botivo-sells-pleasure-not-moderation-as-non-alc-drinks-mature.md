@@ -1,18 +1,18 @@
 ---
 title: "UK Non-Alc Botivo Sells Pleasure, Not Moderation, as Non-Alc Drinks Mature"
-date: 2026-08-11T16:20:55+0000
+date: 2026-08-12T14:31:22+0000
 draft: false
 pillars: ["industry-news"]
-tags: ["spirits", "beer", "beverage industry"]
+tags: ["craft beer", "brewery"]
 categories: ["Industry News"]
 author: "RSS Feed"
-description: "Founded four years ago, non-alcoholic apéritif UK-based Botivo is up 408% year-over-year in all retail outlets, according to Circana’s tracking of no-and-low sp"
-source_url: "https://www.bevnet.com/spirits/2026/uk-non-alc-botivo-sells-pleasure-not-moderation-as-non-alc-drinks-mature"
-source_name: "BevNET"
+description: "If there’s ever a good place to make a pitch that a drinks brand is about hedonism, it would be at Tales of The Cocktail, the U.S. bar industry’s biggest event,"
+source_url: "https://www.brewbound.com/news/uk-non-alc-botivo-sells-pleasure-not-moderation-as-non-alc-drinks-mature"
+source_name: "Brewbound"
 article_type: "news_brief"
 auto_generated: true
 ---
 
-Founded four years ago, non-alcoholic apéritif UK-based Botivo is up 408% year-over-year in all retail outlets, according to Circana’s tracking of no-and-low spirits value sales over the last 52 weeks ending June 13. The secret? A product and brand strategy built entirely around pleasure rather t...
+If there’s ever a good place to make a pitch that a drinks brand is about hedonism, it would be at Tales of The Cocktail, the U.S. bar industry’s biggest event, which took place in New Orleans last month. What’s surprising is that the pitch came from a non-alc brand.
 
-*Source: [BevNET](https://www.bevnet.com/spirits/2026/uk-non-alc-botivo-sells-pleasure-not-moderation-as-non-alc-drinks-mature)*
+*Source: [Brewbound](https://www.brewbound.com/news/uk-non-alc-botivo-sells-pleasure-not-moderation-as-non-alc-drinks-mature)*
