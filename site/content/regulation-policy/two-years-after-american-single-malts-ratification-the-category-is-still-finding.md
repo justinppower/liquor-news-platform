@@ -1,5 +1,5 @@
 ---
-title: "Two Years After American Single Malt’s Ratification, the Category Is Still Findings Its Way"
+title: "Two Years After American Single Malt’s Ratification, the Category Is Still Finding Its Way"
 date: 2026-08-25T13:00:11+0000
 draft: false
 pillars: ["regulation-policy"]

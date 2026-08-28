@@ -1,6 +1,6 @@
 ---
 title: "The Best Restaurants and Bars in Downtown Houston"
-date: 2026-08-25T09:00:00-0400
+date: 2026-08-25T09:00:00-0500
 draft: false
 pillars: ["texas-beat"]
 tags: ["Houston", "bar", "restaurant", "cocktail"]

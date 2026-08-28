@@ -1,20 +1,5 @@
 {
   "urls": {
-    "https://www.brewbound.com/news/stone-brewing-to-lay-off-58-workers-in-mid-october": "2026-08-25T05:27:23.829131+00:00",
-    "https://vinepair.com/articles/the-vinepair-podcast-wheres-the-market-for-weird-spirits/": "2026-08-25T10:59:39.365801+00:00",
-    "https://www.texasmonthly.com/games/word-wrangler-august-22-2026/": "2026-08-25T10:59:46.188215+00:00",
-    "https://www.texasmonthly.com/food/texas-cows-veldhuizen-cheese/": "2026-08-25T11:35:08.451007+00:00",
-    "https://www.texasmonthly.com/travel/goat-island-texas/": "2026-08-25T11:35:08.451474+00:00",
-    "https://www.texasmonthly.com/culture/elliott-smith-new-book/": "2026-08-25T11:35:08.451852+00:00",
-    "https://vinepair.com/buy-this-booze/best-sauvignon-blanc-2026/": "2026-08-25T12:39:08.225812+00:00",
-    "https://vinepair.com/articles/distillers-form-american-single-malt-identity/": "2026-08-25T13:45:01.512235+00:00",
-    "https://houston.eater.com/maps/downtown-houston-best-restaurants-bars-where-to-eat-drink": "2026-08-25T13:45:06.982157+00:00",
-    "https://www.brewbound.com/news/rtd-growth-challenges-bev-alcs-price-based-premiumization-playbook": "2026-08-25T14:40:08.289642+00:00",
-    "https://vinepair.com/articles/winemakers-defining-next-generation-california/": "2026-08-25T14:40:12.192414+00:00",
-    "https://www.brewbound.com/news/craft-beers-summer-slump-deepens-as-declines-accelerate-in-august-circana-report": "2026-08-25T15:37:50.409470+00:00",
-    "https://www.shankennewsdaily.com/2026/08/25/40735/news-briefs-for-august-25-2026/": "2026-08-25T16:31:49.678166+00:00",
-    "https://www.texasmonthly.com/culture/zz-top-billy-gibbons-frank-beard-band-future/": "2026-08-25T16:31:53.057187+00:00",
-    "https://www.bevnet.com/spirits/2026/gulf-distributing-hires-first-spirits-director-to-grow-division": "2026-08-25T17:27:27.468261+00:00",
     "https://daily.sevenfifty.com/the-science-behind-disease-resistant-wine-grapes/": "2026-08-25T19:27:28.187496+00:00",
     "https://www.brewbound.com/news/gulf-distributing-taps-former-rndc-manager-to-lead-spirits-push": "2026-08-25T20:24:13.978374+00:00",
     "https://daily.sevenfifty.com/the-science-of-pyrazines-in-wine/": "2026-08-25T20:54:40.184290+00:00",
@@ -83,7 +68,24 @@
     "https://www.shankennewsdaily.com/2026/08/27/40749/encouraging-home-entertaining-key-to-bolstering-wine-come-over-october-survey/": "2026-08-27T20:39:19.736882+00:00",
     "https://www.texasmonthly.com/bbq/khoi-barbecue-houston/": "2026-08-27T20:39:21.306159+00:00",
     "https://www.texasmonthly.com/games/word-wrangler-august-27-2026/": "2026-08-27T20:39:21.306512+00:00",
-    "https://austin.eater.com/maps/best-mexican-restaurants-austin": "2026-08-27T20:39:21.783270+00:00"
+    "https://austin.eater.com/maps/best-mexican-restaurants-austin": "2026-08-27T20:39:21.783270+00:00",
+    "https://www.bevnet.com/spirits/2026/finnish-long-drink-cuts-sales-roles-after-mark-anthony-acquisition": "2026-08-28T17:34:20.471396+00:00",
+    "https://www.bevnet.com/spirits/2026/gulf-distributing-hires-first-spirits-director-to-grow-division": "2026-08-28T17:34:20.472031+00:00",
+    "https://www.brewbound.com/news/several-long-drink-sales-team-members-to-be-laid-off-in-wake-of-mark-anthony-acquisition": "2026-08-28T17:34:22.452497+00:00",
+    "https://www.brewbound.com/news/craft-beers-summer-slump-deepens-as-declines-accelerate-in-august-circana-report": "2026-08-28T17:34:22.453249+00:00",
+    "https://www.brewbound.com/news/rtd-growth-challenges-bev-alcs-price-based-premiumization-playbook": "2026-08-28T17:34:22.453777+00:00",
+    "https://daily.sevenfifty.com/inside-chandons-new-spritz-collection/": "2026-08-28T17:34:32.420691+00:00",
+    "https://vinepair.com/booze-news/booze-news-weekly-roundup-brown-forman-family-infighting/": "2026-08-28T17:34:33.060018+00:00",
+    "https://vinepair.com/articles/vp-podcast-wine-needs-to-break-rules/": "2026-08-28T17:34:33.060527+00:00",
+    "https://vinepair.com/articles/distillers-form-american-single-malt-identity/": "2026-08-28T17:34:33.061105+00:00",
+    "https://vinepair.com/articles/the-vinepair-podcast-wheres-the-market-for-weird-spirits/": "2026-08-28T17:34:33.061616+00:00",
+    "https://imbibemagazine.com/drink-of-the-week-the-walls-stanley-groovy-lip-stinger-2024/": "2026-08-28T17:34:34.113852+00:00",
+    "https://www.texasmonthly.com/culture/meanwhile-in-texas-austin-raccoon/": "2026-08-28T17:34:40.951382+00:00",
+    "https://www.texasmonthly.com/travel/huntsville-texas-travel-guide/": "2026-08-28T17:34:40.951849+00:00",
+    "https://www.texasmonthly.com/news-politics/ken-paxton-pen/": "2026-08-28T17:34:40.952364+00:00",
+    "https://www.texasmonthly.com/games/word-wrangler-august-28-2026/": "2026-08-28T17:34:40.952817+00:00",
+    "https://www.texasmonthly.com/style/dorm-decor-texas-designers/": "2026-08-28T17:34:40.953314+00:00",
+    "https://houston.eater.com/maps/downtown-houston-best-restaurants-bars-where-to-eat-drink": "2026-08-28T17:34:41.342293+00:00"
   },
-  "last_cleanup": "2026-08-28T05:04:17.965155+00:00"
+  "last_cleanup": "2026-08-28T17:34:18.307651+00:00"
 }
