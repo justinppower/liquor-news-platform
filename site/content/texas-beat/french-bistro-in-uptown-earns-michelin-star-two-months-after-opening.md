@@ -1,6 +1,6 @@
 ---
 title: "French Bistro in Uptown Earns Michelin Star Two Months After Opening"
-date: 2025-10-29T16:12:04-0400
+date: 2025-10-29T16:12:04-0500
 draft: false
 pillars: ["texas-beat"]
 tags: ["Dallas", "bar", "restaurant", "cocktail"]

@@ -1,17 +1,5 @@
 {
   "urls": {
-    "https://daily.sevenfifty.com/the-8-best-natural-wines-according-to-buyers/": "2026-08-26T16:14:16.274165+00:00",
-    "https://daily.sevenfifty.com/what-you-need-to-know-about-albanian-wine/": "2026-08-26T16:14:16.274577+00:00",
-    "https://dallas.eater.com/restaurant-news/77529/michelin-2005-winners-dallas-mamani": "2026-08-26T16:14:24.071113+00:00",
-    "https://austin.eater.com/maps/best-sports-bars-austin-football-baseball-soccer-hockey-games": "2026-08-26T16:14:24.244726+00:00",
-    "https://austin.eater.com/maps/best-restaurants-austin-eater-38": "2026-08-26T16:14:24.245122+00:00",
-    "https://distilledspirits.org/bill-to-allow-consumers-to-decide-on-seven-day-spirits-sales-approved-by-committee/": "2026-08-26T16:14:37.217799+00:00",
-    "https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/": "2026-08-26T16:14:37.218238+00:00",
-    "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/": "2026-08-26T16:14:37.218618+00:00",
-    "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-08-26T16:14:37.218981+00:00",
-    "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-08-26T16:14:37.219363+00:00",
-    "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-08-26T16:14:37.219738+00:00",
-    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-08-26T16:14:37.220129+00:00",
     "https://www.bevnet.com/news/2026/david-enters-drinks-with-rtd-protein-shake": "2026-08-26T18:12:25.121664+00:00",
     "https://www.shankennewsdaily.com/2026/08/26/40745/campari-backs-rising-espolon-tequila-with-global-push/": "2026-08-26T18:12:36.885148+00:00",
     "https://www.shankennewsdaily.com/2026/08/26/40743/quintessential-takes-on-new-100000-case-portfolio-led-by-provenance/": "2026-08-26T18:12:36.885689+00:00",
@@ -82,7 +70,19 @@
     "https://craftspiritsmag.com/2026/08/25/copperworks-distilling-co-and-urban-family-brewing-co-team-up-for-barleywine-cask-american-single-malt-whiskey/": "2026-08-29T13:55:21.445897+00:00",
     "https://craftspiritsmag.com/2026/08/25/wigle-whiskey-releases-a-ready-to-serve-manhattan-returning-the-cocktails-original-whiskey-to-the-region-that-made-it/": "2026-08-29T13:55:21.446442+00:00",
     "https://craftspiritsmag.com/2026/08/25/koopers-whiskey-introduces-8-year-barrel-proof-texas-oak-bourbon-finished-in-toasted-texas-grown-white-oak/": "2026-08-29T13:55:21.446889+00:00",
-    "https://craftspiritsmag.com/2026/08/25/filmland-spirits-releases-first-american-single-malt-the-malted-mummy/": "2026-08-29T13:55:21.447399+00:00"
+    "https://craftspiritsmag.com/2026/08/25/filmland-spirits-releases-first-american-single-malt-the-malted-mummy/": "2026-08-29T13:55:21.447399+00:00",
+    "https://daily.sevenfifty.com/the-8-best-natural-wines-according-to-buyers/": "2026-08-29T17:29:14.085682+00:00",
+    "https://daily.sevenfifty.com/what-you-need-to-know-about-albanian-wine/": "2026-08-29T17:29:14.086303+00:00",
+    "https://dallas.eater.com/restaurant-news/77529/michelin-2005-winners-dallas-mamani": "2026-08-29T17:31:33.380316+00:00",
+    "https://austin.eater.com/maps/best-sports-bars-austin-football-baseball-soccer-hockey-games": "2026-08-29T17:31:33.627353+00:00",
+    "https://austin.eater.com/maps/best-restaurants-austin-eater-38": "2026-08-29T17:31:33.627875+00:00",
+    "https://distilledspirits.org/bill-to-allow-consumers-to-decide-on-seven-day-spirits-sales-approved-by-committee/": "2026-08-29T17:31:44.522250+00:00",
+    "https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/": "2026-08-29T17:31:44.522852+00:00",
+    "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/": "2026-08-29T17:31:44.523417+00:00",
+    "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-08-29T17:31:44.523914+00:00",
+    "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-08-29T17:31:44.524474+00:00",
+    "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-08-29T17:31:44.525001+00:00",
+    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-08-29T17:31:44.525568+00:00"
   },
-  "last_cleanup": "2026-08-29T13:55:08.506412+00:00"
+  "last_cleanup": "2026-08-29T17:29:05.718408+00:00"
 }
