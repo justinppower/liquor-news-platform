@@ -1,9 +1,5 @@
 {
   "urls": {
-    "https://www.bevnet.com/news/2026/corporate-bro-goes-cpg-as-online-comedian-ross-pomerantz-launches-coffee-brand": "2026-08-31T14:47:37.371611+00:00",
-    "https://vinepair.com/articles/ask-a-bartender-skipping-receipt-tip-line/": "2026-08-31T14:47:48.911587+00:00",
-    "https://www.texasmonthly.com/culture/shepards-oldest-barbershops-texas/": "2026-08-31T14:47:56.014190+00:00",
-    "https://www.texasmonthly.com/news-politics/ckdu-kidney-disease-immigration/": "2026-08-31T14:47:56.014666+00:00",
     "https://www.bevnet.com/spirits/2026/finnish-long-drink-cuts-sales-roles-after-mark-anthony-acquisition": "2026-08-31T20:36:57.499684+00:00",
     "https://www.bevnet.com/spirits/2026/gulf-distributing-hires-first-spirits-director-to-grow-division": "2026-08-31T20:36:57.500409+00:00",
     "https://www.brewbound.com/news/several-long-drink-sales-team-members-to-be-laid-off-in-wake-of-mark-anthony-acquisition": "2026-08-31T20:36:59.156442+00:00",
@@ -104,7 +100,13 @@
     "https://vinepair.com/articles/wa-bartenders-best-bang-for-buck-scotch-2026/": "2026-09-03T13:44:52.410476+00:00",
     "https://vinepair.com/articles/wine-101-wine-noise-part-2-british-fungus/": "2026-09-03T13:44:52.411035+00:00",
     "https://www.texasmonthly.com/bbq/melt-barbecue-paris-france/": "2026-09-03T13:45:00.497958+00:00",
-    "https://www.texasmonthly.com/news-politics/san-ygnacio-border-wall/": "2026-09-03T13:45:00.498482+00:00"
+    "https://www.texasmonthly.com/news-politics/san-ygnacio-border-wall/": "2026-09-03T13:45:00.498482+00:00",
+    "https://www.bevnet.com/news/2026/the-next-high-kava-kanna-eye-opportunity-amid-hemp-thc-uncertainty": "2026-09-03T17:28:59.519426+00:00",
+    "https://www.bevnet.com/spirits/2026/liquid-death-founder-and-sazerac-launch-mr-fancy-canned-american-bubbly": "2026-09-03T17:28:59.520024+00:00",
+    "https://www.bevnet.com/news/2026/corporate-bro-goes-cpg-as-online-comedian-ross-pomerantz-launches-coffee-brand": "2026-09-03T17:28:59.520656+00:00",
+    "https://www.brewbound.com/news/a-virtual-walk-through-40-years-of-alaskan-brewing-its-celebratory-40-pack": "2026-09-03T17:29:16.724533+00:00",
+    "https://www.brewbound.com/news/liquid-death-founder-and-sazerac-launch-mr-fancy-canned-american-bubbly": "2026-09-03T17:29:16.725013+00:00",
+    "https://vinepair.com/articles/ask-a-bartender-skipping-receipt-tip-line/": "2026-09-03T17:29:21.730927+00:00"
   },
-  "last_cleanup": "2026-09-03T13:44:43.562290+00:00"
+  "last_cleanup": "2026-09-03T17:28:57.399109+00:00"
 }
