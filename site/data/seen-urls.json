@@ -1,11 +1,5 @@
 {
   "urls": {
-    "https://www.brewbound.com/news/sierra-nevada-arms-wholesalers-with-license-to-sell-in-fight-against-craft-beer-declines-refreshed-packaging-to-roll-in-2027": "2026-09-01T05:26:06.816912+00:00",
-    "https://www.brewbound.com/news/gulf-distributing-taps-former-rndc-manager-to-lead-spirits-push": "2026-09-01T05:26:06.817527+00:00",
-    "https://daily.sevenfifty.com/the-science-of-pyrazines-in-wine/": "2026-09-01T05:26:11.382421+00:00",
-    "https://daily.sevenfifty.com/the-science-behind-disease-resistant-wine-grapes/": "2026-09-01T05:26:11.382897+00:00",
-    "https://www.shankennewsdaily.com/2026/08/28/40761/on-premise-marks-big-opportunity-for-fast-growing-avaline/": "2026-09-01T05:26:14.550599+00:00",
-    "https://austin.eater.com/maps/university-of-texas-austin-ut-campus-best-restaurants-bars-where-to-eat": "2026-09-01T05:26:16.216337+00:00",
     "https://vinepair.com/articles/vp-podcast-secret-wine-lists/": "2026-09-01T10:19:40.053640+00:00",
     "https://craftspiritsmag.com/2026/08/31/craft-distillery-growth-starts-long-before-the-bottle-hits-the-shelf/": "2026-09-01T10:19:45.131757+00:00",
     "https://craftspiritsmag.com/2026/08/28/larrikin-bourbon-co-unveils-the-australia-series/": "2026-09-01T10:19:45.132300+00:00",
@@ -97,7 +91,11 @@
     "https://daily.sevenfifty.com/inside-chandons-new-spritz-collection/": "2026-09-03T22:42:32.405783+00:00",
     "https://vinepair.com/booze-news/booze-news-weekly-roundup-brown-forman-family-infighting/": "2026-09-03T22:42:32.855304+00:00",
     "https://vinepair.com/articles/vp-podcast-wine-needs-to-break-rules/": "2026-09-03T22:42:32.855690+00:00",
-    "https://houston.eater.com/maps/downtown-houston-best-restaurants-bars-where-to-eat-drink": "2026-09-03T22:42:38.438654+00:00"
+    "https://houston.eater.com/maps/downtown-houston-best-restaurants-bars-where-to-eat-drink": "2026-09-03T22:42:38.438654+00:00",
+    "https://daily.sevenfifty.com/the-science-of-pyrazines-in-wine/": "2026-09-04T09:50:14.011126+00:00",
+    "https://daily.sevenfifty.com/the-science-behind-disease-resistant-wine-grapes/": "2026-09-04T09:50:14.011576+00:00",
+    "https://craftspiritsmag.com/2026/09/03/the-mad-scientist-of-blackhat-distillery-kyle-bonasso-blends-craft-chemistry-and-creativity/": "2026-09-04T09:50:18.347482+00:00",
+    "https://austin.eater.com/maps/university-of-texas-austin-ut-campus-best-restaurants-bars-where-to-eat": "2026-09-04T09:50:22.669847+00:00"
   },
-  "last_cleanup": "2026-09-04T05:25:32.854463+00:00"
+  "last_cleanup": "2026-09-04T09:50:05.532472+00:00"
 }
