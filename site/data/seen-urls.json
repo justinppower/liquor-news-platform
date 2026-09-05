@@ -1,11 +1,5 @@
 {
   "urls": {
-    "https://vinepair.com/articles/restaurant-wine-bill-percent-markup-explained/": "2026-09-02T12:29:41.156425+00:00",
-    "https://vinepair.com/articles/wine-101-podcast-wine-noise-part-1-sugar-fungus/": "2026-09-02T12:29:41.157216+00:00",
-    "https://www.texasmonthly.com/interactive/rio-grande-headwaters/": "2026-09-02T12:32:01.473626+00:00",
-    "https://www.texasmonthly.com/interactive/donde-el-rio-nace/": "2026-09-02T12:32:01.474055+00:00",
-    "https://austin.eater.com/maps/best-barbecue-austin-restaurants": "2026-09-02T12:32:01.883366+00:00",
-    "https://distilledspirits.org/discus-president-ceo-chris-swonger-testifies-before-ustr-committee-on-tariffs/": "2026-09-02T12:32:13.097689+00:00",
     "https://www.brewbound.com/news/martignetti-to-acquire-red-network-distributor-girardi-in-massachusetts": "2026-09-02T16:48:43.897159+00:00",
     "https://vinepair.com/articles/early-grape-harvests-climate-change-challenges/": "2026-09-02T16:48:48.868058+00:00",
     "https://www.bevnet.com/news/2026/martignetti-to-acquire-red-network-distributor-girardi-in-massachusetts": "2026-09-02T19:36:52.675806+00:00",
@@ -95,7 +89,11 @@
     "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-09-04T19:47:51.094538+00:00",
     "https://craftspiritsmag.com/2026/09/04/13938/": "2026-09-05T00:15:08.117976+00:00",
     "https://craftspiritsmag.com/2026/09/04/cigar-batch-4-showcases-atlanta-distillerys-signature-approach-to-blending-american-whiskey/": "2026-09-05T00:15:08.118310+00:00",
-    "https://craftspiritsmag.com/2026/09/04/virginia-distillery-co-expands-the-brewers-coalition-with-two-new-september-releases/": "2026-09-05T00:15:08.118602+00:00"
+    "https://craftspiritsmag.com/2026/09/04/virginia-distillery-co-expands-the-brewers-coalition-with-two-new-september-releases/": "2026-09-05T00:15:08.118602+00:00",
+    "https://vinepair.com/articles/restaurant-wine-bill-percent-markup-explained/": "2026-09-05T15:24:51.744215+00:00",
+    "https://www.texasmonthly.com/interactive/rio-grande-headwaters/": "2026-09-05T15:24:58.352166+00:00",
+    "https://austin.eater.com/maps/best-barbecue-austin-restaurants": "2026-09-05T15:24:58.670153+00:00",
+    "https://distilledspirits.org/discus-president-ceo-chris-swonger-testifies-before-ustr-committee-on-tariffs/": "2026-09-05T15:25:11.309444+00:00"
   },
-  "last_cleanup": "2026-09-05T12:19:23.956451+00:00"
+  "last_cleanup": "2026-09-05T15:24:43.212860+00:00"
 }
