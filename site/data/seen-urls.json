@@ -1,9 +1,5 @@
 {
   "urls": {
-    "https://daily.sevenfifty.com/the-science-of-pyrazines-in-wine/": "2026-09-04T09:50:14.011126+00:00",
-    "https://daily.sevenfifty.com/the-science-behind-disease-resistant-wine-grapes/": "2026-09-04T09:50:14.011576+00:00",
-    "https://craftspiritsmag.com/2026/09/03/the-mad-scientist-of-blackhat-distillery-kyle-bonasso-blends-craft-chemistry-and-creativity/": "2026-09-04T09:50:18.347482+00:00",
-    "https://austin.eater.com/maps/university-of-texas-austin-ut-campus-best-restaurants-bars-where-to-eat": "2026-09-04T09:50:22.669847+00:00",
     "https://vinepair.com/articles/vp-podcast-can-american-drinks-regain-the-canadian-market/": "2026-09-04T13:58:04.999459+00:00",
     "https://vinepair.com/articles/vp-podcast-secret-wine-lists/": "2026-09-04T13:58:04.999905+00:00",
     "https://craftspiritsmag.com/2026/08/31/craft-distillery-growth-starts-long-before-the-bottle-hits-the-shelf/": "2026-09-04T13:58:09.057095+00:00",
@@ -88,7 +84,12 @@
     "https://daily.sevenfifty.com/inside-chandons-new-spritz-collection/": "2026-09-06T23:26:40.571712+00:00",
     "https://vinepair.com/booze-news/booze-news-weekly-roundup-brown-forman-family-infighting/": "2026-09-06T23:26:41.067038+00:00",
     "https://vinepair.com/articles/vp-podcast-wine-needs-to-break-rules/": "2026-09-06T23:26:41.067578+00:00",
-    "https://houston.eater.com/maps/downtown-houston-best-restaurants-bars-where-to-eat-drink": "2026-09-06T23:26:48.902125+00:00"
+    "https://houston.eater.com/maps/downtown-houston-best-restaurants-bars-where-to-eat-drink": "2026-09-06T23:26:48.902125+00:00",
+    "https://daily.sevenfifty.com/the-science-of-pyrazines-in-wine/": "2026-09-07T12:53:20.812050+00:00",
+    "https://daily.sevenfifty.com/the-science-behind-disease-resistant-wine-grapes/": "2026-09-07T12:53:20.812347+00:00",
+    "https://vinepair.com/articles/cocktails-named-after-states-mapped/": "2026-09-07T12:53:21.227616+00:00",
+    "https://craftspiritsmag.com/2026/09/03/the-mad-scientist-of-blackhat-distillery-kyle-bonasso-blends-craft-chemistry-and-creativity/": "2026-09-07T12:53:25.444517+00:00",
+    "https://austin.eater.com/maps/university-of-texas-austin-ut-campus-best-restaurants-bars-where-to-eat": "2026-09-07T12:53:28.505701+00:00"
   },
-  "last_cleanup": "2026-09-07T06:23:24.495625+00:00"
+  "last_cleanup": "2026-09-07T12:53:12.432163+00:00"
 }
