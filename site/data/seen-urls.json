@@ -1,9 +1,5 @@
 {
   "urls": {
-    "https://vinepair.com/articles/restaurant-wine-bill-percent-markup-explained/": "2026-09-05T15:24:51.744215+00:00",
-    "https://www.texasmonthly.com/interactive/rio-grande-headwaters/": "2026-09-05T15:24:58.352166+00:00",
-    "https://austin.eater.com/maps/best-barbecue-austin-restaurants": "2026-09-05T15:24:58.670153+00:00",
-    "https://distilledspirits.org/discus-president-ceo-chris-swonger-testifies-before-ustr-committee-on-tariffs/": "2026-09-05T15:25:11.309444+00:00",
     "https://www.brewbound.com/news/martignetti-to-acquire-red-network-distributor-girardi-in-massachusetts": "2026-09-05T17:26:54.775486+00:00",
     "https://vinepair.com/articles/early-grape-harvests-climate-change-challenges/": "2026-09-05T17:26:59.132354+00:00",
     "https://www.bevnet.com/news/2026/martignetti-to-acquire-red-network-distributor-girardi-in-massachusetts": "2026-09-05T21:27:56.821499+00:00",
@@ -89,7 +85,14 @@
     "https://craftspiritsmag.com/2026/09/04/cigar-batch-4-showcases-atlanta-distillerys-signature-approach-to-blending-american-whiskey/": "2026-09-08T03:21:33.105445+00:00",
     "https://craftspiritsmag.com/2026/09/04/virginia-distillery-co-expands-the-brewers-coalition-with-two-new-september-releases/": "2026-09-08T03:21:33.105921+00:00",
     "https://www.bevnet.com/spirits/2026/quarter-proof-founders-return-to-low-alc-with-half-cocktail-strength-demi-vodka": "2026-09-08T12:58:17.041269+00:00",
-    "https://craftspiritsmag.com/2026/09/08/introducing-agga-liza-distillerys-kren-crafted-happiness-in-a-bottle/": "2026-09-08T12:58:28.459728+00:00"
+    "https://craftspiritsmag.com/2026/09/08/introducing-agga-liza-distillerys-kren-crafted-happiness-in-a-bottle/": "2026-09-08T12:58:28.459728+00:00",
+    "https://www.bevnet.com/news/2026/taste-radio-keurig-dr-peppers-former-ceo-has-a-beefy-take-on-growth": "2026-09-08T17:08:59.999103+00:00",
+    "https://www.brewbound.com/news/top-import-rtd-and-na-brands-find-yoy-growth-despite-misaligned-labor-day-and-wonky-comps-in-circana-weekly-scans": "2026-09-08T17:09:03.696749+00:00",
+    "https://www.brewbound.com/news/quarter-proof-founders-return-to-low-alc-with-half-cocktail-strength-demi-vodka": "2026-09-08T17:09:03.697237+00:00",
+    "https://daily.sevenfifty.com/the-secret-to-iconic-single-malt-scotch-a-century-of-oak/": "2026-09-08T17:09:09.231626+00:00",
+    "https://vinepair.com/articles/restaurant-wine-bill-percent-markup-explained/": "2026-09-08T17:09:09.741596+00:00",
+    "https://austin.eater.com/maps/best-barbecue-austin-restaurants": "2026-09-08T17:09:14.408835+00:00",
+    "https://distilledspirits.org/discus-president-ceo-chris-swonger-testifies-before-ustr-committee-on-tariffs/": "2026-09-08T17:09:26.819159+00:00"
   },
-  "last_cleanup": "2026-09-08T12:58:14.857083+00:00"
+  "last_cleanup": "2026-09-08T17:08:57.031553+00:00"
 }

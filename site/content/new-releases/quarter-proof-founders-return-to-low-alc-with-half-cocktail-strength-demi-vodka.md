@@ -1,18 +1,18 @@
 ---
 title: "Quarter Proof Founders Return to Low-Alc With ‘Half-Cocktail’ Strength Demi Vodka"
-date: 2026-09-08T12:30:44+0000
+date: 2026-09-08T13:57:27+0000
 draft: false
 pillars: ["new-releases"]
-tags: ["spirits", "beer", "beverage industry"]
+tags: ["craft beer", "brewery"]
 categories: ["New Releases"]
 author: "RSS Feed"
-description: "Rohan Radhakrishnan and Fabian Clark’s first attempt at building a mid-proof spirits category didn’t go as planned. Now, they’re trying again. The pair is back "
-source_url: "https://www.bevnet.com/spirits/2026/quarter-proof-founders-return-to-low-alc-with-half-cocktail-strength-demi-vodka"
-source_name: "BevNET"
+description: "Rohan Radhakrishnan and Fabian Clark’s first attempt at building a mid-proof spirits category didn’t go as planned. Now, they’re trying again."
+source_url: "https://www.brewbound.com/news/quarter-proof-founders-return-to-low-alc-with-half-cocktail-strength-demi-vodka"
+source_name: "Brewbound"
 article_type: "news_brief"
 auto_generated: true
 ---
 
-Rohan Radhakrishnan and Fabian Clark’s first attempt at building a mid-proof spirits category didn’t go as planned. Now, they’re trying again. The pair is back with Demi, a new 20% ABV vodka brand launching today, which arrives after their 2022 venture, Quarter Proof Spirits, struggled to capture...
+Rohan Radhakrishnan and Fabian Clark’s first attempt at building a mid-proof spirits category didn’t go as planned. Now, they’re trying again.
 
-*Source: [BevNET](https://www.bevnet.com/spirits/2026/quarter-proof-founders-return-to-low-alc-with-half-cocktail-strength-demi-vodka)*
+*Source: [Brewbound](https://www.brewbound.com/news/quarter-proof-founders-return-to-low-alc-with-half-cocktail-strength-demi-vodka)*
