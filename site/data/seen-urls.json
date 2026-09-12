@@ -1,20 +1,5 @@
 {
   "urls": {
-    "https://daily.sevenfifty.com/wildfires-are-testing-sierra-de-gredoss-wine-revival/": "2026-09-09T06:18:54.060111+00:00",
-    "https://daily.sevenfifty.com/what-makes-a-great-wine-list-today/": "2026-09-09T06:18:54.060681+00:00",
-    "https://punchdrink.com/articles/underrated-tequila-cocktail-recipes/": "2026-09-09T06:18:54.740063+00:00",
-    "https://punchdrink.com/articles/rolos-wine-program-fire/": "2026-09-09T06:18:54.740578+00:00",
-    "https://www.gobourbon.com/legacy-bourbon-brand-is-for-sale-1b-price-tag/": "2026-09-09T06:18:57.438033+00:00",
-    "https://www.gobourbon.com/big-news-buffalo-trace-distillery-is-expanding-the-btac-collection/": "2026-09-09T06:18:57.438633+00:00",
-    "https://www.gobourbon.com/upcoming-event-beam-supper-club-little-book-chapter-9-may-14th/": "2026-09-09T06:18:57.439151+00:00",
-    "https://www.gobourbon.com/historic-day-heaven-hill-fills-first-barrel-at-new-200m-distillery-in-bardstown/": "2026-09-09T06:18:57.439698+00:00",
-    "https://www.gobourbon.com/new-release-ky-senator-bourbon-john-edwards-107-proof/": "2026-09-09T06:18:57.440200+00:00",
-    "https://www.gobourbon.com/new-release-angels-envy-cellar-collection-vol-5-straight-rye-whiskey-finished-in-french-oak-extra-anejo-tequila-barrels/": "2026-09-09T06:18:57.440734+00:00",
-    "https://www.gobourbon.com/new-release-makers-mark-ground-breaking-historic-new-chapter/": "2026-09-09T06:18:57.441200+00:00",
-    "https://www.gobourbon.com/new-release-blood-oath-pact-11-bourbon-anejo-finished-special-distillery-april-release/": "2026-09-09T06:18:57.441715+00:00",
-    "https://www.gobourbon.com/new-release-2025-michters-10-year-bourbon/": "2026-09-09T06:18:57.442198+00:00",
-    "https://www.gobourbon.com/new-release-barrell-bourbon-cask-finish-p-x-sherry/": "2026-09-09T06:18:57.442696+00:00",
-    "https://austin.eater.com/maps/best-mexican-restaurants-austin": "2026-09-09T06:19:02.078808+00:00",
     "https://craftspiritsmag.com/2026/09/02/503-distilling-expands-west-with-new-hawaii-and-alaska-launches/": "2026-09-09T11:40:36.442164+00:00",
     "https://craftspiritsmag.com/2026/09/02/hello-soju-expands-into-colorado-and-texas-as-spirit-based-rtds-power-alcohols-fastest-growing-category/": "2026-09-09T11:40:36.442765+00:00",
     "https://craftspiritsmag.com/2026/09/02/former-sagamore-spirit-ceos-new-whiskey-venture-draws-on-lessons-learned/": "2026-09-09T11:40:36.443355+00:00",
@@ -95,7 +80,22 @@
     "https://www.brewbound.com/news/uk-based-moth-bets-15m-on-us-growth-as-premium-rtds-surge": "2026-09-11T21:49:37.243115+00:00",
     "https://www.brewbound.com/news/press-clips-sgws-taps-a-b-alum-to-lead-gold-division-boneyard-to-shutter-satellite-pub-and-hemp-brands-win-against-ohio-in-federal-court": "2026-09-11T21:49:37.243727+00:00",
     "https://www.brewbound.com/news/rogue-ip-auction-ends-with-2-82-million-winning-bid-from-fitness-company": "2026-09-11T21:49:37.244544+00:00",
-    "https://www.bevnet.com/news/2026/non-alc-beverages-accelerate-in-late-summer-retail-sales": "2026-09-12T02:56:38.855435+00:00"
+    "https://www.bevnet.com/news/2026/non-alc-beverages-accelerate-in-late-summer-retail-sales": "2026-09-12T02:56:38.855435+00:00",
+    "https://daily.sevenfifty.com/wildfires-are-testing-sierra-de-gredoss-wine-revival/": "2026-09-12T07:42:54.751822+00:00",
+    "https://daily.sevenfifty.com/what-makes-a-great-wine-list-today/": "2026-09-12T07:42:54.752251+00:00",
+    "https://punchdrink.com/articles/underrated-tequila-cocktail-recipes/": "2026-09-12T07:42:55.451120+00:00",
+    "https://punchdrink.com/articles/rolos-wine-program-fire/": "2026-09-12T07:42:55.451457+00:00",
+    "https://www.gobourbon.com/legacy-bourbon-brand-is-for-sale-1b-price-tag/": "2026-09-12T07:42:58.002171+00:00",
+    "https://www.gobourbon.com/big-news-buffalo-trace-distillery-is-expanding-the-btac-collection/": "2026-09-12T07:42:58.048330+00:00",
+    "https://www.gobourbon.com/upcoming-event-beam-supper-club-little-book-chapter-9-may-14th/": "2026-09-12T07:42:58.048905+00:00",
+    "https://www.gobourbon.com/historic-day-heaven-hill-fills-first-barrel-at-new-200m-distillery-in-bardstown/": "2026-09-12T07:42:58.187686+00:00",
+    "https://www.gobourbon.com/new-release-ky-senator-bourbon-john-edwards-107-proof/": "2026-09-12T07:42:58.188217+00:00",
+    "https://www.gobourbon.com/new-release-angels-envy-cellar-collection-vol-5-straight-rye-whiskey-finished-in-french-oak-extra-anejo-tequila-barrels/": "2026-09-12T07:42:58.188717+00:00",
+    "https://www.gobourbon.com/new-release-makers-mark-ground-breaking-historic-new-chapter/": "2026-09-12T07:42:58.189113+00:00",
+    "https://www.gobourbon.com/new-release-blood-oath-pact-11-bourbon-anejo-finished-special-distillery-april-release/": "2026-09-12T07:42:58.189576+00:00",
+    "https://www.gobourbon.com/new-release-2025-michters-10-year-bourbon/": "2026-09-12T07:42:58.190016+00:00",
+    "https://www.gobourbon.com/new-release-barrell-bourbon-cask-finish-p-x-sherry/": "2026-09-12T07:42:58.190401+00:00",
+    "https://austin.eater.com/maps/best-mexican-restaurants-austin": "2026-09-12T07:43:01.910661+00:00"
   },
-  "last_cleanup": "2026-09-12T02:56:36.919329+00:00"
+  "last_cleanup": "2026-09-12T07:42:46.562421+00:00"
 }
