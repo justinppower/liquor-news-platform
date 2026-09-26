@@ -1,15 +1,5 @@
 {
   "urls": {
-    "https://dallas.eater.com/restaurant-news/77529/michelin-2005-winners-dallas-mamani": "2026-09-23T01:40:11.128648+00:00",
-    "https://austin.eater.com/maps/best-sports-bars-austin-football-baseball-soccer-hockey-games": "2026-09-23T01:40:11.474840+00:00",
-    "https://austin.eater.com/maps/best-restaurants-austin-eater-38": "2026-09-23T01:40:11.475218+00:00",
-    "https://distilledspirits.org/bill-to-allow-consumers-to-decide-on-seven-day-spirits-sales-approved-by-committee/": "2026-09-23T01:40:24.236218+00:00",
-    "https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/": "2026-09-23T01:40:24.236825+00:00",
-    "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/": "2026-09-23T01:40:24.237165+00:00",
-    "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-09-23T01:40:24.237447+00:00",
-    "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-09-23T01:40:24.237820+00:00",
-    "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-09-23T01:40:24.238219+00:00",
-    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-09-23T01:40:24.238662+00:00",
     "https://craftspiritsmag.com/2026/09/16/branch-barrel-distilling-releases-peas-please-one-of-the-first-specialty-spirits-ever-built-around-a-field-pea-mash-bill/": "2026-09-23T07:16:13.425531+00:00",
     "https://craftspiritsmag.com/2026/09/16/mad-river-distillers-on-craft-community-and-the-vermont-ethos/": "2026-09-23T07:16:13.426196+00:00",
     "https://craftspiritsmag.com/2026/09/16/copperworks-craft-malt-month-2026-american-single-malt-whiskey/": "2026-09-23T07:16:13.426738+00:00",
@@ -94,7 +84,17 @@
     "https://punchdrink.com/articles/best-easy-whiskey-cocktail-recipes/": "2026-09-25T22:37:14.568259+00:00",
     "https://www.texasmonthly.com/food/texas-daily-state-fair-food-judge/": "2026-09-25T22:37:21.953284+00:00",
     "https://austin.eater.com/maps/university-of-texas-austin-ut-campus-best-restaurants-bars-where-to-eat": "2026-09-25T22:37:22.241977+00:00",
-    "https://www.brewbound.com/news/mark-anthony-brands-to-exit-coors-distributing-company-for-reyes-subsidiary-in-denver": "2026-09-26T01:09:07.050495+00:00"
+    "https://www.brewbound.com/news/mark-anthony-brands-to-exit-coors-distributing-company-for-reyes-subsidiary-in-denver": "2026-09-26T01:09:07.050495+00:00",
+    "https://dallas.eater.com/restaurant-news/77529/michelin-2005-winners-dallas-mamani": "2026-09-26T06:21:54.308591+00:00",
+    "https://austin.eater.com/maps/best-sports-bars-austin-football-baseball-soccer-hockey-games": "2026-09-26T06:21:54.798206+00:00",
+    "https://austin.eater.com/maps/best-restaurants-austin-eater-38": "2026-09-26T06:21:54.798708+00:00",
+    "https://distilledspirits.org/bill-to-allow-consumers-to-decide-on-seven-day-spirits-sales-approved-by-committee/": "2026-09-26T06:22:05.161710+00:00",
+    "https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/": "2026-09-26T06:22:05.162392+00:00",
+    "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/": "2026-09-26T06:22:05.163279+00:00",
+    "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-09-26T06:22:05.164015+00:00",
+    "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-09-26T06:22:05.164651+00:00",
+    "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-09-26T06:22:05.165601+00:00",
+    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-09-26T06:22:05.166692+00:00"
   },
-  "last_cleanup": "2026-09-26T01:09:03.511656+00:00"
+  "last_cleanup": "2026-09-26T06:21:37.288683+00:00"
 }
