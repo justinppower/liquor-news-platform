@@ -1,9 +1,5 @@
 {
   "urls": {
-    "https://www.texasmonthly.com/culture/david-byrne-true-stories-oral-history/": "2026-09-23T12:52:47.626157+00:00",
-    "https://www.texasmonthly.com/bbq/bubbys-bbq-smithville/": "2026-09-23T12:52:47.626479+00:00",
-    "https://www.texasmonthly.com/news-politics/ogallala-water-crisis-panhandle-playas/": "2026-09-23T12:52:47.626737+00:00",
-    "https://www.texasmonthly.com/games/word-wrangler-september-23-2026/": "2026-09-23T12:52:47.627012+00:00",
     "https://www.bevnet.com/spirits/2026/after-brown-forman-snub-sazerac-in-talks-with-european-beverage-group": "2026-09-23T17:40:27.067378+00:00",
     "https://daily.sevenfifty.com/how-4-new-master-sommeliers-passed-the-exam/": "2026-09-23T17:41:09.128055+00:00",
     "https://vinepair.com/articles/craft-beer-favorite-styles-timeline/": "2026-09-23T17:41:09.620664+00:00",
@@ -90,7 +86,10 @@
     "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-09-26T06:22:05.164015+00:00",
     "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-09-26T06:22:05.164651+00:00",
     "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-09-26T06:22:05.165601+00:00",
-    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-09-26T06:22:05.166692+00:00"
+    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-09-26T06:22:05.166692+00:00",
+    "https://www.texasmonthly.com/culture/david-byrne-true-stories-oral-history/": "2026-09-26T15:41:03.395179+00:00",
+    "https://www.texasmonthly.com/bbq/bubbys-bbq-smithville/": "2026-09-26T15:41:03.395783+00:00",
+    "https://www.texasmonthly.com/news-politics/ogallala-water-crisis-panhandle-playas/": "2026-09-26T15:41:03.396286+00:00"
   },
-  "last_cleanup": "2026-09-26T11:38:34.974273+00:00"
+  "last_cleanup": "2026-09-26T15:40:34.589247+00:00"
 }
