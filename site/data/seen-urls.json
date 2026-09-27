@@ -1,10 +1,5 @@
 {
   "urls": {
-    "https://www.bevnet.com/news/2026/submit-your-nominations-for-bevnet-cpg-medias-2026-awards": "2026-09-24T21:39:29.846877+00:00",
-    "https://www.brewbound.com/news/sun-king-to-transition-florida-production-to-sun-lab-brewing-shutter-sarasota-facility-and-move-taproom": "2026-09-24T21:39:31.649147+00:00",
-    "https://www.brewbound.com/news/submit-your-nominations-for-bevnet-cpg-medias-2026-awards": "2026-09-24T21:39:31.649677+00:00",
-    "https://vinepair.com/booze-news/glenmorangie-50-year-scotch-oldest-whisky-yet/": "2026-09-24T21:39:36.242317+00:00",
-    "https://vinepair.com/booze-news/gallo-apothic-heidi-klum-halloween-collab/": "2026-09-24T21:39:36.243065+00:00",
     "https://daily.sevenfifty.com/how-an-outlier-region-is-reshaping-austrian-wine/": "2026-09-25T10:22:53.510723+00:00",
     "https://daily.sevenfifty.com/inside-chandons-new-spritz-collection/": "2026-09-25T10:22:53.511133+00:00",
     "https://craftspiritsmag.com/2026/09/24/whistling-andy-distillery-releases-twisted-trail-montana-huckleberry-bourbon-featuring-the-acsa-certified-craft-seal/": "2026-09-25T10:22:57.207562+00:00",
@@ -80,7 +75,12 @@
     "https://vinepair.com/articles/what-happens-to-aging-craft-beer/": "2026-09-27T19:29:45.029180+00:00",
     "https://vinepair.com/articles/vp-podcast-cabernet-still-king/": "2026-09-27T19:29:45.029703+00:00",
     "https://www.shankennewsdaily.com/2026/09/24/40923/wine-spectator-exclusive-jean-charles-boisset-purchases-artesa-winery/": "2026-09-27T19:29:50.306761+00:00",
-    "https://www.shankennewsdaily.com/2026/09/24/40921/italian-wine-exports-to-u-s-improved-over-the-summer/": "2026-09-27T19:29:50.307304+00:00"
+    "https://www.shankennewsdaily.com/2026/09/24/40921/italian-wine-exports-to-u-s-improved-over-the-summer/": "2026-09-27T19:29:50.307304+00:00",
+    "https://www.bevnet.com/news/2026/submit-your-nominations-for-bevnet-cpg-medias-2026-awards": "2026-09-27T22:31:26.057038+00:00",
+    "https://www.brewbound.com/news/sun-king-to-transition-florida-production-to-sun-lab-brewing-shutter-sarasota-facility-and-move-taproom": "2026-09-27T22:31:27.949291+00:00",
+    "https://www.brewbound.com/news/submit-your-nominations-for-bevnet-cpg-medias-2026-awards": "2026-09-27T22:31:28.009103+00:00",
+    "https://vinepair.com/booze-news/glenmorangie-50-year-scotch-oldest-whisky-yet/": "2026-09-27T22:31:32.776942+00:00",
+    "https://vinepair.com/booze-news/gallo-apothic-heidi-klum-halloween-collab/": "2026-09-27T22:31:32.777641+00:00"
   },
-  "last_cleanup": "2026-09-27T19:29:36.664641+00:00"
+  "last_cleanup": "2026-09-27T22:31:24.009055+00:00"
 }
