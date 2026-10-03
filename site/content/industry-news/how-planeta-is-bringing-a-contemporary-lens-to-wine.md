@@ -6,13 +6,13 @@ pillars: ["industry-news"]
 tags: ["spirits", "wine", "beer", "industry trends"]
 categories: ["Industry News"]
 author: "RSS Feed"
-description: "A multidisciplinary meeting of the minds hosted by Planeta in 2025 gave rise to a set of guidelines to frame wine as a contemporary story, rooted in principles "
+description: "A multidisciplinary meeting of the minds hosted by Planeta gave rise to a set of guidelines to frame wine as a contemporary story, rooted in principles that hav"
 source_url: "https://daily.sevenfifty.com/how-planeta-is-bringing-a-contemporary-lens-to-wine/"
 source_name: "SevenFifty Daily"
 article_type: "news_brief"
 auto_generated: true
 ---
 
-A multidisciplinary meeting of the minds hosted by Planeta in 2025 gave rise to a set of guidelines to frame wine as a contemporary story, rooted in principles that have long been part of Planeta’s ethos
+A multidisciplinary meeting of the minds hosted by Planeta gave rise to a set of guidelines to frame wine as a contemporary story, rooted in principles that have long been part of Planeta’s ethos
 
 *Source: [SevenFifty Daily](https://daily.sevenfifty.com/how-planeta-is-bringing-a-contemporary-lens-to-wine/)*
