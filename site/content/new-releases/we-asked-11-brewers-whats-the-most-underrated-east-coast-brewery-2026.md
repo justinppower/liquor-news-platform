@@ -1,6 +1,6 @@
 ---
 title: "We Asked 11 Brewers: What’s The Most Underrated East Coast Brewery? (2026)"
-date: 2026-09-30T20:27:54+0000
+date: 2026-10-01T10:55:54+0000
 draft: false
 pillars: ["new-releases"]
 tags: ["cocktail", "wine", "spirits", "beer"]
