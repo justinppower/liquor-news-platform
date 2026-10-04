@@ -1,5 +1,5 @@
 ---
-title: "Jan Jarboe Russell Was a Widely Admired Author and Journalist. She Was an Even Better Friend"
+title: "Jan Jarboe Russell Was a Widely Admired Author and Journalist. She Was an Even Better Friend."
 date: 2026-09-30T21:41:41+0000
 draft: false
 pillars: ["texas-beat"]
