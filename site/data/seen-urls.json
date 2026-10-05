@@ -1,14 +1,5 @@
 {
   "urls": {
-    "https://www.bevnet.com/news/2026/na-beverages-broadly-stable-over-the-back-to-school-period": "2026-10-02T15:18:53.256210+00:00",
-    "https://www.bevnet.com/news/2026/new-beverages-liquid-death-liquid-i-v-embrace-blood-orange-mingles-non-alc-espresso-martini": "2026-10-02T15:18:53.256629+00:00",
-    "https://www.brewbound.com/news/spirits-based-rtd-sales-21-in-latest-niq-weekly-scans-surfside-super-lyte-sun-cruiser-cutwater-buzzballz-lead-growth": "2026-10-02T15:18:55.738588+00:00",
-    "https://vinepair.com/articles/where-to-drink-in-nyc-right-now/": "2026-10-02T15:19:01.938859+00:00",
-    "https://vinepair.com/booze-news/10-most-expensive-tequilas-2026/": "2026-10-02T15:19:01.939444+00:00",
-    "https://vinepair.com/articles/wa-bartenders-best-rye-whiskey-for-beginners-2026/": "2026-10-02T15:19:01.939871+00:00",
-    "https://imbibemagazine.com/drink-of-the-week-lagrimas-del-valle-la-mesa-del-charco-plata-tequila/": "2026-10-02T15:19:02.953072+00:00",
-    "https://craftspiritsmag.com/2026/09/28/trust-your-gut-but-test-the-data-bluegrass-bitters-sean-herbig-on-crafting-flavor/": "2026-10-02T15:19:05.525216+00:00",
-    "https://www.texasmonthly.com/culture/friday-night-lights-anniversary-kyle-chandler/": "2026-10-02T15:19:14.430539+00:00",
     "https://www.bevnet.com/news/events/bevnetlivewinter26/sell-the-rocketship-inside-the-st-agrestis-exit-at-bevnet-live-la-2026": "2026-10-02T20:03:24.701217+00:00",
     "https://www.bevnet.com/news/2026/taste-radio-do-what-the-others-wont-its-why-this-brand-works": "2026-10-02T20:03:24.701903+00:00",
     "https://www.brewbound.com/news/two-roads-joins-us-beverage-sales-platform-in-wake-of-b3-exit": "2026-10-02T20:03:26.576606+00:00",
@@ -83,7 +74,25 @@
     "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-10-05T09:25:22.696251+00:00",
     "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-10-05T09:25:22.696845+00:00",
     "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-10-05T09:25:22.697393+00:00",
-    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-10-05T09:25:22.697948+00:00"
+    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-10-05T09:25:22.697948+00:00",
+    "https://www.bevnet.com/news/2026/na-beverages-broadly-stable-over-the-back-to-school-period": "2026-10-05T18:42:18.405580+00:00",
+    "https://www.bevnet.com/news/2026/new-beverages-liquid-death-liquid-i-v-embrace-blood-orange-mingles-non-alc-espresso-martini": "2026-10-05T18:42:18.405951+00:00",
+    "https://www.brewbound.com/news/feds-southern-glazers-bribery-probe-could-serve-as-template-for-future-investigations": "2026-10-05T18:42:20.060241+00:00",
+    "https://www.brewbound.com/news/spirits-based-rtd-sales-21-in-latest-niq-weekly-scans-surfside-super-lyte-sun-cruiser-cutwater-buzzballz-lead-growth": "2026-10-05T18:42:20.060927+00:00",
+    "https://daily.sevenfifty.com/after-a-decade-of-momentum-whats-next-for-hungarian-wine/": "2026-10-05T18:42:23.817739+00:00",
+    "https://vinepair.com/articles/where-to-drink-in-nyc-right-now/": "2026-10-05T18:42:24.251489+00:00",
+    "https://vinepair.com/booze-news/10-most-expensive-tequilas-2026/": "2026-10-05T18:42:24.251973+00:00",
+    "https://vinepair.com/articles/wa-bartenders-best-rye-whiskey-for-beginners-2026/": "2026-10-05T18:42:24.252374+00:00",
+    "https://imbibemagazine.com/drink-of-the-week-lagrimas-del-valle-la-mesa-del-charco-plata-tequila/": "2026-10-05T18:42:25.496740+00:00",
+    "https://craftspiritsmag.com/2026/10/01/celebrate-national-vodka-day-with-craft-spirits/": "2026-10-05T18:42:28.288294+00:00",
+    "https://craftspiritsmag.com/2026/09/28/trust-your-gut-but-test-the-data-bluegrass-bitters-sean-herbig-on-crafting-flavor/": "2026-10-05T18:42:28.288679+00:00",
+    "https://www.shankennewsdaily.com/2026/10/05/40995/wine-market-to-slip-for-sixth-straight-year-but-wine-based-cocktails-stem-decline/": "2026-10-05T18:42:28.997486+00:00",
+    "https://www.shankennewsdaily.com/2026/10/05/40993/on-premise-outperforming-wswa-says/": "2026-10-05T18:42:28.997850+00:00",
+    "https://www.shankennewsdaily.com/2026/10/05/40989/news-briefs-for-october-5-2026/": "2026-10-05T18:42:28.998256+00:00",
+    "https://www.texasmonthly.com/press-room/2026-signal-awards-finalist/": "2026-10-05T18:42:30.759085+00:00",
+    "https://www.texasmonthly.com/bbq/beef-lounge-pop-ups/": "2026-10-05T18:42:30.759445+00:00",
+    "https://www.texasmonthly.com/games/word-wrangler-october-5-2026/": "2026-10-05T18:42:30.759728+00:00",
+    "https://www.texasmonthly.com/bbq/classic-sandwiches-made-with-texas-bbq/": "2026-10-05T18:42:30.760039+00:00"
   },
-  "last_cleanup": "2026-10-05T09:24:51.621497+00:00"
+  "last_cleanup": "2026-10-05T18:42:16.207467+00:00"
 }
