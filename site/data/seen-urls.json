@@ -1,23 +1,5 @@
 {
   "urls": {
-    "https://www.bevnet.com/news/2026/na-beverages-broadly-stable-over-the-back-to-school-period": "2026-10-05T18:42:18.405580+00:00",
-    "https://www.bevnet.com/news/2026/new-beverages-liquid-death-liquid-i-v-embrace-blood-orange-mingles-non-alc-espresso-martini": "2026-10-05T18:42:18.405951+00:00",
-    "https://www.brewbound.com/news/feds-southern-glazers-bribery-probe-could-serve-as-template-for-future-investigations": "2026-10-05T18:42:20.060241+00:00",
-    "https://www.brewbound.com/news/spirits-based-rtd-sales-21-in-latest-niq-weekly-scans-surfside-super-lyte-sun-cruiser-cutwater-buzzballz-lead-growth": "2026-10-05T18:42:20.060927+00:00",
-    "https://daily.sevenfifty.com/after-a-decade-of-momentum-whats-next-for-hungarian-wine/": "2026-10-05T18:42:23.817739+00:00",
-    "https://vinepair.com/articles/where-to-drink-in-nyc-right-now/": "2026-10-05T18:42:24.251489+00:00",
-    "https://vinepair.com/booze-news/10-most-expensive-tequilas-2026/": "2026-10-05T18:42:24.251973+00:00",
-    "https://vinepair.com/articles/wa-bartenders-best-rye-whiskey-for-beginners-2026/": "2026-10-05T18:42:24.252374+00:00",
-    "https://imbibemagazine.com/drink-of-the-week-lagrimas-del-valle-la-mesa-del-charco-plata-tequila/": "2026-10-05T18:42:25.496740+00:00",
-    "https://craftspiritsmag.com/2026/10/01/celebrate-national-vodka-day-with-craft-spirits/": "2026-10-05T18:42:28.288294+00:00",
-    "https://craftspiritsmag.com/2026/09/28/trust-your-gut-but-test-the-data-bluegrass-bitters-sean-herbig-on-crafting-flavor/": "2026-10-05T18:42:28.288679+00:00",
-    "https://www.shankennewsdaily.com/2026/10/05/40995/wine-market-to-slip-for-sixth-straight-year-but-wine-based-cocktails-stem-decline/": "2026-10-05T18:42:28.997486+00:00",
-    "https://www.shankennewsdaily.com/2026/10/05/40993/on-premise-outperforming-wswa-says/": "2026-10-05T18:42:28.997850+00:00",
-    "https://www.shankennewsdaily.com/2026/10/05/40989/news-briefs-for-october-5-2026/": "2026-10-05T18:42:28.998256+00:00",
-    "https://www.texasmonthly.com/press-room/2026-signal-awards-finalist/": "2026-10-05T18:42:30.759085+00:00",
-    "https://www.texasmonthly.com/bbq/beef-lounge-pop-ups/": "2026-10-05T18:42:30.759445+00:00",
-    "https://www.texasmonthly.com/games/word-wrangler-october-5-2026/": "2026-10-05T18:42:30.759728+00:00",
-    "https://www.texasmonthly.com/bbq/classic-sandwiches-made-with-texas-bbq/": "2026-10-05T18:42:30.760039+00:00",
     "https://www.bevnet.com/news/2026/hiyo-closes-20-8m-series-b-as-distribution-footprint-surges": "2026-10-06T00:33:40.529829+00:00",
     "https://www.brewbound.com/news/hiyo-closes-20-8m-series-b-as-distribution-footprint-surges": "2026-10-06T00:33:43.741818+00:00",
     "https://www.brewbound.com/news/two-roads-joins-us-beverage-sales-platform-in-wake-of-b3-exit": "2026-10-06T00:33:43.742364+00:00",
@@ -102,7 +84,17 @@
     "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-10-08T16:45:13.877136+00:00",
     "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-10-08T16:45:13.877528+00:00",
     "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-10-08T16:45:13.877913+00:00",
-    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-10-08T16:45:13.878308+00:00"
+    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-10-08T16:45:13.878308+00:00",
+    "https://www.brewbound.com/news/174-layoffs-expected-next-month-due-to-baltimore-guinness-open-gate-brewery-closure": "2026-10-08T21:47:09.830209+00:00",
+    "https://www.brewbound.com/news/feds-southern-glazers-bribery-probe-could-serve-as-template-for-future-investigations": "2026-10-08T21:47:09.830674+00:00",
+    "https://daily.sevenfifty.com/after-a-decade-of-momentum-whats-next-for-hungarian-wine/": "2026-10-08T21:47:17.561068+00:00",
+    "https://vinepair.com/articles/where-to-drink-in-nyc-right-now/": "2026-10-08T21:47:18.093022+00:00",
+    "https://imbibemagazine.com/drink-of-the-week-lagrimas-del-valle-la-mesa-del-charco-plata-tequila/": "2026-10-08T21:47:19.120087+00:00",
+    "https://craftspiritsmag.com/2026/10/08/knobel-tennessee-whiskey-launches-7-year-special-edition-to-honor-mikeroweworks-foundation-milestone/": "2026-10-08T21:47:22.446188+00:00",
+    "https://craftspiritsmag.com/2026/10/08/ghostwood-whiskey-introduces-3-brothers-bourbon-a-six-year-high-rye-three-grain-bourbon-inspired-by-family-traditions/": "2026-10-08T21:47:22.446473+00:00",
+    "https://craftspiritsmag.com/2026/10/01/celebrate-national-vodka-day-with-craft-spirits/": "2026-10-08T21:47:22.446807+00:00",
+    "https://www.texasmonthly.com/press-room/2026-signal-awards-finalist/": "2026-10-08T21:47:27.757909+00:00",
+    "https://www.texasmonthly.com/bbq/beef-lounge-pop-ups/": "2026-10-08T21:47:27.758213+00:00"
   },
-  "last_cleanup": "2026-10-08T16:44:45.526315+00:00"
+  "last_cleanup": "2026-10-08T21:47:05.351632+00:00"
 }
