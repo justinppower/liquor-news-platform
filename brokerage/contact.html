@@ -94,6 +94,10 @@ p{margin:0}
 .trust-foot{max-width:1140px;margin:0 auto;padding:0 20px 20px}
 /* sections */
 .section{padding-block:80px}
+.section:not(.soft):not(.navy) + .cta-sec{padding-top:0}
+.head-phone-m{display:none}
+.phone-strip{display:none}
+.result{scroll-margin-top:90px}
 .section.soft{background:var(--soft)}
 .section.navy{background:var(--navy);color:#fff}
 .section.navy h2,.section.navy h3{color:#fff}
@@ -218,6 +222,8 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 
 /* responsive */
 @media (max-width:1140px){
+  .head-phone-m{display:inline-flex;flex-direction:column;align-items:flex-end;text-decoration:none;color:var(--navy);font-weight:700;font-size:1rem;line-height:1.15;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .head-phone-m span{font-size:.68rem;font-weight:600;color:var(--muted)}
   .nav,.head-cta .head-phone,.head-cta .btn{display:none}
   .menu-btn{display:inline-flex}
   .mobile-nav.open{display:block}
@@ -234,11 +240,13 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
   .split,.two-col,.calc,.bio{grid-template-columns:1fr;gap:28px}
   .bio .portrait{max-width:320px}
   .result,.side-card{position:static}
-  .calc .result{order:-1}
   .foot-grid{grid-template-columns:1fr 1fr}
   .cta-band{grid-template-columns:1fr;padding:36px}
 }
 @media (max-width:640px){
+  .head-phone-m{display:none}
+  .phone-strip{display:block;background:var(--navy);color:#fff;text-align:center;text-decoration:none;font-size:1rem;font-weight:600;padding:9px 12px;font-variant-numeric:tabular-nums}
+  .phone-strip b{color:#f0b35e;white-space:nowrap}
   html{font-size:17px}
   .section{padding-block:56px}
   .g2,.g3,.g4,.steps,.form-grid{grid-template-columns:1fr}
@@ -252,14 +260,15 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
   .logo small{display:none}
   .mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 16px rgba(0,0,0,.08)}
   .mobile-bar .btn{min-height:52px;padding:12px;font-size:.98rem}
-  body{padding-bottom:80px}
+  body{padding-bottom:96px}
+  body.typing .mobile-bar,body.form-on .mobile-bar{display:none}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style></head><body><header class="site-header"><div class="wrap bar">
+</style></head><body><header class="site-header"><a class="phone-strip" href="tel:+17372813132">Call Justin or Jeff: <b>(737) 281-3132</b></a><div class="wrap bar">
 <a class="logo" href="/"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#f0b35e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-5h4v5"/></svg></span><span><b>Package Store TX</b><small>Texas liquor store brokers</small></span></a>
 <nav class="nav" aria-label="Main"><a href="/sell.html">Sell</a><a href="/buy.html">Buy</a><a href="/audit.html">Readiness Audit</a><a href="/licensing.html">Licensing</a><a href="/news/">News</a><a href="/about.html">About</a><a href="/contact.html" aria-current="page">Contact</a></nav>
 <div class="head-cta"><a class="head-phone" href="tel:+17372813132"><span>Call Justin or Jeff</span>(737) 281-3132</a><a class="btn sm" href="/value.html">Free store value</a>
-<button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="26" height="26"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
+<a class="head-phone-m" href="tel:+17372813132"><span>Call us</span>(737) 281-3132</a><button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="26" height="26"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
 </div><nav class="mobile-nav" aria-label="Mobile"><a href="/sell.html">Sell</a><a href="/buy.html">Buy</a><a href="/audit.html">Readiness Audit</a><a href="/licensing.html">Licensing</a><a href="/news/">News</a><a href="/about.html">About</a><a href="/contact.html" aria-current="page">Contact</a><a href="/value.html">Free store value</a><a href="tel:+17372813132">Call (737) 281-3132</a></nav></header><main><section class="page-head"><div class="wrap"><span class="eyebrow" style="color:#f0b35e">Contact</span><h1>Talk to us</h1><p class="lead">The fastest way to reach us is by phone. If we miss you, we call back the same day.</p></div></section>
 <section class="section"><div class="wrap two-col">
 <div class="form-card"><h3 style="margin-bottom:16px">Send us a message</h3><form class="lead" id="contact-form" data-type="contact" data-done="contact-form-done" novalidate>
@@ -282,7 +291,7 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 </div></section>
 <section class="section soft" id="iabs"><div class="wrap narrow prose">
 <h2>Information About Brokerage Services</h2>
-<p>Texas law requires real estate license holders to give you this notice. The completed form for Jeffrey Grant, TREC #123456789, will be linked here at launch.</p>
+<p>Texas law requires real estate license holders to give you this notice. <a href="https://www.trec.texas.gov/forms/information-about-brokerage-services">Read the Information About Brokerage Services form</a> on the Texas Real Estate Commission website. Real estate services are provided by Jeffrey Grant, TREC #123456789.</p>
 </div></section>
 </main><footer class="site-footer"><div class="wrap">
 <div class="foot-grid">
@@ -293,7 +302,7 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 </div>
 <div class="foot-legal">
 <div class="legal-links"><a href="/terms.html">Terms of Use</a><a href="/privacy.html">Privacy Policy</a><a href="/disclaimers.html">Disclaimers</a></div>
-<div class="trec"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice">Texas Real Estate Commission Consumer Protection Notice</a><a href="/contact.html">Texas Real Estate Commission Information About Brokerage Services</a></div>
+<div class="trec"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice">Texas Real Estate Commission Consumer Protection Notice</a><a href="https://www.trec.texas.gov/forms/information-about-brokerage-services">Texas Real Estate Commission Information About Brokerage Services</a></div>
 <p>Real estate services provided by Jeffrey Grant, licensed Texas real estate broker, TREC license #123456789. All figures, ranges, multiples, timelines and statistics on this site are indicative, non-binding estimates drawn from published third-party data. They are not an offer to buy or sell, an appraisal, a valuation opinion, a broker price opinion, or a guarantee of any price, timeline or result, and must not be relied on to make any decision. Actual results depend on your store's records, lease, location, permits, buyer and market conditions. Past rankings and results do not predict future results. Nothing on this site is legal, tax, financial or licensing advice.</p>
 <p>Use of this site is subject to our <a href="/terms.html">Terms of Use</a>. &copy; 2026 Package Store TX. Photos: Unsplash.</p>
 </div></div></footer>
@@ -322,6 +331,20 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
     fetch(LEAD_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
       .then(function(r){ onDone(r.ok, false); })
       .catch(function(){ onDone(false, false); });
+  }
+
+  // hide the sticky call bar while someone is typing, so it never covers a field or button
+  document.addEventListener("focusin", function(e){ if(e.target.matches("input,textarea,select")) document.body.classList.add("typing"); });
+  document.addEventListener("focusout", function(){ document.body.classList.remove("typing"); });
+
+  // hide the sticky call bar while any form is on screen, so it never sits over a form button
+  if("IntersectionObserver" in window){
+    var onScreen = new Set();
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting) onScreen.add(e.target); else onScreen.delete(e.target); });
+      document.body.classList.toggle("form-on", onScreen.size > 0);
+    });
+    document.querySelectorAll("form").forEach(function(f){ io.observe(f); });
   }
 
   // mobile menu
@@ -396,7 +419,7 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 
       var has = sales > 0 || sde > 0;
       document.getElementById("r-empty").hidden = has;
-      document.getElementById("r-full").hidden = !has;
+      var rf = document.getElementById("r-full"); rf.hidden = !has; rf.style.display = has ? "flex" : "none";
       if(!has) return;
       document.getElementById("r-range").textContent = money(lo) + " to " + money(hi);
       document.getElementById("r-basis").textContent = "Based on " + basis + ".";
@@ -414,7 +437,12 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
     }
     calc.addEventListener("input", compute);
     calc.addEventListener("change", compute);
-    calc.addEventListener("submit", function(e){ e.preventDefault(); compute(); });
+    calc.addEventListener("submit", function(e){
+      e.preventDefault(); compute();
+      if(num("sales") <= 0 && num("sde") <= 0){ var s0 = document.getElementById("sales"); if(s0) s0.focus(); return; }
+      var r = document.getElementById("result");
+      if(r && window.matchMedia("(max-width:1000px)").matches){ r.scrollIntoView({behavior:"smooth", block:"start"}); }
+    });
     compute();
 
     var gate = document.getElementById("gate");

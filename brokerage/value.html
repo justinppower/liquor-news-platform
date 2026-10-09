@@ -94,6 +94,10 @@ p{margin:0}
 .trust-foot{max-width:1140px;margin:0 auto;padding:0 20px 20px}
 /* sections */
 .section{padding-block:80px}
+.section:not(.soft):not(.navy) + .cta-sec{padding-top:0}
+.head-phone-m{display:none}
+.phone-strip{display:none}
+.result{scroll-margin-top:90px}
 .section.soft{background:var(--soft)}
 .section.navy{background:var(--navy);color:#fff}
 .section.navy h2,.section.navy h3{color:#fff}
@@ -218,6 +222,8 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 
 /* responsive */
 @media (max-width:1140px){
+  .head-phone-m{display:inline-flex;flex-direction:column;align-items:flex-end;text-decoration:none;color:var(--navy);font-weight:700;font-size:1rem;line-height:1.15;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .head-phone-m span{font-size:.68rem;font-weight:600;color:var(--muted)}
   .nav,.head-cta .head-phone,.head-cta .btn{display:none}
   .menu-btn{display:inline-flex}
   .mobile-nav.open{display:block}
@@ -234,11 +240,13 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
   .split,.two-col,.calc,.bio{grid-template-columns:1fr;gap:28px}
   .bio .portrait{max-width:320px}
   .result,.side-card{position:static}
-  .calc .result{order:-1}
   .foot-grid{grid-template-columns:1fr 1fr}
   .cta-band{grid-template-columns:1fr;padding:36px}
 }
 @media (max-width:640px){
+  .head-phone-m{display:none}
+  .phone-strip{display:block;background:var(--navy);color:#fff;text-align:center;text-decoration:none;font-size:1rem;font-weight:600;padding:9px 12px;font-variant-numeric:tabular-nums}
+  .phone-strip b{color:#f0b35e;white-space:nowrap}
   html{font-size:17px}
   .section{padding-block:56px}
   .g2,.g3,.g4,.steps,.form-grid{grid-template-columns:1fr}
@@ -252,48 +260,50 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
   .logo small{display:none}
   .mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 16px rgba(0,0,0,.08)}
   .mobile-bar .btn{min-height:52px;padding:12px;font-size:.98rem}
-  body{padding-bottom:80px}
+  body{padding-bottom:96px}
+  body.typing .mobile-bar,body.form-on .mobile-bar{display:none}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style></head><body><header class="site-header"><div class="wrap bar">
+</style></head><body><header class="site-header"><a class="phone-strip" href="tel:+17372813132">Call Justin or Jeff: <b>(737) 281-3132</b></a><div class="wrap bar">
 <a class="logo" href="/"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#f0b35e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-5h4v5"/></svg></span><span><b>Package Store TX</b><small>Texas liquor store brokers</small></span></a>
 <nav class="nav" aria-label="Main"><a href="/sell.html">Sell</a><a href="/buy.html">Buy</a><a href="/audit.html">Readiness Audit</a><a href="/licensing.html">Licensing</a><a href="/news/">News</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav>
 <div class="head-cta"><a class="head-phone" href="tel:+17372813132"><span>Call Justin or Jeff</span>(737) 281-3132</a><a class="btn sm" href="/value.html">Free store value</a>
-<button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="26" height="26"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
-</div><nav class="mobile-nav" aria-label="Mobile"><a href="/sell.html">Sell</a><a href="/buy.html">Buy</a><a href="/audit.html">Readiness Audit</a><a href="/licensing.html">Licensing</a><a href="/news/">News</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/value.html">Free store value</a><a href="tel:+17372813132">Call (737) 281-3132</a></nav></header><main><section class="page-head"><div class="wrap"><span class="eyebrow" style="color:#f0b35e">Free estimate</span><h1>What could your store sell for?</h1><p class="lead">Enter a few numbers and see a price range based on what 1,076 liquor stores actually sold for. Nothing is sent until you ask for the full report.</p></div></section>
+<a class="head-phone-m" href="tel:+17372813132"><span>Call us</span>(737) 281-3132</a><button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="26" height="26"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
+</div><nav class="mobile-nav" aria-label="Mobile"><a href="/sell.html">Sell</a><a href="/buy.html">Buy</a><a href="/audit.html">Readiness Audit</a><a href="/licensing.html">Licensing</a><a href="/news/">News</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/value.html">Free store value</a><a href="tel:+17372813132">Call (737) 281-3132</a></nav></header><main><section class="page-head"><div class="wrap"><span class="eyebrow" style="color:#f0b35e">Free estimate</span><h1>What could your store sell for?</h1><p class="lead">Enter a few numbers and see a price range based on what 1,076 US liquor stores actually sold for. Nothing is sent unless you ask for the detailed report.</p></div></section>
 <section class="section"><div class="wrap">
 <div class="calc">
 <form id="calc" class="form-card" novalidate>
 <h3>Your store</h3>
-<div class="field"><label for="sales">Yearly sales</label><span class="hint">Total sales for the last full year</span><div class="money"><input id="sales" inputmode="numeric" data-money value="1,050,000"></div></div>
-<div class="field"><label for="sde">Your yearly take-home <span class="hint">(if you know it)</span></label><span class="hint">Profit plus what you pay yourself</span><div class="money"><input id="sde" inputmode="numeric" data-money value="150,000"></div></div>
-<div class="field"><label for="inventory">Stock on the shelves, at cost</label><div class="money"><input id="inventory" inputmode="numeric" data-money value="175,000"></div></div>
+<div class="field"><label for="sales">Yearly sales</label><span class="hint">Total sales for the last full year</span><div class="money"><input id="sales" inputmode="numeric" data-money placeholder="1,050,000" required></div></div>
+<div class="field"><label for="sde">Your yearly take-home <span class="hint">(if you know it)</span></label><span class="hint">Profit plus what you pay yourself</span><div class="money"><input id="sde" inputmode="numeric" data-money placeholder="150,000"></div></div>
+<div class="field"><label for="inventory">Stock on the shelves, at cost <span class="hint">(optional)</span></label><div class="money"><input id="inventory" inputmode="numeric" data-money placeholder="175,000"></div></div>
 <fieldset class="field"><legend>Do you own the building?</legend>
 <div class="choice"><label><input type="radio" name="own" id="own-no" value="rent" checked>I rent it</label><label><input type="radio" name="own" id="own-yes" value="own">I own it</label></div></fieldset>
 <div class="form-grid">
-<div class="field" id="lease-row"><label for="lease">Years left on lease</label><input id="lease" inputmode="numeric" value="8"></div>
-<div class="field"><label for="years">Years open</label><input id="years" inputmode="numeric" value="12"></div>
+<div class="field" id="lease-row"><label for="lease">Years left on lease <span class="hint">(optional)</span></label><input id="lease" inputmode="numeric" placeholder="8"></div>
+<div class="field"><label for="years">Years open <span class="hint">(optional)</span></label><input id="years" inputmode="numeric" placeholder="12"></div>
 </div>
-<div class="field"><label for="county">County</label><input id="county" value="Travis"></div>
-<p class="note">Filled in with an example store. Replace with your numbers.</p>
+<div class="field"><label for="county">County <span class="hint">(optional)</span></label><input id="county" placeholder="Travis"></div>
+<p class="note">Grey numbers are examples only and are not used. Only what you type counts.</p>
+<button class="btn" type="submit" style="width:100%">See my price range</button>
 </form>
-<div class="result" aria-live="polite">
-<div id="r-empty" hidden><p>Enter your yearly sales to see a range.</p></div>
-<div id="r-full" style="display:flex;flex-direction:column;gap:12px">
+<div class="result" id="result" aria-live="polite">
+<div id="r-empty"><span class="label">Your price range</span><p style="margin-top:8px">Enter your yearly sales to see a range.</p></div>
+<div id="r-full" hidden style="flex-direction:column;gap:12px">
 <span class="label">Likely price for your business</span>
 <div class="range" id="r-range"></div>
 <p id="r-basis" class="sub"></p>
 <p class="sub">Plus your stock at cost on closing day. Land and buildings you own are valued separately.</p>
 <p class="sub" style="border-top:1px solid rgba(255,255,255,.2);padding-top:10px;font-size:.82rem">Indicative, non-binding estimate only. Not an offer, appraisal, valuation opinion or guarantee of any price, timeline or outcome. Based on published industry data, not on your store's records.</p>
 <form id="gate" class="gate" novalidate>
-<h3>Get your full report</h3>
-<p class="note">Low, middle and high price, line by line, and what would raise your number.</p>
+<h3>Get your detailed report</h3>
+<p class="note">Free. Add your name, phone and email and we send the low, middle and high price, line by line, and what would raise your number.</p>
 <div class="field"><label for="g-name">Name</label><input id="g-name" autocomplete="name"></div>
 <div class="field"><label for="g-phone">Phone</label><input id="g-phone" type="tel" autocomplete="tel"></div>
 <div class="field"><label for="g-email">Email</label><input id="g-email" type="email" autocomplete="email"></div>
 <div class="hp" aria-hidden="true"><label for="g-company">Company</label><input id="g-company" tabindex="-1" autocomplete="off"></div>
 <p class="err" id="gate-err" hidden></p>
-<button class="btn" type="submit" style="width:100%">Show my full report</button>
+<button class="btn" type="submit" style="width:100%">Send my detailed report</button>
 <p class="note">No mailing lists. By submitting, you agree to our <a href="/terms.html">Terms of Use</a> and <a href="/privacy.html">Privacy Policy</a> and to be contacted about your request by phone, text or email. Message and data rates may apply. Reply STOP to opt out.</p>
 </form>
 </div>
@@ -328,7 +338,7 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 
 <section class="section soft"><div class="wrap narrow prose">
 <h2>How we work out the range</h2>
-<p>Buyers and lenders price a liquor store on what it earns its owner. In 1,076 liquor store sales reported to BizBuySell from 2021 to 2025, stores sold for 2.2 to 4.0 times the owner's yearly take-home, with 2.85 in the middle. Against sales, they sold for 0.29 to 0.61 times a year's sales.</p>
+<p>Buyers and lenders price a liquor store on what it earns its owner. In 1,076 US liquor store sales reported to BizBuySell from 2021 to 2025, stores sold for 2.2 to 4.0 times the owner's yearly take-home, with 2.85 in the middle. Against sales, they sold for 0.29 to 0.61 times a year's sales.</p>
 <p>If you give us your take-home, we use it. Sales alone gives a wider range. A lease under five years pulls the range down. Your real price depends on your books, lease, location and buyer, which is what the readiness audit pins down.</p>
 <p class="note">Source: BizBuySell liquor store valuation benchmarks, 2021 to 2025. Figures are national medians and ranges, not Texas-specific and not about your store. Indicative, non-binding estimate only. Not an offer, appraisal, valuation opinion or guarantee of any price, timeline or outcome.</p>
 </div></section>
@@ -341,7 +351,7 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 </div>
 <div class="foot-legal">
 <div class="legal-links"><a href="/terms.html">Terms of Use</a><a href="/privacy.html">Privacy Policy</a><a href="/disclaimers.html">Disclaimers</a></div>
-<div class="trec"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice">Texas Real Estate Commission Consumer Protection Notice</a><a href="/contact.html">Texas Real Estate Commission Information About Brokerage Services</a></div>
+<div class="trec"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice">Texas Real Estate Commission Consumer Protection Notice</a><a href="https://www.trec.texas.gov/forms/information-about-brokerage-services">Texas Real Estate Commission Information About Brokerage Services</a></div>
 <p>Real estate services provided by Jeffrey Grant, licensed Texas real estate broker, TREC license #123456789. All figures, ranges, multiples, timelines and statistics on this site are indicative, non-binding estimates drawn from published third-party data. They are not an offer to buy or sell, an appraisal, a valuation opinion, a broker price opinion, or a guarantee of any price, timeline or result, and must not be relied on to make any decision. Actual results depend on your store's records, lease, location, permits, buyer and market conditions. Past rankings and results do not predict future results. Nothing on this site is legal, tax, financial or licensing advice.</p>
 <p>Use of this site is subject to our <a href="/terms.html">Terms of Use</a>. &copy; 2026 Package Store TX. Photos: Unsplash.</p>
 </div></div></footer>
@@ -370,6 +380,20 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
     fetch(LEAD_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
       .then(function(r){ onDone(r.ok, false); })
       .catch(function(){ onDone(false, false); });
+  }
+
+  // hide the sticky call bar while someone is typing, so it never covers a field or button
+  document.addEventListener("focusin", function(e){ if(e.target.matches("input,textarea,select")) document.body.classList.add("typing"); });
+  document.addEventListener("focusout", function(){ document.body.classList.remove("typing"); });
+
+  // hide the sticky call bar while any form is on screen, so it never sits over a form button
+  if("IntersectionObserver" in window){
+    var onScreen = new Set();
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting) onScreen.add(e.target); else onScreen.delete(e.target); });
+      document.body.classList.toggle("form-on", onScreen.size > 0);
+    });
+    document.querySelectorAll("form").forEach(function(f){ io.observe(f); });
   }
 
   // mobile menu
@@ -444,7 +468,7 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 
       var has = sales > 0 || sde > 0;
       document.getElementById("r-empty").hidden = has;
-      document.getElementById("r-full").hidden = !has;
+      var rf = document.getElementById("r-full"); rf.hidden = !has; rf.style.display = has ? "flex" : "none";
       if(!has) return;
       document.getElementById("r-range").textContent = money(lo) + " to " + money(hi);
       document.getElementById("r-basis").textContent = "Based on " + basis + ".";
@@ -462,7 +486,12 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
     }
     calc.addEventListener("input", compute);
     calc.addEventListener("change", compute);
-    calc.addEventListener("submit", function(e){ e.preventDefault(); compute(); });
+    calc.addEventListener("submit", function(e){
+      e.preventDefault(); compute();
+      if(num("sales") <= 0 && num("sde") <= 0){ var s0 = document.getElementById("sales"); if(s0) s0.focus(); return; }
+      var r = document.getElementById("result");
+      if(r && window.matchMedia("(max-width:1000px)").matches){ r.scrollIntoView({behavior:"smooth", block:"start"}); }
+    });
     compute();
 
     var gate = document.getElementById("gate");

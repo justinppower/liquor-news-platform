@@ -94,6 +94,10 @@ p{margin:0}
 .trust-foot{max-width:1140px;margin:0 auto;padding:0 20px 20px}
 /* sections */
 .section{padding-block:80px}
+.section:not(.soft):not(.navy) + .cta-sec{padding-top:0}
+.head-phone-m{display:none}
+.phone-strip{display:none}
+.result{scroll-margin-top:90px}
 .section.soft{background:var(--soft)}
 .section.navy{background:var(--navy);color:#fff}
 .section.navy h2,.section.navy h3{color:#fff}
@@ -218,6 +222,8 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 
 /* responsive */
 @media (max-width:1140px){
+  .head-phone-m{display:inline-flex;flex-direction:column;align-items:flex-end;text-decoration:none;color:var(--navy);font-weight:700;font-size:1rem;line-height:1.15;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .head-phone-m span{font-size:.68rem;font-weight:600;color:var(--muted)}
   .nav,.head-cta .head-phone,.head-cta .btn{display:none}
   .menu-btn{display:inline-flex}
   .mobile-nav.open{display:block}
@@ -234,11 +240,13 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
   .split,.two-col,.calc,.bio{grid-template-columns:1fr;gap:28px}
   .bio .portrait{max-width:320px}
   .result,.side-card{position:static}
-  .calc .result{order:-1}
   .foot-grid{grid-template-columns:1fr 1fr}
   .cta-band{grid-template-columns:1fr;padding:36px}
 }
 @media (max-width:640px){
+  .head-phone-m{display:none}
+  .phone-strip{display:block;background:var(--navy);color:#fff;text-align:center;text-decoration:none;font-size:1rem;font-weight:600;padding:9px 12px;font-variant-numeric:tabular-nums}
+  .phone-strip b{color:#f0b35e;white-space:nowrap}
   html{font-size:17px}
   .section{padding-block:56px}
   .g2,.g3,.g4,.steps,.form-grid{grid-template-columns:1fr}
@@ -252,14 +260,15 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
   .logo small{display:none}
   .mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 16px rgba(0,0,0,.08)}
   .mobile-bar .btn{min-height:52px;padding:12px;font-size:.98rem}
-  body{padding-bottom:80px}
+  body{padding-bottom:96px}
+  body.typing .mobile-bar,body.form-on .mobile-bar{display:none}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style></head><body><header class="site-header"><div class="wrap bar">
+</style></head><body><header class="site-header"><a class="phone-strip" href="tel:+17372813132">Call Justin or Jeff: <b>(737) 281-3132</b></a><div class="wrap bar">
 <a class="logo" href="/"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#f0b35e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-5h4v5"/></svg></span><span><b>Package Store TX</b><small>Texas liquor store brokers</small></span></a>
 <nav class="nav" aria-label="Main"><a href="/sell.html" aria-current="page">Sell</a><a href="/buy.html">Buy</a><a href="/audit.html">Readiness Audit</a><a href="/licensing.html">Licensing</a><a href="/news/">News</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav>
 <div class="head-cta"><a class="head-phone" href="tel:+17372813132"><span>Call Justin or Jeff</span>(737) 281-3132</a><a class="btn sm" href="/value.html">Free store value</a>
-<button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="26" height="26"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
+<a class="head-phone-m" href="tel:+17372813132"><span>Call us</span>(737) 281-3132</a><button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="26" height="26"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
 </div><nav class="mobile-nav" aria-label="Mobile"><a href="/sell.html" aria-current="page">Sell</a><a href="/buy.html">Buy</a><a href="/audit.html">Readiness Audit</a><a href="/licensing.html">Licensing</a><a href="/news/">News</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/value.html">Free store value</a><a href="tel:+17372813132">Call (737) 281-3132</a></nav></header><main><section class="page-head"><div class="wrap"><span class="eyebrow" style="color:#f0b35e">For sellers</span><h1>Selling your liquor store</h1><p class="lead">You built it over years. We help you sell it for the right price, to the right buyer, without your staff or customers hearing about it first.</p></div></section>
 <section class="section"><div class="wrap two-col">
 <div style="display:flex;flex-direction:column;gap:40px">
@@ -277,9 +286,9 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 <p class="note">Missing some of these is normal. Pulling them together is part of step 2.</p></div>
 <div class="prose"><h2>Own the building too?</h2><p>Sell the store and real estate together, sell the store and lease the building to the buyer, or sell them separately. Jeff values the property and handles the real estate side, so you work with one team from start to finish.</p></div>
 </div>
-<aside class="side-card"><div class="icon" style="width:52px;height:52px;border-radius:10px;background:#fff;color:var(--amber-d);display:grid;place-items:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h8"/></svg></div><h3>What's your store worth?</h3><p class="note" style="font-size:.95rem">Get a free indicative price range in about a minute, based on 1,076 reported liquor store sales.</p><p class="note">Indicative, non-binding estimate only. Not an offer, appraisal, valuation opinion or guarantee of any price, timeline or outcome.</p><a class="btn" href="/value.html">Get my free store value</a><p class="note">Fees are explained on the first call. The sale fee is paid at closing.</p></aside>
+<aside class="side-card"><div class="icon" style="width:52px;height:52px;border-radius:10px;background:#fff;color:var(--amber-d);display:grid;place-items:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h8"/></svg></div><h3>What's your store worth?</h3><p class="note" style="font-size:.95rem">Get a free indicative price range in about a minute, based on 1,076 reported US liquor store sales.</p><p class="note">Indicative, non-binding estimate only. Not an offer, appraisal, valuation opinion or guarantee of any price, timeline or outcome.</p><a class="btn" href="/value.html">Get my free store value</a><p class="note">Fees are explained on the first call. The sale fee is paid at closing.</p></aside>
 </div></section>
-<section class="section"><div class="wrap"><div class="cta-band">
+<section class="section cta-sec"><div class="wrap"><div class="cta-band">
 <div><h2>Find out what your store could sell for</h2><p>A first call costs nothing and stays private. Or get a free estimate in about a minute.</p></div>
 <div class="btns"><a class="btn" href="/value.html">Get my free store value</a><a class="btn light" href="tel:+17372813132">Call (737) 281-3132</a></div>
 </div></div></section>
@@ -292,7 +301,7 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 </div>
 <div class="foot-legal">
 <div class="legal-links"><a href="/terms.html">Terms of Use</a><a href="/privacy.html">Privacy Policy</a><a href="/disclaimers.html">Disclaimers</a></div>
-<div class="trec"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice">Texas Real Estate Commission Consumer Protection Notice</a><a href="/contact.html">Texas Real Estate Commission Information About Brokerage Services</a></div>
+<div class="trec"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice">Texas Real Estate Commission Consumer Protection Notice</a><a href="https://www.trec.texas.gov/forms/information-about-brokerage-services">Texas Real Estate Commission Information About Brokerage Services</a></div>
 <p>Real estate services provided by Jeffrey Grant, licensed Texas real estate broker, TREC license #123456789. All figures, ranges, multiples, timelines and statistics on this site are indicative, non-binding estimates drawn from published third-party data. They are not an offer to buy or sell, an appraisal, a valuation opinion, a broker price opinion, or a guarantee of any price, timeline or result, and must not be relied on to make any decision. Actual results depend on your store's records, lease, location, permits, buyer and market conditions. Past rankings and results do not predict future results. Nothing on this site is legal, tax, financial or licensing advice.</p>
 <p>Use of this site is subject to our <a href="/terms.html">Terms of Use</a>. &copy; 2026 Package Store TX. Photos: Unsplash.</p>
 </div></div></footer>
@@ -321,6 +330,20 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
     fetch(LEAD_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
       .then(function(r){ onDone(r.ok, false); })
       .catch(function(){ onDone(false, false); });
+  }
+
+  // hide the sticky call bar while someone is typing, so it never covers a field or button
+  document.addEventListener("focusin", function(e){ if(e.target.matches("input,textarea,select")) document.body.classList.add("typing"); });
+  document.addEventListener("focusout", function(){ document.body.classList.remove("typing"); });
+
+  // hide the sticky call bar while any form is on screen, so it never sits over a form button
+  if("IntersectionObserver" in window){
+    var onScreen = new Set();
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting) onScreen.add(e.target); else onScreen.delete(e.target); });
+      document.body.classList.toggle("form-on", onScreen.size > 0);
+    });
+    document.querySelectorAll("form").forEach(function(f){ io.observe(f); });
   }
 
   // mobile menu
@@ -395,7 +418,7 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 
       var has = sales > 0 || sde > 0;
       document.getElementById("r-empty").hidden = has;
-      document.getElementById("r-full").hidden = !has;
+      var rf = document.getElementById("r-full"); rf.hidden = !has; rf.style.display = has ? "flex" : "none";
       if(!has) return;
       document.getElementById("r-range").textContent = money(lo) + " to " + money(hi);
       document.getElementById("r-basis").textContent = "Based on " + basis + ".";
@@ -413,7 +436,12 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
     }
     calc.addEventListener("input", compute);
     calc.addEventListener("change", compute);
-    calc.addEventListener("submit", function(e){ e.preventDefault(); compute(); });
+    calc.addEventListener("submit", function(e){
+      e.preventDefault(); compute();
+      if(num("sales") <= 0 && num("sde") <= 0){ var s0 = document.getElementById("sales"); if(s0) s0.focus(); return; }
+      var r = document.getElementById("result");
+      if(r && window.matchMedia("(max-width:1000px)").matches){ r.scrollIntoView({behavior:"smooth", block:"start"}); }
+    });
     compute();
 
     var gate = document.getElementById("gate");

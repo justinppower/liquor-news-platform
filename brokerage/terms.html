@@ -94,6 +94,10 @@ p{margin:0}
 .trust-foot{max-width:1140px;margin:0 auto;padding:0 20px 20px}
 /* sections */
 .section{padding-block:80px}
+.section:not(.soft):not(.navy) + .cta-sec{padding-top:0}
+.head-phone-m{display:none}
+.phone-strip{display:none}
+.result{scroll-margin-top:90px}
 .section.soft{background:var(--soft)}
 .section.navy{background:var(--navy);color:#fff}
 .section.navy h2,.section.navy h3{color:#fff}
@@ -218,6 +222,8 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 
 /* responsive */
 @media (max-width:1140px){
+  .head-phone-m{display:inline-flex;flex-direction:column;align-items:flex-end;text-decoration:none;color:var(--navy);font-weight:700;font-size:1rem;line-height:1.15;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .head-phone-m span{font-size:.68rem;font-weight:600;color:var(--muted)}
   .nav,.head-cta .head-phone,.head-cta .btn{display:none}
   .menu-btn{display:inline-flex}
   .mobile-nav.open{display:block}
@@ -234,11 +240,13 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
   .split,.two-col,.calc,.bio{grid-template-columns:1fr;gap:28px}
   .bio .portrait{max-width:320px}
   .result,.side-card{position:static}
-  .calc .result{order:-1}
   .foot-grid{grid-template-columns:1fr 1fr}
   .cta-band{grid-template-columns:1fr;padding:36px}
 }
 @media (max-width:640px){
+  .head-phone-m{display:none}
+  .phone-strip{display:block;background:var(--navy);color:#fff;text-align:center;text-decoration:none;font-size:1rem;font-weight:600;padding:9px 12px;font-variant-numeric:tabular-nums}
+  .phone-strip b{color:#f0b35e;white-space:nowrap}
   html{font-size:17px}
   .section{padding-block:56px}
   .g2,.g3,.g4,.steps,.form-grid{grid-template-columns:1fr}
@@ -252,14 +260,15 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
   .logo small{display:none}
   .mobile-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 16px rgba(0,0,0,.08)}
   .mobile-bar .btn{min-height:52px;padding:12px;font-size:.98rem}
-  body{padding-bottom:80px}
+  body{padding-bottom:96px}
+  body.typing .mobile-bar,body.form-on .mobile-bar{display:none}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style></head><body><header class="site-header"><div class="wrap bar">
+</style></head><body><header class="site-header"><a class="phone-strip" href="tel:+17372813132">Call Justin or Jeff: <b>(737) 281-3132</b></a><div class="wrap bar">
 <a class="logo" href="/"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#f0b35e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-5h4v5"/></svg></span><span><b>Package Store TX</b><small>Texas liquor store brokers</small></span></a>
 <nav class="nav" aria-label="Main"><a href="/sell.html">Sell</a><a href="/buy.html">Buy</a><a href="/audit.html">Readiness Audit</a><a href="/licensing.html">Licensing</a><a href="/news/">News</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav>
 <div class="head-cta"><a class="head-phone" href="tel:+17372813132"><span>Call Justin or Jeff</span>(737) 281-3132</a><a class="btn sm" href="/value.html">Free store value</a>
-<button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="26" height="26"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
+<a class="head-phone-m" href="tel:+17372813132"><span>Call us</span>(737) 281-3132</a><button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="26" height="26"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
 </div><nav class="mobile-nav" aria-label="Mobile"><a href="/sell.html">Sell</a><a href="/buy.html">Buy</a><a href="/audit.html">Readiness Audit</a><a href="/licensing.html">Licensing</a><a href="/news/">News</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/value.html">Free store value</a><a href="tel:+17372813132">Call (737) 281-3132</a></nav></header><main><section class="page-head"><div class="wrap"><span class="eyebrow" style="color:#f0b35e">Legal</span><h1>Terms of Use</h1><p class="lead">The rules for using this website, including the news section and the store value calculator.</p></div></section><section class="section"><div class="wrap narrow prose legal"><p class="note">Effective October 9, 2026. Please read these terms carefully. By using this website you agree to them. If you do not agree, do not use the site.</p><h2>1. Who we are</h2><p>This website, packagestoretx.com, including its news section (the "Site"), is operated by Package Store TX ("we", "us", "our"). Real estate brokerage services are provided only by Jeffrey Grant, a licensed Texas real estate broker (TREC license #123456789), under a separate written agreement. Business sale services are provided by Package Store TX under a separate written agreement.</p><h2>2. Information only, no offer</h2><p>Everything on the Site is general information. Nothing on the Site is an offer to buy or sell any business, real estate, permit or other asset, an invitation to make an offer, or a promise to provide any service. Any listing, opportunity or service mentioned on the Site may be withdrawn, changed or sold at any time without notice.</p><h2>3. Estimates, figures and the calculator</h2><p>All prices, ranges, multiples, percentages, timelines, statistics and other figures on the Site, including every result produced by the "What's my store worth" calculator and any report it generates (together, "Estimates"), are indicative, non-binding and for general illustration only. Estimates:</p><ul><li>are produced automatically from published third-party industry data and the figures you enter, which we do not verify;</li><li>are not an appraisal, a valuation opinion, a broker price opinion, a comparative market analysis, a fairness opinion or any other professional opinion of value;</li><li>are not an offer, a listing price recommendation or a guarantee of any sale price, sale timeline, buyer interest, financing or outcome;</li><li>may be inaccurate, incomplete or out of date, and may differ materially from what any business or property actually sells for.</li></ul><p>You must not rely on any Estimate to make a financial, legal, tax, lending, investment, purchase, sale or other decision. Any actual pricing advice is given only after a review of your records under a signed written agreement.</p><h2>4. No professional advice</h2><p>Nothing on the Site is legal, tax, accounting, financial, investment, lending, licensing or regulatory advice. Information about the Texas Alcoholic Beverage Commission (TABC), permits, local wet or dry status or the Texas Alcoholic Beverage Code is a general summary only, may be out of date, and must be confirmed with TABC and your own qualified advisers before you act on it.</p><h2>5. No client relationship</h2><p>Using the Site, using the calculator, submitting a form, calling us or exchanging emails does not create a broker, agency, advisory, fiduciary or client relationship of any kind. A relationship exists only when you and we sign a written agreement setting out the services and fees. Real estate brokerage services require a written agreement as Texas law provides. Please read the Texas Real Estate Commission Information About Brokerage Services and Consumer Protection Notice linked in the footer.</p><h2>6. Rankings, experience and past results</h2><p>Rankings, awards, years of experience and descriptions of past work are stated in good faith from third-party sources and our own records. They describe past performance only and do not predict or guarantee any future result.</p><h2>7. Information you send us</h2><p>Do not send confidential, financial or personal information through the Site that you are not comfortable sharing before a confidentiality agreement is signed. Information sent through the Site is not treated as confidential until a written confidentiality agreement is in place. You confirm that anything you send is accurate and that you have the right to share it. Our handling of personal information is described in our <a href="/privacy.html">Privacy Policy</a>.</p><h2>8. Consent to be contacted</h2><p>When you submit a form or give us your phone number or email address, you agree that Package Store TX, Jeffrey Grant and Justin Power may contact you about your request by phone call, text message or email at the details you provide. Message and data rates may apply. You can opt out at any time by replying STOP to a text, asking us on a call, or writing to us. Consent is not a condition of any purchase or service.</p><h2>9. News section and third-party content</h2><p>The news section shows headlines and short summaries from third-party publishers with links to the original stories. That content belongs to its publishers, is not written, checked or endorsed by us, and may be inaccurate or out of date. Links to other websites are provided for convenience only. We do not control and are not responsible for any third-party website, content, product or service.</p><h2>10. Acceptable use</h2><p>You agree not to misuse the Site, including by submitting false information, impersonating anyone, sending spam, interfering with the Site's operation or security, scraping or copying content in bulk, or using the Site for any unlawful purpose. You must be at least 18 years old to submit information through the Site.</p><h2>11. Intellectual property</h2><p>The Site's text, design, graphics, calculator logic and branding belong to us or our licensors. Photographs are used under licence from their owners. You may view and print pages for your own personal, non-commercial use. Any other use requires our written permission.</p><h2>12. Disclaimer of warranties</h2><p>THE SITE AND ALL CONTENT, ESTIMATES AND TOOLS ON IT ARE PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING ANY WARRANTY OF ACCURACY, COMPLETENESS, TIMELINESS, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-INFRINGEMENT, AND ANY WARRANTY THAT THE SITE WILL BE UNINTERRUPTED, SECURE OR ERROR-FREE, TO THE FULLEST EXTENT PERMITTED BY LAW.</p><h2>13. Limitation of liability</h2><p>TO THE FULLEST EXTENT PERMITTED BY LAW, PACKAGE STORE TX, JEFFREY GRANT, JUSTIN POWER AND THEIR AFFILIATES, PARTNERS, CONTRACTORS AND AGENTS WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, SALE PROCEEDS, BUSINESS, OPPORTUNITY, DATA OR GOODWILL, ARISING FROM OR RELATED TO THE SITE, ANY ESTIMATE, OR YOUR RELIANCE ON ANY CONTENT, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY FOR ANY CLAIM ARISING FROM OR RELATED TO THE SITE IS LIMITED TO ONE HUNDRED U.S. DOLLARS (US$100). Some jurisdictions do not allow certain limitations, so some of these may not apply to you. Nothing in these terms limits liability that cannot be limited by law.</p><h2>14. Indemnity</h2><p>You agree to defend, indemnify and hold harmless Package Store TX, Jeffrey Grant, Justin Power and their affiliates, partners, contractors and agents from any claim, loss, liability or expense, including reasonable attorneys' fees, arising from your use or misuse of the Site, your reliance on any content or Estimate, information you submit, or your breach of these terms.</p><h2>15. Governing law and disputes</h2><p>These terms and any dispute arising from or related to the Site are governed by the laws of the State of Texas, without regard to conflict of law rules. You agree that any such dispute will be brought only in the state or federal courts located in Travis County, Texas, and you consent to their jurisdiction. Any claim must be brought within one (1) year after it arises, to the extent permitted by law. To the extent permitted by law, you waive any right to bring or join a class or representative action about the Site.</p><h2>16. Changes, severability and entire terms</h2><p>We may update the Site or these terms at any time. Changes take effect when posted, and your continued use of the Site means you accept them. If any part of these terms is found unenforceable, the rest remains in effect and the unenforceable part is enforced to the fullest extent allowed. Our failure to enforce any part is not a waiver. These terms, together with the Privacy Policy and Disclaimers, are the entire agreement between you and us about the Site. Any signed written agreement for services controls over these terms for those services.</p><h2>17. Contact</h2><p>Questions about these terms: call (737) 281-3132 or use our <a href="/contact.html">contact form</a>.</p></div></section></main><footer class="site-footer"><div class="wrap">
 <div class="foot-grid">
 <div><a class="logo" href="/" style="color:#fff"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#f0b35e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-5h4v5"/></svg></span><span><b style="color:#fff">Package Store TX</b></span></a><p style="margin-top:14px">We help Texas liquor store owners prepare, list and sell their stores, and help buyers find their next one.</p></div>
@@ -269,7 +278,7 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 </div>
 <div class="foot-legal">
 <div class="legal-links"><a href="/terms.html">Terms of Use</a><a href="/privacy.html">Privacy Policy</a><a href="/disclaimers.html">Disclaimers</a></div>
-<div class="trec"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice">Texas Real Estate Commission Consumer Protection Notice</a><a href="/contact.html">Texas Real Estate Commission Information About Brokerage Services</a></div>
+<div class="trec"><a href="https://www.trec.texas.gov/forms/consumer-protection-notice">Texas Real Estate Commission Consumer Protection Notice</a><a href="https://www.trec.texas.gov/forms/information-about-brokerage-services">Texas Real Estate Commission Information About Brokerage Services</a></div>
 <p>Real estate services provided by Jeffrey Grant, licensed Texas real estate broker, TREC license #123456789. All figures, ranges, multiples, timelines and statistics on this site are indicative, non-binding estimates drawn from published third-party data. They are not an offer to buy or sell, an appraisal, a valuation opinion, a broker price opinion, or a guarantee of any price, timeline or result, and must not be relied on to make any decision. Actual results depend on your store's records, lease, location, permits, buyer and market conditions. Past rankings and results do not predict future results. Nothing on this site is legal, tax, financial or licensing advice.</p>
 <p>Use of this site is subject to our <a href="/terms.html">Terms of Use</a>. &copy; 2026 Package Store TX. Photos: Unsplash.</p>
 </div></div></footer>
@@ -298,6 +307,20 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
     fetch(LEAD_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
       .then(function(r){ onDone(r.ok, false); })
       .catch(function(){ onDone(false, false); });
+  }
+
+  // hide the sticky call bar while someone is typing, so it never covers a field or button
+  document.addEventListener("focusin", function(e){ if(e.target.matches("input,textarea,select")) document.body.classList.add("typing"); });
+  document.addEventListener("focusout", function(){ document.body.classList.remove("typing"); });
+
+  // hide the sticky call bar while any form is on screen, so it never sits over a form button
+  if("IntersectionObserver" in window){
+    var onScreen = new Set();
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting) onScreen.add(e.target); else onScreen.delete(e.target); });
+      document.body.classList.toggle("form-on", onScreen.size > 0);
+    });
+    document.querySelectorAll("form").forEach(function(f){ io.observe(f); });
   }
 
   // mobile menu
@@ -372,7 +395,7 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 
       var has = sales > 0 || sde > 0;
       document.getElementById("r-empty").hidden = has;
-      document.getElementById("r-full").hidden = !has;
+      var rf = document.getElementById("r-full"); rf.hidden = !has; rf.style.display = has ? "flex" : "none";
       if(!has) return;
       document.getElementById("r-range").textContent = money(lo) + " to " + money(hi);
       document.getElementById("r-basis").textContent = "Based on " + basis + ".";
@@ -390,7 +413,12 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
     }
     calc.addEventListener("input", compute);
     calc.addEventListener("change", compute);
-    calc.addEventListener("submit", function(e){ e.preventDefault(); compute(); });
+    calc.addEventListener("submit", function(e){
+      e.preventDefault(); compute();
+      if(num("sales") <= 0 && num("sde") <= 0){ var s0 = document.getElementById("sales"); if(s0) s0.focus(); return; }
+      var r = document.getElementById("result");
+      if(r && window.matchMedia("(max-width:1000px)").matches){ r.scrollIntoView({behavior:"smooth", block:"start"}); }
+    });
     compute();
 
     var gate = document.getElementById("gate");
