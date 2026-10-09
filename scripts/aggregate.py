@@ -804,6 +804,11 @@ def main():
     # Build sitemap
     build_sitemap(items, cfg, BUILD)
 
+    # Brokerage site at /, this news site under /news/
+    sys.path.insert(0, str(Path(__file__).parent))
+    from compose_site import compose
+    compose(BUILD)
+
     print(f"=== Done. _build/ has {sum(1 for _ in BUILD.rglob('*') if _.is_file())} files ===")
 
 
