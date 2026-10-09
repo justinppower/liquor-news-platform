@@ -217,6 +217,15 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
 .foot-legal .trec{display:flex;flex-wrap:wrap;gap:8px 24px}
 .foot-legal .trec a{font-size:.85rem;text-decoration:underline}
 
+/* county search */
+.combo{position:relative}
+.combo input{width:100%}
+.combo-list{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:40;margin:0;padding:6px;list-style:none;background:#fff;border:2px solid var(--navy);border-radius:10px;box-shadow:var(--shadow);max-height:320px;overflow:auto}
+.combo-list li{padding:12px 14px;border-radius:8px;cursor:pointer;color:var(--ink);line-height:1.3;min-height:44px}
+.combo-list li b{display:block;font-weight:700;color:var(--navy)}
+.combo-list li span{display:block;font-size:.9rem;color:var(--muted)}
+.combo-list li:hover,.combo-list li[aria-selected="true"]{background:var(--soft)}
+.combo-list li.combo-none{cursor:default;color:var(--muted);font-size:.95rem}
 /* sticky mobile bar */
 .mobile-bar{display:none}
 
@@ -359,6 +368,79 @@ table.break tr.total td{border-bottom:0;border-top:2px solid var(--navy);font-si
     el.addEventListener("input", function(){
       var digits = el.value.replace(/[^0-9]/g,"");
       el.value = digits ? Number(digits).toLocaleString("en-US") : "";
+    });
+  });
+
+  /* ---------- County search: all 254 Texas counties, plus city to county ---------- */
+  var TX_COUNTIES = "Anderson,Andrews,Angelina,Aransas,Archer,Armstrong,Atascosa,Austin,Bailey,Bandera,Bastrop,Baylor,Bee,Bell,Bexar,Blanco,Borden,Bosque,Bowie,Brazoria,Brazos,Brewster,Briscoe,Brooks,Brown,Burleson,Burnet,Caldwell,Calhoun,Callahan,Cameron,Camp,Carson,Cass,Castro,Chambers,Cherokee,Childress,Clay,Cochran,Coke,Coleman,Collin,Collingsworth,Colorado,Comal,Comanche,Concho,Cooke,Coryell,Cottle,Crane,Crockett,Crosby,Culberson,Dallam,Dallas,Dawson,Deaf Smith,Delta,Denton,DeWitt,Dickens,Dimmit,Donley,Duval,Eastland,Ector,Edwards,Ellis,El Paso,Erath,Falls,Fannin,Fayette,Fisher,Floyd,Foard,Fort Bend,Franklin,Freestone,Frio,Gaines,Galveston,Garza,Gillespie,Glasscock,Goliad,Gonzales,Gray,Grayson,Gregg,Grimes,Guadalupe,Hale,Hall,Hamilton,Hansford,Hardeman,Hardin,Harris,Harrison,Hartley,Haskell,Hays,Hemphill,Henderson,Hidalgo,Hill,Hockley,Hood,Hopkins,Houston,Howard,Hudspeth,Hunt,Hutchinson,Irion,Jack,Jackson,Jasper,Jeff Davis,Jefferson,Jim Hogg,Jim Wells,Johnson,Jones,Karnes,Kaufman,Kendall,Kenedy,Kent,Kerr,Kimble,King,Kinney,Kleberg,Knox,Lamar,Lamb,Lampasas,La Salle,Lavaca,Lee,Leon,Liberty,Limestone,Lipscomb,Live Oak,Llano,Loving,Lubbock,Lynn,McCulloch,McLennan,McMullen,Madison,Marion,Martin,Mason,Matagorda,Maverick,Medina,Menard,Midland,Milam,Mills,Mitchell,Montague,Montgomery,Moore,Morris,Motley,Nacogdoches,Navarro,Newton,Nolan,Nueces,Ochiltree,Oldham,Orange,Palo Pinto,Panola,Parker,Parmer,Pecos,Polk,Potter,Presidio,Rains,Randall,Reagan,Real,Red River,Reeves,Refugio,Roberts,Robertson,Rockwall,Runnels,Rusk,Sabine,San Augustine,San Jacinto,San Patricio,San Saba,Schleicher,Scurry,Shackelford,Shelby,Sherman,Smith,Somervell,Starr,Stephens,Sterling,Stonewall,Sutton,Swisher,Tarrant,Taylor,Terrell,Terry,Throckmorton,Titus,Tom Green,Travis,Trinity,Tyler,Upshur,Upton,Uvalde,Val Verde,Van Zandt,Victoria,Walker,Waller,Ward,Washington,Webb,Wharton,Wheeler,Wichita,Wilbarger,Willacy,Williamson,Wilson,Winkler,Wise,Wood,Yoakum,Young,Zapata,Zavala".split(",");
+  var TX_CITIES = {"Houston":"Harris","San Antonio":"Bexar","Dallas":"Dallas","Austin":"Travis","Fort Worth":"Tarrant","El Paso":"El Paso","Arlington":"Tarrant","Corpus Christi":"Nueces","Plano":"Collin","Lubbock":"Lubbock","Laredo":"Webb","Irving":"Dallas","Garland":"Dallas","Frisco":"Collin","McKinney":"Collin","Amarillo":"Potter","Grand Prairie":"Dallas","Brownsville":"Cameron","Killeen":"Bell","Pasadena":"Harris","Mesquite":"Dallas","McAllen":"Hidalgo","Denton":"Denton","Waco":"McLennan","Carrollton":"Dallas","Midland":"Midland","Abilene":"Taylor","Round Rock":"Williamson","Odessa":"Ector","Pearland":"Brazoria","Richardson":"Dallas","College Station":"Brazos","Lewisville":"Denton","Tyler":"Smith","Beaumont":"Jefferson","League City":"Galveston","Sugar Land":"Fort Bend","Allen":"Collin","Wichita Falls":"Wichita","Edinburg":"Hidalgo","San Angelo":"Tom Green","Conroe":"Montgomery","Georgetown":"Williamson","Mission":"Hidalgo","Pflugerville":"Travis","New Braunfels":"Comal","Longview":"Gregg","Bryan":"Brazos","Baytown":"Harris","Temple":"Bell","Missouri City":"Fort Bend","Flower Mound":"Denton","Harlingen":"Cameron","North Richland Hills":"Tarrant","San Marcos":"Hays","Kyle":"Hays","Cedar Park":"Williamson","Leander":"Williamson","Mansfield":"Tarrant","Rowlett":"Dallas","Pharr":"Hidalgo","Port Arthur":"Jefferson","Texas City":"Galveston","Euless":"Tarrant","Grapevine":"Tarrant","Keller":"Tarrant","Bedford":"Tarrant","DeSoto":"Dallas","Wylie":"Collin","Little Elm":"Denton","Prosper":"Collin","Cleburne":"Johnson","Denison":"Grayson","Texarkana":"Bowie","Lufkin":"Angelina","Huntsville":"Walker","San Benito":"Cameron","Weslaco":"Hidalgo","Del Rio":"Val Verde","Eagle Pass":"Maverick","Kerrville":"Kerr","Fredericksburg":"Gillespie","Boerne":"Kendall","Seguin":"Guadalupe","Schertz":"Guadalupe","Hutto":"Williamson","Lockhart":"Caldwell","Marble Falls":"Burnet","Lake Jackson":"Brazoria","Katy":"Harris","The Woodlands":"Montgomery","Spring":"Harris","Humble":"Harris","Tomball":"Harris","Big Spring":"Howard","Stephenville":"Erath","Weatherford":"Parker","Granbury":"Hood","Corsicana":"Navarro","Waxahachie":"Ellis","Paris":"Lamar","Greenville":"Hunt","Mount Pleasant":"Titus","Marshall":"Harrison","Palestine":"Anderson","Brownwood":"Brown","Alpine":"Brewster","Kingsville":"Kleberg","Alice":"Jim Wells","Beeville":"Bee","Rockport":"Aransas","Port Lavaca":"Calhoun","Bay City":"Matagorda","El Campo":"Wharton","Rosenberg":"Fort Bend","Richmond":"Fort Bend","Friendswood":"Galveston","Copperas Cove":"Coryell","Harker Heights":"Bell","Belton":"Bell","Hewitt":"McLennan","Canyon":"Randall","Plainview":"Hale","Pampa":"Gray","Borger":"Hutchinson","Dumas":"Moore","Hereford":"Deaf Smith","Snyder":"Scurry","Sweetwater":"Nolan","Lamesa":"Dawson","Levelland":"Hockley","Gainesville":"Cooke","Decatur":"Wise","Mineral Wells":"Palo Pinto","Rio Grande City":"Starr","Sulphur Springs":"Hopkins","Jacksonville":"Cherokee","Athens":"Henderson","Kilgore":"Gregg","Vidor":"Orange","Nederland":"Jefferson","Livingston":"Polk","Cleveland":"Liberty","Dayton":"Liberty","Brenham":"Washington","Navasota":"Grimes","La Grange":"Fayette","Cuero":"DeWitt","Pleasanton":"Atascosa","Floresville":"Wilson","Hondo":"Medina","Castroville":"Medina","Universal City":"Bexar","Converse":"Bexar","Socorro":"El Paso","Horizon City":"El Paso","Coppell":"Dallas","Farmers Branch":"Dallas","Duncanville":"Dallas","Cedar Hill":"Dallas","Lancaster":"Dallas","The Colony":"Denton","Southlake":"Tarrant","Haltom City":"Tarrant","Hurst":"Tarrant","Saginaw":"Tarrant","Azle":"Tarrant","Forney":"Kaufman","Midlothian":"Ellis","Celina":"Collin","Anna":"Collin","Princeton":"Collin","Sachse":"Dallas","Lakeway":"Travis","Manor":"Travis","Buda":"Hays","Dripping Springs":"Hays","Liberty Hill":"Williamson","Salado":"Bell","South Padre Island":"Cameron","Port Aransas":"Nueces","Portland":"San Patricio","Robstown":"Nueces"};
+  var COUNTY_SET = {};
+  TX_COUNTIES.forEach(function(c){ COUNTY_SET[c.toLowerCase()] = c; });
+  function norm(s){ return s.toLowerCase().replace(/\bcounty\b/g,"").replace(/[^a-z ]/g,"").replace(/\s+/g," ").trim(); }
+  function searchCounties(q){
+    q = norm(q); if(!q) return [];
+    var starts = [], has = [], cities = [];
+    TX_COUNTIES.forEach(function(c){ var n = c.toLowerCase(); if(n.indexOf(q) === 0) starts.push(c); else if(q.length > 1 && n.indexOf(q) > 0) has.push(c); });
+    Object.keys(TX_CITIES).forEach(function(city){
+      var n = city.toLowerCase();
+      if(n.indexOf(q) === 0 || (q.length > 2 && n.indexOf(" " + q) > 0)){ var c = TX_CITIES[city]; if(c.toLowerCase() !== n) cities.push({city:city, county:c}); }
+    });
+    var out = starts.map(function(c){ return {county:c}; }).concat(cities, has.map(function(c){ return {county:c}; }));
+    var seen = {}; return out.filter(function(o){ var k = o.county + "|" + (o.city || ""); if(seen[k]) return false; seen[k] = 1; return true; }).slice(0, 8);
+  }
+  var cbId = 0;
+  document.querySelectorAll("input[data-county]").forEach(function(input){
+    var multi = input.getAttribute("data-county") === "multi";
+    var id = "cty-list-" + (++cbId), active = -1, items = [];
+    var wrap = document.createElement("div"); wrap.className = "combo";
+    input.parentNode.insertBefore(wrap, input); wrap.appendChild(input);
+    var list = document.createElement("ul"); list.id = id; list.className = "combo-list"; list.setAttribute("role","listbox"); list.hidden = true;
+    wrap.appendChild(list);
+    input.setAttribute("role","combobox"); input.setAttribute("aria-autocomplete","list"); input.setAttribute("aria-expanded","false"); input.setAttribute("aria-controls", id); input.setAttribute("autocomplete","off");
+    function term(){ if(!multi) return input.value; var parts = input.value.split(","); return parts[parts.length-1]; }
+    function close(){ list.hidden = true; input.setAttribute("aria-expanded","false"); input.removeAttribute("aria-activedescendant"); active = -1; }
+    function pick(i){
+      var c = items[i].county + " County";
+      if(multi){ var parts = input.value.split(","); parts[parts.length-1] = " " + c; input.value = parts.map(function(s){ return s.trim(); }).filter(Boolean).join(", ") + ", "; }
+      else input.value = c;
+      close(); input.dispatchEvent(new Event("change",{bubbles:true})); input.focus();
+    }
+    function render(){
+      items = searchCounties(term());
+      list.innerHTML = "";
+      if(!items.length){
+        if(norm(term()).length > 1){ var li = document.createElement("li"); li.className = "combo-none"; li.textContent = "No Texas county matches. Check the spelling or type a nearby city."; list.appendChild(li); list.hidden = false; input.setAttribute("aria-expanded","true"); }
+        else close();
+        return;
+      }
+      items.forEach(function(it, i){
+        var li = document.createElement("li"); li.id = id + "-" + i; li.setAttribute("role","option");
+        li.innerHTML = "<b></b>" + (it.city ? "<span></span>" : "");
+        li.firstChild.textContent = it.county + " County";
+        if(it.city) li.lastChild.textContent = it.city + " is in " + it.county + " County";
+        li.addEventListener("mousedown", function(e){ e.preventDefault(); pick(i); });
+        list.appendChild(li);
+      });
+      active = -1; list.hidden = false; input.setAttribute("aria-expanded","true");
+    }
+    function move(d){
+      if(list.hidden || !items.length) return;
+      active = (active + d + items.length) % items.length;
+      [].forEach.call(list.children, function(li, i){ li.setAttribute("aria-selected", i === active ? "true" : "false"); });
+      input.setAttribute("aria-activedescendant", id + "-" + active);
+      list.children[active].scrollIntoView({block:"nearest"});
+    }
+    input.addEventListener("input", render);
+    input.addEventListener("focus", function(){ if(norm(term())) render(); });
+    input.addEventListener("keydown", function(e){
+      if(e.key === "ArrowDown"){ e.preventDefault(); if(list.hidden) render(); move(1); }
+      else if(e.key === "ArrowUp"){ e.preventDefault(); move(-1); }
+      else if(e.key === "Enter" && !list.hidden && items.length){ e.preventDefault(); pick(active >= 0 ? active : 0); }
+      else if(e.key === "Escape"){ close(); }
+    });
+    input.addEventListener("blur", function(){
+      close();
+      if(!multi){ var n = norm(input.value); if(COUNTY_SET[n]) input.value = COUNTY_SET[n] + " County"; }
     });
   });
 
