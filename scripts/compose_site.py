@@ -37,7 +37,9 @@ BACKBAR = (
     '<div style="background:#13243b;color:#fff;font:600 14px/1.4 \'Public Sans\',Arial,sans-serif;'
     'padding:10px 16px;text-align:center">'
     '<a href="/" style="color:#f0b35e;text-decoration:none">&larr; Package Store TX</a>'
-    ' &middot; <a href="/value.html" style="color:#fff">What&#39;s my store worth?</a></div>'
+    ' &middot; <a href="/value.html" style="color:#fff">What&#39;s my store worth?</a>'
+    ' &middot; <a href="/terms.html" style="color:#cfd9e4">Terms</a>'
+    ' &middot; <a href="/disclaimers.html" style="color:#cfd9e4">Disclaimers</a></div>'
 )
 
 
