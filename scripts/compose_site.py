@@ -129,6 +129,45 @@ def clean_news_sitemap(path: Path):
     path.write_text(t, encoding="utf-8")
 
 
+def redirect_stub(target: str) -> str:
+    """Instant redirect page Google treats as a permanent move (meta refresh 0 plus canonical)."""
+    url = DOMAIN + target
+    return (
+        '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+        f'<title>Moved</title><link rel="canonical" href="{url}">'
+        f'<meta http-equiv="refresh" content="0; url={target}">'
+        f'<script>location.replace({target!r} + location.search + location.hash)</script>'
+        f'</head><body><p>This page has moved to <a href="{target}">{url}</a>.</p></body></html>'
+    )
+
+
+def write_legacy_redirects(build: Path) -> int:
+    """The news site used to live at the root. Every old root URL now redirects to its /news/ home."""
+    news = build / PREFIX.strip("/")
+    n = 0
+    for f in news.rglob("index.html"):
+        rel = f.relative_to(news)
+        if rel == Path("index.html"):
+            continue
+        dst = build / rel
+        if dst.exists():
+            continue
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        target = PREFIX + "/" + rel.parent.as_posix() + "/"
+        dst.write_text(redirect_stub(target), encoding="utf-8")
+        n += 1
+    for old, new in REMAP.items():
+        if "#" in old or not old.endswith("/"):
+            continue
+        dst = build / old.strip("/") / "index.html"
+        if dst.exists():
+            continue
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_text(redirect_stub(new), encoding="utf-8")
+        n += 1
+    return n
+
+
 def compose(build: Path):
     if not BROKERAGE.exists():
         sys.exit(f"brokerage/ not found at {BROKERAGE}")
@@ -186,6 +225,7 @@ def compose(build: Path):
         "</sitemapindex>\n"
     )
     (build / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /news-chrome-\nSitemap: {DOMAIN}/sitemap.xml\n")
+    print(f"legacy redirects: {write_legacy_redirects(build)}")
     (build / ".nojekyll").write_text("")
     (build / ".composed").write_text("")
     print(f"composed: brokerage at /, {n} news files rewritten under {PREFIX}/")
