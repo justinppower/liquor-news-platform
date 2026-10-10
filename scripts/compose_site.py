@@ -14,6 +14,7 @@ pointed at the matching brokerage page instead of a 404.
 import re
 import sys
 import shutil
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -168,6 +169,36 @@ def write_legacy_redirects(build: Path) -> int:
     return n
 
 
+REGISTRY = ROOT / "data" / "published_urls.json"
+
+
+def expired_article_redirects(build: Path) -> int:
+    """Articles drop out of the rolling feed after MAX_AGE_DAYS. Keep every URL ever published alive
+    by redirecting expired ones (at /news/... and the old root path) to their section page."""
+    news = build / PREFIX.strip("/")
+    pillars_dir = news / "pillars"
+    current = set()
+    for f in news.glob("*/*/index.html"):
+        rel = f.parent.relative_to(news).as_posix()
+        if not rel.startswith("pillars/"):
+            current.add(rel)
+    known = set(json.loads(REGISTRY.read_text())) if REGISTRY.exists() else set()
+    known |= current
+    REGISTRY.parent.mkdir(parents=True, exist_ok=True)
+    REGISTRY.write_text(json.dumps(sorted(known), indent=0) + "\n")
+    n = 0
+    for rel in sorted(known - current):
+        pillar = rel.split("/")[0]
+        target = f"{PREFIX}/pillars/{pillar}/" if (pillars_dir / pillar).exists() else f"{PREFIX}/"
+        for dst in (news / rel / "index.html", build / rel / "index.html"):
+            if dst.exists():
+                continue
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            dst.write_text(redirect_stub(target), encoding="utf-8")
+            n += 1
+    return n
+
+
 def compose(build: Path):
     if not BROKERAGE.exists():
         sys.exit(f"brokerage/ not found at {BROKERAGE}")
@@ -226,6 +257,7 @@ def compose(build: Path):
     )
     (build / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /news-chrome-\nSitemap: {DOMAIN}/sitemap.xml\n")
     print(f"legacy redirects: {write_legacy_redirects(build)}")
+    print(f"expired article redirects: {expired_article_redirects(build)}")
     (build / ".nojekyll").write_text("")
     (build / ".composed").write_text("")
     print(f"composed: brokerage at /, {n} news files rewritten under {PREFIX}/")
