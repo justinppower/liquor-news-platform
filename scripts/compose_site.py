@@ -66,8 +66,40 @@ def rewrite_html(text: str) -> str:
         lambda m: DOMAIN + rewrite_url(m.group(1) or "/"),
         text,
     )
-    if BACKBAR not in text:
-        text = re.sub(r"(<body[^>]*>)", r"\1" + BACKBAR, text, count=1)
+    return add_chrome(text)
+
+
+def _chrome():
+    """Main-site header, footer and CSS for news pages, written by the brokerage build."""
+    try:
+        return ((BROKERAGE / "news-chrome-header.html").read_text(encoding="utf-8"),
+                (BROKERAGE / "news-chrome-footer.html").read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return None
+
+
+HS, HE = "<!--pstx-head-->", "<!--/pstx-head-->"
+FS, FE = "<!--pstx-foot-->", "<!--/pstx-foot-->"
+CSSLINK = '<link rel="stylesheet" href="/news-chrome.css">'
+
+
+def add_chrome(text: str) -> str:
+    """Idempotent: strips any earlier back bar or chrome, then injects the current one."""
+    text = text.replace(BACKBAR, "")
+    text = re.sub(re.escape(HS) + r".*?" + re.escape(HE), "", text, flags=re.S)
+    text = re.sub(re.escape(FS) + r".*?" + re.escape(FE), "", text, flags=re.S)
+    text = text.replace(CSSLINK, "")
+    ch = _chrome()
+    if not ch or "<body" not in text:
+        if "<body" in text:
+            text = re.sub(r"(<body[^>]*>)", lambda m: m.group(1) + BACKBAR, text, count=1)
+        return text
+    head, foot = ch
+    text = text.replace("</head>", CSSLINK + "</head>", 1)
+    text = re.sub(r"(<body[^>]*>)", lambda m: m.group(1) + HS + head + HE, text, count=1)
+    i = text.rfind("</body>")
+    if i != -1:
+        text = text[:i] + FS + foot + FE + text[i:]
     return text
 
 
@@ -94,8 +126,15 @@ def compose(build: Path):
     for f in news.rglob("*"):
         if not f.is_file():
             continue
-        if f.suffix in (".html", ".xml"):
+        if f.suffix == ".html":
             f.write_text(rewrite_html(f.read_text(encoding="utf-8")), encoding="utf-8")
+            n += 1
+            continue
+        if f.suffix == ".xml":
+            t = f.read_text(encoding="utf-8")
+            t = ATTR.sub(lambda m: m.group(1) + rewrite_url(m.group(2)) + m.group(3), t)
+            t = re.sub(re.escape(DOMAIN) + r'(/[^"<\s]*)?', lambda m: DOMAIN + rewrite_url(m.group(1) or "/"), t)
+            f.write_text(t, encoding="utf-8")
             n += 1
         elif f.suffix == ".css":
             f.write_text(rewrite_css(f.read_text(encoding="utf-8")), encoding="utf-8")
@@ -107,7 +146,7 @@ def compose(build: Path):
             shutil.copytree(item, dst, dirs_exist_ok=True)
         else:
             shutil.copy2(item, dst)
-    pages = sorted(p.name for p in BROKERAGE.glob("*.html") if p.name != "404.html")
+    pages = sorted(p.name for p in BROKERAGE.glob("*.html") if p.name != "404.html" and not p.name.startswith("news-chrome"))
     urls = "".join(
         f"<url><loc>{DOMAIN}/{'' if p == 'index.html' else p}</loc></url>" for p in pages
     )
