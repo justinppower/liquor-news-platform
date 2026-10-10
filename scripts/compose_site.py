@@ -72,13 +72,15 @@ def rewrite_html(text: str) -> str:
 def _chrome():
     """Main-site header, footer and CSS for news pages, written by the brokerage build."""
     try:
+        head = (BROKERAGE / "news-chrome-head.html").read_text(encoding="utf-8") if (BROKERAGE / "news-chrome-head.html").exists() else CSSLINK
         return ((BROKERAGE / "news-chrome-header.html").read_text(encoding="utf-8"),
-                (BROKERAGE / "news-chrome-footer.html").read_text(encoding="utf-8"))
+                (BROKERAGE / "news-chrome-footer.html").read_text(encoding="utf-8"), head)
     except FileNotFoundError:
         return None
 
 
 HS, HE = "<!--pstx-head-->", "<!--/pstx-head-->"
+TS, TE = "<!--pstx-tags-->", "<!--/pstx-tags-->"
 FS, FE = "<!--pstx-foot-->", "<!--/pstx-foot-->"
 CSSLINK = '<link rel="stylesheet" href="/news-chrome.css">'
 
@@ -88,14 +90,15 @@ def add_chrome(text: str) -> str:
     text = text.replace(BACKBAR, "")
     text = re.sub(re.escape(HS) + r".*?" + re.escape(HE), "", text, flags=re.S)
     text = re.sub(re.escape(FS) + r".*?" + re.escape(FE), "", text, flags=re.S)
+    text = re.sub(re.escape(TS) + r".*?" + re.escape(TE), "", text, flags=re.S)
     text = text.replace(CSSLINK, "")
     ch = _chrome()
     if not ch or "<body" not in text:
         if "<body" in text:
             text = re.sub(r"(<body[^>]*>)", lambda m: m.group(1) + BACKBAR, text, count=1)
         return text
-    head, foot = ch
-    text = text.replace("</head>", CSSLINK + "</head>", 1)
+    head, foot, tags = ch
+    text = text.replace("</head>", TS + tags + TE + "</head>", 1)
     text = re.sub(r"(<body[^>]*>)", lambda m: m.group(1) + HS + head + HE, text, count=1)
     i = text.rfind("</body>")
     if i != -1:
@@ -105,6 +108,25 @@ def add_chrome(text: str) -> str:
 
 def rewrite_css(text: str) -> str:
     return CSSURL.sub(lambda m: m.group(1) + rewrite_url(m.group(2)), text)
+
+
+def clean_news_sitemap(path: Path):
+    """Keep only /news/ URLs (old remapped links pointed at main-site pages) and drop duplicates."""
+    if not path.exists():
+        return
+    t = path.read_text(encoding="utf-8")
+    seen = set()
+
+    def keep(m):
+        loc = re.search(r"<loc>([^<]+)</loc>", m.group(0))
+        u = loc.group(1).strip() if loc else ""
+        if not u.startswith(DOMAIN + PREFIX + "/") or u in seen:
+            return ""
+        seen.add(u)
+        return m.group(0)
+
+    t = re.sub(r"<url>.*?</url>\s*", keep, t, flags=re.S)
+    path.write_text(t, encoding="utf-8")
 
 
 def compose(build: Path):
@@ -146,9 +168,11 @@ def compose(build: Path):
             shutil.copytree(item, dst, dirs_exist_ok=True)
         else:
             shutil.copy2(item, dst)
+    clean_news_sitemap(news / "sitemap.xml")
     pages = sorted(p.name for p in BROKERAGE.glob("*.html") if p.name != "404.html" and not p.name.startswith("news-chrome"))
+    today = __import__("datetime").date.today().isoformat()
     urls = "".join(
-        f"<url><loc>{DOMAIN}/{'' if p == 'index.html' else p}</loc></url>" for p in pages
+        f"<url><loc>{DOMAIN}/{'' if p == 'index.html' else p}</loc><lastmod>{today}</lastmod></url>" for p in pages
     )
     (build / "sitemap-main.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -161,7 +185,7 @@ def compose(build: Path):
         f"<sitemap><loc>{DOMAIN}/news/sitemap.xml</loc></sitemap>"
         "</sitemapindex>\n"
     )
-    (build / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
+    (build / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /news-chrome-\nSitemap: {DOMAIN}/sitemap.xml\n")
     (build / ".nojekyll").write_text("")
     (build / ".composed").write_text("")
     print(f"composed: brokerage at /, {n} news files rewritten under {PREFIX}/")
