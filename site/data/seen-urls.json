@@ -1,8 +1,5 @@
 {
   "urls": {
-    "https://www.brewbound.com/news/nkd-distillery-turns-to-kanna-for-nakies-functional-edge": "2026-10-10T21:05:41.401444+00:00",
-    "https://vinepair.com/articles/mexican-spirits-to-try-beyond-tequila-mezcal/": "2026-10-10T21:05:47.020769+00:00",
-    "https://www.texasmonthly.com/news-politics/ken-paxton-campaign-ads/": "2026-10-10T21:05:51.489377+00:00",
     "https://daily.sevenfifty.com/register-now-for-vinitaly-usas-nyc-debut/": "2026-10-11T00:18:52.467944+00:00",
     "https://daily.sevenfifty.com/what-grapevines-can-tell-us-about-fighting-smoke-taint/": "2026-10-11T00:18:52.468349+00:00",
     "https://houston.eater.com/maps/downtown-houston-best-restaurants-bars-where-to-eat-drink": "2026-10-11T00:19:04.172261+00:00",
@@ -84,7 +81,12 @@
     "https://www.shankennewsdaily.com/2026/10/13/41052/carbliss-unveils-higher-alc-12-abv-collection/": "2026-10-13T16:13:12.223064+00:00",
     "https://www.shankennewsdaily.com/2026/10/13/41050/news-briefs-for-october-13-2026/": "2026-10-13T16:13:12.223563+00:00",
     "https://www.texasmonthly.com/news-politics/dan-patrick-religious-liberty-commission/": "2026-10-13T16:13:17.456494+00:00",
-    "https://www.texasmonthly.com/travel/haunted-san-antonio/": "2026-10-13T16:13:17.456844+00:00"
+    "https://www.texasmonthly.com/travel/haunted-san-antonio/": "2026-10-13T16:13:17.456844+00:00",
+    "https://www.bevnet.com/spirits/2026/adult-non-alcs-fastest-growing-dollars-are-coming-from-bars-and-browsers": "2026-10-13T21:23:39.229240+00:00",
+    "https://www.brewbound.com/news/events/brewboundlivewinter26/brewbound-live-la-2026-early-registration-savings-end-friday-oct-23": "2026-10-13T21:23:40.779258+00:00",
+    "https://www.brewbound.com/news/rndcs-remaining-michigan-operations-find-new-ownership-pending-court-approval": "2026-10-13T21:23:40.779743+00:00",
+    "https://vinepair.com/articles/mexican-spirits-to-try-beyond-tequila-mezcal/": "2026-10-13T21:23:45.684096+00:00",
+    "https://www.texasmonthly.com/news-politics/the-attempted-character-assassination-of-james-talarico-by-the-poster-tickletexts/": "2026-10-13T21:24:00.888941+00:00"
   },
-  "last_cleanup": "2026-10-13T16:12:54.885787+00:00"
+  "last_cleanup": "2026-10-13T21:23:37.245940+00:00"
 }
