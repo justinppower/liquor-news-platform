@@ -1,26 +1,5 @@
 {
   "urls": {
-    "https://vinepair.com/booze-news/delta-one-blantons-bourbon-partnership/": "2026-10-14T19:33:31.405209+00:00",
-    "https://vinepair.com/articles/signs-of-american-drinkers-in-europe/": "2026-10-14T19:33:31.405741+00:00",
-    "https://vinepair.com/articles/wa-bartenders-best-gin-for-beginners-2026/": "2026-10-14T19:33:31.406071+00:00",
-    "https://vinepair.com/the-buildout/capitaine/": "2026-10-14T19:33:31.406391+00:00",
-    "https://vinepair.com/articles/vinitaly-usa-2026/": "2026-10-14T19:33:31.406672+00:00",
-    "https://vinepair.com/articles/wine-101-podcast-great-american-wine-tour/": "2026-10-14T19:33:31.406962+00:00",
-    "https://punchdrink.com/articles/best-easy-whiskey-cocktail-recipes/": "2026-10-14T19:33:31.507790+00:00",
-    "https://www.shankennewsdaily.com/2026/10/14/41063/super-premium-spirits-outpace-the-market-despite-tough-conditions/": "2026-10-14T19:33:34.120323+00:00",
-    "https://www.shankennewsdaily.com/2026/10/14/41061/burgundys-u-s-shipments-decline-on-tariff-effect/": "2026-10-14T19:33:34.120625+00:00",
-    "https://www.shankennewsdaily.com/2026/10/14/41059/news-briefs-for-october-14-2026/": "2026-10-14T19:33:34.120919+00:00",
-    "https://dallas.eater.com/restaurant-news/77529/michelin-2005-winners-dallas-mamani": "2026-10-14T19:33:38.984402+00:00",
-    "https://austin.eater.com/maps/best-restaurants-austin-eater-38": "2026-10-14T19:33:39.201091+00:00",
-    "https://austin.eater.com/maps/best-sports-bars-austin-football-baseball-soccer-hockey-games": "2026-10-14T19:33:39.201438+00:00",
-    "https://austin.eater.com/maps/university-of-texas-austin-ut-campus-best-restaurants-bars-where-to-eat": "2026-10-14T19:33:39.201722+00:00",
-    "https://distilledspirits.org/bill-to-allow-consumers-to-decide-on-seven-day-spirits-sales-approved-by-committee/": "2026-10-14T19:33:52.227846+00:00",
-    "https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/": "2026-10-14T19:33:52.228329+00:00",
-    "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/": "2026-10-14T19:33:52.228732+00:00",
-    "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-10-14T19:33:52.229105+00:00",
-    "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-10-14T19:33:52.229517+00:00",
-    "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-10-14T19:33:52.229890+00:00",
-    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-10-14T19:33:52.230249+00:00",
     "https://daily.sevenfifty.com/after-a-decade-of-momentum-whats-next-for-hungarian-wine/": "2026-10-14T22:56:51.871054+00:00",
     "https://craftspiritsmag.com/2026/10/14/iron-smoke-whiskey-celebrates-15-years-with-limited-release-barrel-house-collection/": "2026-10-14T22:56:56.625330+00:00",
     "https://craftspiritsmag.com/2026/10/14/larrikin-bourbon-company-expands-distribution-into-texas/": "2026-10-14T22:56:56.625822+00:00",
@@ -94,7 +73,18 @@
     "https://www.texasmonthly.com/games/word-wrangler-october-17-2026/": "2026-10-17T12:52:57.029125+00:00",
     "https://www.texasmonthly.com/games/word-wrangler-october-14-2026/": "2026-10-17T12:52:57.029670+00:00",
     "https://www.brewbound.com/news/bars-and-browsers-are-driving-adult-non-alcs-growth": "2026-10-17T16:06:49.096734+00:00",
-    "https://www.texasmonthly.com/news-politics/dade-phelan-republicans-freaking-out/": "2026-10-17T16:06:58.114634+00:00"
+    "https://www.texasmonthly.com/news-politics/dade-phelan-republicans-freaking-out/": "2026-10-17T16:06:58.114634+00:00",
+    "https://dallas.eater.com/restaurant-news/77529/michelin-2005-winners-dallas-mamani": "2026-10-17T21:12:41.141337+00:00",
+    "https://austin.eater.com/maps/best-restaurants-austin-eater-38": "2026-10-17T21:12:41.445287+00:00",
+    "https://austin.eater.com/maps/best-sports-bars-austin-football-baseball-soccer-hockey-games": "2026-10-17T21:12:41.445781+00:00",
+    "https://austin.eater.com/maps/university-of-texas-austin-ut-campus-best-restaurants-bars-where-to-eat": "2026-10-17T21:12:41.446194+00:00",
+    "https://distilledspirits.org/bill-to-allow-consumers-to-decide-on-seven-day-spirits-sales-approved-by-committee/": "2026-10-17T21:13:05.869433+00:00",
+    "https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/": "2026-10-17T21:13:05.870167+00:00",
+    "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/": "2026-10-17T21:13:05.870788+00:00",
+    "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-10-17T21:13:05.871389+00:00",
+    "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-10-17T21:13:05.874392+00:00",
+    "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-10-17T21:13:05.875221+00:00",
+    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-10-17T21:13:05.875924+00:00"
   },
-  "last_cleanup": "2026-10-17T18:41:53.756368+00:00"
+  "last_cleanup": "2026-10-17T21:12:18.927372+00:00"
 }
