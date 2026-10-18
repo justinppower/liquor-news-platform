@@ -1,5 +1,5 @@
 ---
-title: "After Arguing About Trump, A Texas Man Killed His Daughter. Her Mother Is Seeking Justice."
+title: "After Arguing About Trump, a Texas Man Killed His Daughter. Her Mother Is Seeking Justice."
 date: 2026-10-15T11:00:00+0000
 draft: false
 pillars: ["texas-beat"]
