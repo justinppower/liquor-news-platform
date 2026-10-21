@@ -1,21 +1,5 @@
 {
   "urls": {
-    "https://www.bevnet.com/spirits/2026/pernod-ricard-expects-rtds-to-gain-share-but-no-us-spirits-bounceback": "2026-10-18T20:56:30.629061+00:00",
-    "https://www.brewbound.com/news/pernod-ricard-us-sales-fall-10-as-small-formats-gain-focus": "2026-10-18T20:56:33.049307+00:00",
-    "https://www.brewbound.com/news/summit-brewing-bmo-bank-reach-agreement-new-lender-to-take-over-mn-brewerys-loans": "2026-10-18T20:56:33.049854+00:00",
-    "https://vinepair.com/articles/2026-next-wave-aapi-food-and-wine/": "2026-10-18T20:56:37.587139+00:00",
-    "https://vinepair.com/articles/2026-next-wave-still-austin-whiskey-co/": "2026-10-18T20:56:37.587808+00:00",
-    "https://vinepair.com/articles/2026-next-wave-eckhart-beer-co/": "2026-10-18T20:56:37.588524+00:00",
-    "https://vinepair.com/articles/2026-next-wave-eamoni-collier/": "2026-10-18T20:56:37.589112+00:00",
-    "https://vinepair.com/articles/2026-next-wave-vesper-books-and-wine/": "2026-10-18T20:56:37.589780+00:00",
-    "https://vinepair.com/articles/2026-next-wave-matt-turner/": "2026-10-18T20:56:37.590501+00:00",
-    "https://vinepair.com/articles/2026-next-wave-matt-crafton/": "2026-10-18T20:56:37.591224+00:00",
-    "https://vinepair.com/articles/2026-next-wave-alice-anderson/": "2026-10-18T20:56:37.591964+00:00",
-    "https://vinepair.com/articles/2026-next-wave-00-wines/": "2026-10-18T20:56:37.592699+00:00",
-    "https://vinepair.com/articles/2026-next-wave-jenny-camarena/": "2026-10-18T20:56:37.593452+00:00",
-    "https://vinepair.com/articles/2026-next-wave-los-siete-misterios-mezcal/": "2026-10-18T20:56:37.594120+00:00",
-    "https://vinepair.com/articles/2026-next-wave-jade-ayala/": "2026-10-18T20:56:37.594897+00:00",
-    "https://distilledspirits.org/discus-president-ceo-chris-swonger-testifies-before-ustr-committee-on-tariffs/": "2026-10-18T20:56:55.908450+00:00",
     "https://craftspiritsmag.com/2026/10/15/luke-grimes-raises-a-glass-to-conservation-through-high-wests-protect-the-west-initiative/": "2026-10-19T05:40:17.731033+00:00",
     "https://craftspiritsmag.com/2026/10/15/one-roq-spirits-signs-distribution-agreement-with-gold-coast-eagle-distributing-for-2027-florida-retail-launch/": "2026-10-19T05:40:17.731729+00:00",
     "https://daily.sevenfifty.com/how-planeta-is-bringing-a-contemporary-lens-to-wine/": "2026-10-19T11:59:26.425553+00:00",
@@ -93,7 +77,18 @@
     "https://www.brewbound.com/news/press-clips-stone-founders-reveal-new-restaurant-name-suarez-family-brewery-changes-operating-model": "2026-10-21T19:04:58.610770+00:00",
     "https://www.brewbound.com/news/ftc-settlement-with-southern-glazers-a-narrow-fix-for-price-discrimination": "2026-10-21T19:04:58.611241+00:00",
     "https://www.brewbound.com/news/rtds-serve-as-crafts-trojan-horse-to-win-drinkers-boston-beer-leaders-on-leveraging-innovation": "2026-10-21T19:04:58.611732+00:00",
-    "https://vinepair.com/booze-news/costco-pure-agave-tequila-case-dismissed/": "2026-10-21T19:05:02.909406+00:00"
+    "https://vinepair.com/booze-news/costco-pure-agave-tequila-case-dismissed/": "2026-10-21T19:05:02.909406+00:00",
+    "https://www.brewbound.com/news/pernod-ricard-us-sales-fall-10-as-small-formats-gain-focus": "2026-10-21T22:34:22.690316+00:00",
+    "https://www.brewbound.com/news/summit-brewing-bmo-bank-reach-agreement-new-lender-to-take-over-mn-brewerys-loans": "2026-10-21T22:34:22.690809+00:00",
+    "https://vinepair.com/articles/2026-next-wave-aapi-food-and-wine/": "2026-10-21T22:34:26.603184+00:00",
+    "https://vinepair.com/articles/2026-next-wave-still-austin-whiskey-co/": "2026-10-21T22:34:26.603714+00:00",
+    "https://vinepair.com/articles/2026-next-wave-eckhart-beer-co/": "2026-10-21T22:34:26.604347+00:00",
+    "https://vinepair.com/articles/2026-next-wave-eamoni-collier/": "2026-10-21T22:34:26.604840+00:00",
+    "https://vinepair.com/articles/2026-next-wave-vesper-books-and-wine/": "2026-10-21T22:34:26.605324+00:00",
+    "https://vinepair.com/articles/2026-next-wave-matt-turner/": "2026-10-21T22:34:26.605882+00:00",
+    "https://vinepair.com/articles/2026-next-wave-matt-crafton/": "2026-10-21T22:34:26.606450+00:00",
+    "https://vinepair.com/articles/2026-next-wave-alice-anderson/": "2026-10-21T22:34:26.607007+00:00",
+    "https://distilledspirits.org/discus-president-ceo-chris-swonger-testifies-before-ustr-committee-on-tariffs/": "2026-10-21T22:34:43.068295+00:00"
   },
-  "last_cleanup": "2026-10-21T19:04:54.144795+00:00"
+  "last_cleanup": "2026-10-21T22:34:18.777311+00:00"
 }
