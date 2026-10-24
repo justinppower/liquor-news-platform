@@ -1,21 +1,5 @@
 {
   "urls": {
-    "https://daily.sevenfifty.com/after-a-decade-of-momentum-whats-next-for-hungarian-wine/": "2026-10-21T00:00:11.555395+00:00",
-    "https://craftspiritsmag.com/2026/10/14/iron-smoke-whiskey-celebrates-15-years-with-limited-release-barrel-house-collection/": "2026-10-21T00:00:16.233951+00:00",
-    "https://craftspiritsmag.com/2026/10/14/larrikin-bourbon-company-expands-distribution-into-texas/": "2026-10-21T00:00:16.234420+00:00",
-    "https://craftspiritsmag.com/2026/10/08/knobel-tennessee-whiskey-launches-7-year-special-edition-to-honor-mikeroweworks-foundation-milestone/": "2026-10-21T00:00:16.234882+00:00",
-    "https://craftspiritsmag.com/2026/10/08/ghostwood-whiskey-introduces-3-brothers-bourbon-a-six-year-high-rye-three-grain-bourbon-inspired-by-family-traditions/": "2026-10-21T00:00:16.235377+00:00",
-    "https://dallas.eater.com/restaurant-news/77529/michelin-2005-winners-dallas-mamani": "2026-10-21T00:00:19.109095+00:00",
-    "https://austin.eater.com/maps/best-restaurants-austin-eater-38": "2026-10-21T00:00:19.379596+00:00",
-    "https://austin.eater.com/maps/best-sports-bars-austin-football-baseball-soccer-hockey-games": "2026-10-21T00:00:19.380069+00:00",
-    "https://austin.eater.com/maps/university-of-texas-austin-ut-campus-best-restaurants-bars-where-to-eat": "2026-10-21T00:00:19.380530+00:00",
-    "https://distilledspirits.org/bill-to-allow-consumers-to-decide-on-seven-day-spirits-sales-approved-by-committee/": "2026-10-21T00:00:31.000650+00:00",
-    "https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/": "2026-10-21T00:00:31.001370+00:00",
-    "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/": "2026-10-21T00:00:31.001992+00:00",
-    "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-10-21T00:00:31.002592+00:00",
-    "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-10-21T00:00:31.003213+00:00",
-    "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-10-21T00:00:31.003802+00:00",
-    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-10-21T00:00:31.004413+00:00",
     "https://craftspiritsmag.com/2026/10/20/untappd-grows-to-nearly-10-million-drinks-with-the-addition-of-wine-and-spirits-alongside-comprehensive-app-redesign/": "2026-10-21T04:28:44.233501+00:00",
     "https://www.brewbound.com/news/three-floyds-unleashes-dark-lord-variant-on-retailers-for-1st-time-as-part-of-30th-anniversary": "2026-10-21T14:49:14.787673+00:00",
     "https://vinepair.com/articles/does-art-sell-wine/": "2026-10-21T14:49:19.564647+00:00",
@@ -102,7 +86,19 @@
     "https://www.shankennewsdaily.com/2026/10/23/41118/g4-tequila-builds-on-recent-growth-rising-55-through-september/": "2026-10-23T18:35:21.989662+00:00",
     "https://www.shankennewsdaily.com/2026/10/23/41116/news-briefs-for-october-23-2026/": "2026-10-23T18:35:21.990063+00:00",
     "https://www.brewbound.com/news/press-clips-a-potential-new-brewery-tax-credit-chandler-street-breweries-shuts-down": "2026-10-23T21:49:08.598994+00:00",
-    "https://punchdrink.com/articles/how-to-use-benedictine-liqueur-cocktail-recipe/": "2026-10-23T21:49:14.001002+00:00"
+    "https://punchdrink.com/articles/how-to-use-benedictine-liqueur-cocktail-recipe/": "2026-10-23T21:49:14.001002+00:00",
+    "https://daily.sevenfifty.com/after-a-decade-of-momentum-whats-next-for-hungarian-wine/": "2026-10-24T00:13:14.683132+00:00",
+    "https://dallas.eater.com/restaurant-news/77529/michelin-2005-winners-dallas-mamani": "2026-10-24T00:13:20.103397+00:00",
+    "https://austin.eater.com/maps/best-restaurants-austin-eater-38": "2026-10-24T00:13:20.250732+00:00",
+    "https://austin.eater.com/maps/best-sports-bars-austin-football-baseball-soccer-hockey-games": "2026-10-24T00:13:20.251255+00:00",
+    "https://austin.eater.com/maps/university-of-texas-austin-ut-campus-best-restaurants-bars-where-to-eat": "2026-10-24T00:13:20.251788+00:00",
+    "https://distilledspirits.org/bill-to-allow-consumers-to-decide-on-seven-day-spirits-sales-approved-by-committee/": "2026-10-24T00:13:32.369317+00:00",
+    "https://distilledspirits.org/florida-craft-spirits-association-joins-growing-spirits-united-grassroots-platform-in-support-of-spirits-industry/": "2026-10-24T00:13:32.369890+00:00",
+    "https://distilledspirits.org/oklahoma-house-passes-bill-to-allow-cocktails-to-go-until-2022/": "2026-10-24T00:13:32.370392+00:00",
+    "https://distilledspirits.org/ohio-bill-to-permanently-allow-cocktails-to-go-passes-committee/": "2026-10-24T00:13:32.370847+00:00",
+    "https://distilledspirits.org/moderation-responsibility-at-home/": "2026-10-24T00:13:32.371367+00:00",
+    "https://distilledspirits.org/governor-lamont-issues-new-executive-order-clarifying-cocktails-to-go-are-permitted/": "2026-10-24T00:13:32.371869+00:00",
+    "https://distilledspirits.org/hand-sanitizer-keep-out-of-reach-of-children/": "2026-10-24T00:13:32.372349+00:00"
   },
-  "last_cleanup": "2026-10-23T21:49:04.206731+00:00"
+  "last_cleanup": "2026-10-24T00:13:06.661369+00:00"
 }
