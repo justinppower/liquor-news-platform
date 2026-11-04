@@ -160,15 +160,34 @@ def is_relevant(item) -> bool:
     return any(k in hay for k in RELEVANT)
 
 
+_KW_CACHE = {}
+
+
+def _kw_hit(kw: str, haystack: str) -> bool:
+    """Whole-word match, so 'iri' no longer fires on 'spirits' or 'niq' on 'unique'."""
+    rx = _KW_CACHE.get(kw)
+    if rx is None:
+        rx = _KW_CACHE[kw] = re.compile(r"(?<![a-z0-9])" + re.escape(kw.strip()) + r"(?![a-z0-9])")
+    return bool(rx.search(haystack))
+
+
 def classify(item, classifier: dict, default: str) -> str:
     haystack = (item["title"] + " " + item["description"]).lower()
     for pillar, keywords in classifier.items():
         if not keywords:
             continue
         for kw in keywords:
-            if kw in haystack:
+            if _kw_hit(kw, haystack):
                 return pillar
     return default
+
+
+def passes_gate(item, feed: dict) -> bool:
+    """Per-feed gate for noisy sources (Google News): every require_all group must hit, no exclude may."""
+    hay = " " + (item.get("title", "") + " " + item.get("description", "")).lower() + " "
+    if any(x in hay for x in feed.get("exclude", [])):
+        return False
+    return all(any(k in hay for k in grp) for grp in feed.get("require_all", []))
 
 
 def fetch_all(cfg) -> list:
@@ -176,11 +195,14 @@ def fetch_all(cfg) -> list:
     all_items = []
     for feed in cfg["feeds"]:
         print(f"  → {feed['name']}")
-        items = parse_rss(feed["url"])
+        items = [it for it in parse_rss(feed["url"]) if passes_gate(it, feed)]
         for it in items:
             it["source"] = feed["name"]
+            if feed.get("publisher_from_title") and " - " in it["title"]:
+                # Google News titles end in " - Publisher": credit the real outlet
+                it["title"], it["source"] = it["title"].rsplit(" - ", 1)
             it["source_id"] = feed["id"]
-            it["pillar"] = classify(it, cfg["classifier"], feed["default_pillar"])
+            it["pillar"] = feed.get("force_pillar") or classify(it, cfg["classifier"], feed["default_pillar"])
         all_items.extend(items)
         print(f"      {len(items)} items")
     # Topic filter: drinks/alcohol only
@@ -616,24 +638,21 @@ def build_homepage(by_pillar, cfg, out_dir: Path):
   <div class="container">
     <div class="marketplace-band-grid">
       <div>
-        <div class="eyebrow">The Marketplace · Coming soon</div>
+        <div class="eyebrow">Package Store TX · Brokerage</div>
         <h2>Buying or selling a Texas package store?</h2>
-        <p>The only marketplace built inside an editorial brand. Listings written like journalism, with the numbers up front. Verified owners. Real revenue. Real margins. Real buyer flow.</p>
+        <p>We help Texas package store owners get ready to sell, list and close, and help buyers find stores and sites before they hit the market.</p>
         <div class="actions">
-          <a href="/marketplace/" class="btn btn-primary">See the marketplace</a>
-          <a href="/marketplace/#list" class="btn btn-ghost">List your store</a>
+          <a href="/sell.html" class="btn btn-primary">Selling a store</a>
+          <a href="/buy.html" class="btn btn-ghost">Buying a store</a>
         </div>
       </div>
       <div class="listing-mock">
-        <span class="tag">Texas · Off-Premise</span>
-        <h3>Established Package Store, Harris County</h3>
-        <div class="sub">TABC Permit P · 22 years operating · Owner retiring</div>
-        <div class="stats">
-          <div class="stat"><div class="stat-label">Annual Rev</div><div class="stat-value">$2.4M</div></div>
-          <div class="stat"><div class="stat-label">Sq Ft</div><div class="stat-value">4,800</div></div>
-          <div class="stat"><div class="stat-label">Margin</div><div class="stat-value">31%</div></div>
+        <span class="tag">Texas · Package stores</span>
+        <h3>What could your store sell for?</h3>
+        <div class="sub">Free, confidential estimate from Justin and Jeffrey. Indicative only, not an offer.</div>
+        <div class="actions" style="margin-top:18px">
+          <a href="/value.html" class="btn btn-primary">Get my store value</a>
         </div>
-        <div class="price">$1.85M</div>
       </div>
     </div>
   </div>
