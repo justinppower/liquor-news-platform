@@ -7,27 +7,9 @@
       "default_pillar": "industry-news"
     },
     {
-      "id": "spirits-business",
-      "name": "The Spirits Business",
-      "url": "https://www.thespiritsbusiness.com/feed/",
-      "default_pillar": "industry-news"
-    },
-    {
-      "id": "drinks-business",
-      "name": "The Drinks Business",
-      "url": "https://www.thedrinksbusiness.com/feed/",
-      "default_pillar": "industry-news"
-    },
-    {
       "id": "brewbound",
       "name": "Brewbound",
       "url": "https://www.brewbound.com/feed/",
-      "default_pillar": "industry-news"
-    },
-    {
-      "id": "craft-brewing-business",
-      "name": "Craft Brewing Business",
-      "url": "https://www.craftbrewingbusiness.com/feed/",
       "default_pillar": "industry-news"
     },
     {
@@ -46,18 +28,6 @@
       "id": "imbibe",
       "name": "Imbibe Magazine",
       "url": "https://imbibemagazine.com/feed/",
-      "default_pillar": "culture-lifestyle"
-    },
-    {
-      "id": "good-beer-hunting",
-      "name": "Good Beer Hunting",
-      "url": "https://www.goodbeerhunting.com/blog?format=rss",
-      "default_pillar": "culture-lifestyle"
-    },
-    {
-      "id": "wine-folly",
-      "name": "Wine Folly",
-      "url": "https://winefolly.com/feed/",
       "default_pillar": "culture-lifestyle"
     },
     {
@@ -89,6 +59,201 @@
       "name": "Texas Monthly",
       "url": "https://www.texasmonthly.com/food/feed/",
       "default_pillar": "texas-beat"
+    },
+    {
+      "id": "gn-tabc",
+      "name": "Google News: TABC",
+      "url": "https://news.google.com/rss/search?hl=en-US&gl=US&ceid=US:en&q=%22Texas+Alcoholic+Beverage+Commission%22+-basketball+when:30d",
+      "default_pillar": "texas-beat",
+      "require_all": [
+        [
+          "texas",
+          " tx ",
+          "houston",
+          "dallas",
+          "austin",
+          "san antonio",
+          "fort worth",
+          "el paso",
+          "lubbock",
+          "bastrop",
+          "county"
+        ],
+        [
+          "liquor",
+          "alcohol",
+          "package store",
+          "tabc",
+          "spec's",
+          "spec’s",
+          "twin liquors",
+          "total wine",
+          "wine",
+          "beer",
+          "spirits",
+          "beverage",
+          "wet",
+          "dry"
+        ]
+      ],
+      "exclude": [
+        "killed",
+        "shooting",
+        "shot ",
+        "robbery",
+        "robbed",
+        "arrest",
+        "sentenced",
+        "crash",
+        "police",
+        "lottery",
+        "basketball",
+        "football",
+        "tailgate",
+        "obituary",
+        "murder",
+        "stabbing",
+        "campaign",
+        "nominee",
+        "congress",
+        "candidate",
+        "senate",
+        "governor",
+        "election night",
+        "cookies"
+      ],
+      "force_pillar": "texas-beat",
+      "publisher_from_title": true
+    },
+    {
+      "id": "gn-local-option",
+      "name": "Google News: Texas local option",
+      "url": "https://news.google.com/rss/search?hl=en-US&gl=US&ceid=US:en&q=Texas+(%22local+option%22+OR+%22wet+dry%22+OR+%22alcohol+election%22+OR+%22package+store+permit%22)+when:60d",
+      "default_pillar": "texas-beat",
+      "require_all": [
+        [
+          "texas",
+          " tx ",
+          "houston",
+          "dallas",
+          "austin",
+          "san antonio",
+          "fort worth",
+          "el paso",
+          "lubbock",
+          "bastrop",
+          "county"
+        ],
+        [
+          "liquor",
+          "alcohol",
+          "package store",
+          "tabc",
+          "spec's",
+          "spec’s",
+          "twin liquors",
+          "total wine",
+          "wine",
+          "beer",
+          "spirits",
+          "beverage",
+          "wet",
+          "dry"
+        ]
+      ],
+      "exclude": [
+        "killed",
+        "shooting",
+        "shot ",
+        "robbery",
+        "robbed",
+        "arrest",
+        "sentenced",
+        "crash",
+        "police",
+        "lottery",
+        "basketball",
+        "football",
+        "tailgate",
+        "obituary",
+        "murder",
+        "stabbing",
+        "campaign",
+        "nominee",
+        "congress",
+        "candidate",
+        "senate",
+        "governor",
+        "election night",
+        "cookies"
+      ],
+      "force_pillar": "texas-beat",
+      "publisher_from_title": true
+    },
+    {
+      "id": "gn-tx-chains",
+      "name": "Google News: Texas liquor retail",
+      "url": "https://news.google.com/rss/search?hl=en-US&gl=US&ceid=US:en&q=(%22Spec%27s%22+OR+%22Twin+Liquors%22+OR+%22Total+Wine%22+OR+%22Goody+Goody%22)+Texas+-robbery+-shooting+when:30d",
+      "default_pillar": "texas-beat",
+      "require_all": [
+        [
+          "texas",
+          " tx ",
+          "houston",
+          "dallas",
+          "austin",
+          "san antonio",
+          "fort worth",
+          "el paso",
+          "lubbock",
+          "bastrop",
+          "county"
+        ],
+        [
+          "liquor",
+          "alcohol",
+          "package store",
+          "tabc",
+          "spec's",
+          "spec’s",
+          "twin liquors",
+          "total wine",
+          "wine",
+          "beer",
+          "spirits",
+          "beverage",
+          "wet",
+          "dry"
+        ]
+      ],
+      "exclude": [
+        "killed",
+        "shooting",
+        "shot ",
+        "robbery",
+        "robbed",
+        "arrest",
+        "sentenced",
+        "crash",
+        "police",
+        "lottery",
+        "basketball",
+        "football",
+        "tailgate",
+        "obituary",
+        "murder",
+        "stabbing",
+        "campaign",
+        "nominee",
+        "congress",
+        "candidate",
+        "senate",
+        "governor",
+        "election night",
+        "cookies"
+      ],
+      "force_pillar": "texas-beat",
+      "publisher_from_title": true
     }
   ],
   "pillars": {

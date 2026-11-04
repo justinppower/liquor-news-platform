@@ -1,8 +1,8 @@
 name: RSS Feed Aggregator
 
 on:
-  schedule:
-    - cron: '*/30 * * * *'
+  # Schedule removed 4 Nov 2026: this Hugo pipeline (site/) is never deployed.
+  # deploy.yml ships site-bundle.b64, which scripts/aggregate.py builds. Manual run still works.
   workflow_dispatch:
     inputs:
       dry_run:
