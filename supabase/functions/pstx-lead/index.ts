@@ -6,6 +6,14 @@ import { createClient } from "npm:@supabase/supabase-js@2.45.4";
 
 const ALLOWED = ["https://packagestoretx.com", "https://www.packagestoretx.com"];
 const TYPES = ["valuation", "audit", "buyer", "contact"];
+// Zapier catch hook for the pstx-lead-alert workflow (email justin@ and jeff@packagestoretx.com + Slack DM).
+// The deployed function carries the real URL; the public repo copy reads it from the environment.
+const ALERT_HOOK = Deno.env.get("PSTX_ALERT_HOOK") || "__ALERT_HOOK__";
+
+function labelize(k: string) {
+  return k.replace(/^(contact|buy|audit|value|gate|calc|quick)-form-|^(contact|buy|audit|gate|calc|q)-/, "").replace(/[-_]/g, " ")
+    .replace(/^./, (c) => c.toUpperCase());
+}
 
 function cors(origin: string | null) {
   const o = origin && ALLOWED.includes(origin) ? origin : ALLOWED[0];
@@ -70,10 +78,23 @@ Deno.serve(async (req) => {
     if ((count ?? 0) >= 5) return new Response(JSON.stringify({ ok: false, error: "rate" }), { status: 429, headers: { ...h, "content-type": "application/json" } });
   }
 
-  const { error } = await db.from("pstx_leads").insert({
+  const { data: row, error } = await db.from("pstx_leads").insert({
     lead_type: type, name, phone, email: email || null, details, ip_hash,
     user_agent: (req.headers.get("user-agent") || "").slice(0, 300),
-  });
+  }).select("id, created_at").single();
   if (error) return new Response(JSON.stringify({ ok: false }), { status: 500, headers: { ...h, "content-type": "application/json" } });
+
+  // Alert Justin and Jeffrey. A failed alert never fails the visitor's submission; alerted_at stays null so it can be retried.
+  if (ALERT_HOOK.startsWith("https://")) {
+    try {
+      const details_text = Object.entries(details).filter(([, v]) => String(v).trim() !== "")
+        .map(([k, v]) => `${labelize(k)}: ${v}`).join("\n");
+      const r = await fetch(ALERT_HOOK, {
+        method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({ id: row.id, created_at: row.created_at, lead_type: type, name, phone, email, details_text }),
+      });
+      if (r.ok) await db.from("pstx_leads").update({ alerted_at: new Date().toISOString() }).eq("id", row.id);
+    } catch (_) { /* alert retry is handled by the freshness watchdog */ }
+  }
   return new Response(JSON.stringify({ ok: true }), { headers: { ...h, "content-type": "application/json" } });
 });
