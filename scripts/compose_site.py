@@ -44,9 +44,15 @@ BACKBAR = (
 )
 
 
+# Brokerage pages live at the root (/value.html, /sell.html ...): never prefix them with /news.
+BROKERAGE_PAGES = {"/" + p.name for p in BROKERAGE.glob("*.html")}
+
+
 def rewrite_url(url: str) -> str:
     if url in REMAP:
         return REMAP[url]
+    if url.split("#")[0].split("?")[0] in BROKERAGE_PAGES:
+        return url
     if url.startswith("//") or not url.startswith("/"):
         return url
     if url == PREFIX or url.startswith(PREFIX + "/"):
